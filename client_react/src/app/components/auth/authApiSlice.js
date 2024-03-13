@@ -1,6 +1,5 @@
-import apiSlice from "../../src/app/apiSlice";
-
-const authApiSlice = apiSlice.injectEndpoints({
+import ApiSlice from "../../ApiSlice"
+const authApiSlice = ApiSlice.injectEndpoints({
     endpoints:(build)=>({
         registerChef:build.mutation({
             query:(registerChef)=>({

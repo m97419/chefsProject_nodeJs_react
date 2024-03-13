@@ -1,13 +1,17 @@
 import logo from './logo.svg';
 import './App.css'
-import {Button } from "primereact/button"
+import Register from './app/components/auth/Register';
+import CountryList from './app/components/countries/CountryList';
+import List from './app/components/countries/List';
+import BasicDemo from './app/components/countries/BasicDemo';
 
 function App() {
   return (
     <div className="App">
-      aaaa
-      <Button></Button>
-     
+      {/* <List></List> */}
+      <BasicDemo></BasicDemo>
+      {/* <Register/> */}
+      {/* <CountryList/> */}
     </div>
   );
 }

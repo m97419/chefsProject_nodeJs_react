@@ -3,19 +3,26 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import store from './app/store';
-import { Provider } from 'react-redux';
+import {Provider} from 'react-redux'
+import { configureStore } from '@reduxjs/toolkit';
+import store from './app/store'
 import { PrimeReactProvider, PrimeReactContext } from 'primereact/api';
-
 import "primereact/resources/themes/lara-light-cyan/theme.css";
-         
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// const myStore = configureStore({
+//   reducer:{
+//     store
+//   }
+// })
+
+
 root.render(
   <React.StrictMode>
-    <PrimeReactProvider store={store}>
+    <Provider store={store}>
     <App />
-    </PrimeReactProvider>
+    </Provider>
   </React.StrictMode>
 );
 
