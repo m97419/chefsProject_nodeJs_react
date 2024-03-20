@@ -2,6 +2,7 @@ import React,{useEffect,useState} from "react";
 import { useLoginMutation } from "./authApiSlice";
 import { setToken } from "./authSlice";
 import { UseDispatch, useDispatch } from "react-redux";
+import { Form } from "react-router-dom";
 
 
 const Login=()=>{
@@ -14,4 +15,14 @@ const Login=()=>{
             dispatch(setToken(data))
         }
     },[isSuccess])
+    return(<Form>
+
+        <input>hhhh</input>
+        {/* //loginFunc({}) */}
+    </Form>
+
+
+
+
+    )
 }
