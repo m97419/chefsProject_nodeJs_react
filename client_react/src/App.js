@@ -10,11 +10,11 @@ import { useParams } from "react-router-dom";
 import Bssss from './app/components/countries/Bssss';
 import 'primereact/resources/themes/saga-orange/theme.css'
 import './assets/theme.css'
-
 import FooterDemo from './app/components/countries/exp';
 
 import New from './app/components/New';
 import Nice from './app/components/Nice';
+import Basket from './app/components/Basket';
 
 
 function App() {
@@ -31,16 +31,13 @@ function App() {
  <Route path='/' element={<HomePage/>}></Route> 
  <Route path="/country/:id" element={<Country />}></Route>
  <Route path="/countries" element={<CountryList/>}></Route>
+ <Route path="/basket" element={<Basket/>}></Route>
  </Routes>
- <Link to="/country/1"></Link>
- <Link to="/countries"></Link>
-
- 
-
       {/* <List></List> */}
       {/* <BasicDemo></BasicDemo> */}
       {/* <Register/> */}
    {/* <FooterDemo/> */}
+   <Basket/>
     </div>   
   );
 }

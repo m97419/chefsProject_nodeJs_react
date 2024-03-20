@@ -14,7 +14,6 @@ import 'primeicons/primeicons.css';
 
 const Country = () =>{
     const {id} = useParams();
-    console.log(id);
     const { data: productsData = [], isLoading, isSuccess, isError, error, refetch } =useGetByCountryQuery(id)
 //--------------------------------------//
 const [products, setProducts] = useState([]);
@@ -106,7 +105,7 @@ const gridItem = (product) => {
                 </div>
                 <div className="flex align-items-center justify-content-between">
                     <span className="text-2xl font-semibold">{product.price}</span>
-                    <Button icon="pi-cart-plus" rounded text raised aria-label="Filter" />
+                    <Button icon="pi-cart-plus" rounded text raised aria-label="Filter" onClick={()=>addItemToBusket(product)}></Button>
                     {/* <Button icon="pi pi-shopping-cart" className="p-button-rounded" disabled={product.inventoryStatus === 'OUTOFSTOCK'}></Button> */}
                 </div>
             
