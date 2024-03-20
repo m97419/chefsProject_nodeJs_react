@@ -4,7 +4,7 @@ const router= express.Router()
 const verifyJWT = require("../middleware/verifyJWT")
 const countryController = require("../controllers/countryController")
 
-router.use(verifyJWT)
+//router.use(verifyJWT)
 
 router.get("/",countryController.getAllCountry)
 router.get("/:id",countryController.getCountryById)

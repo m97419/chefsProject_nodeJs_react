@@ -19,16 +19,15 @@ const categoriesApiSlice = ApiSlice.injectEndpoints({
         updateCategory:build.mutation({
             query:(category)=>({
                 url:"/api/category/",
-                method:'POST',
+                method:'PUT',
                 body:category
             })
 
         }),    
         deleteCategory:build.mutation({
             query:(id)=>({
-                url:"/api/category/",
+                url:`/api/category/${id}`,
                 method:'POST',
-                body:category
             })
 
         })

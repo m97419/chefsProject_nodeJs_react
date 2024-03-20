@@ -2,6 +2,7 @@ const Product = require('../modules/Product')
 const Category = require('../modules/Category')
 
 const createNewProduct = async (req,res)=>{
+    // const picture =(req.file?.filename? req.file.filename:"") 
     const{name,category,country,chef,price,picture} = req.body
     if(!name || !price || !category || !country || !chef)
     return res.status(400).json({message: 'field are required!!'})
@@ -36,6 +37,7 @@ const getProductById=async(req,res)=>{
 }
 
 const updateProduct=async(req,res)=>{
+    // const picture =(req.file?.filename? req.file.filename:"") 
     const {_id,name,category,price,picture}=req.body
     if(!_id||!name||!price)
         return res.status(400).json({message:'fields are required'})
@@ -66,11 +68,20 @@ const deleteProduct=async(req,res)=>{
     res.json(reply)
 
 }
+const getByCountry=async(req,res)=>{
+    const {countryId}=req.params
+    const products = await Product.find({country:countryId}).populate("category","chef").lean()
+    if(!products){
+        return res.status(400).json({message:'products not found'})
+    }
+    res.json(products)
+}
 module.exports = {
     createNewProduct,
     getAllProducts,
     getProductById,
     updateProduct,
-    deleteProduct
+    deleteProduct,
+    getByCountry
 
 }

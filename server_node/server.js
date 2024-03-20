@@ -1,12 +1,14 @@
 require("dotenv").config()
 const express= require("express")
+
 const cors=require("cors")
 
 const corsOptions=require("./config/corsOptions")
 const connectDB = require("./config/dbConn")
 const { default: mongoose } = require("mongoose")
-const PORT=process.env.PORT || 7778
+const PORT=process.env.PORT || 7788
 const app = express()
+
 connectDB()
 
 app.use(cors(corsOptions))
