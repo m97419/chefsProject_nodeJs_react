@@ -1,6 +1,6 @@
-import apiSlice from "../../src/app/apiSlice";
+import ApiSlice from "../../src/app/apiSlice";
 
-const categoriesApiSlice = apiSlice.injectEndpoints({
+const categoriesApiSlice = ApiSlice.injectEndpoints({
     endpoints:(build)=>({
         getAllCategories:build.query({
             query:()=>({
@@ -19,16 +19,15 @@ const categoriesApiSlice = apiSlice.injectEndpoints({
         updateCategory:build.mutation({
             query:(category)=>({
                 url:"/api/category/",
-                method:'POST',
+                method:'PUT',
                 body:category
             })
 
         }),    
         deleteCategory:build.mutation({
             query:(id)=>({
-                url:"/api/category/",
+                url:`/api/category/${id}`,
                 method:'POST',
-                body:category
             })
 
         })
