@@ -1,6 +1,6 @@
-import apiSlice from "../../apiSlice";
+import ApiSlice from "../../ApiSlice.js";
 
-const countriesApiSlice = apiSlice.injectEndpoints({
+const countriesApiSlice = ApiSlice.injectEndpoints({
     endpoints:(build)=>({
         getAllCountries:build.query({
             query:()=>({
@@ -11,7 +11,7 @@ const countriesApiSlice = apiSlice.injectEndpoints({
         addcountry:build.mutation({
             query:(country)=>({
                 url:"/api/countries",
-                // method:POST,
+                method:'POST',
                 body:country
             })
 
