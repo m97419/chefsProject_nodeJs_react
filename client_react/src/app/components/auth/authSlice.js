@@ -3,10 +3,10 @@ import { createSlice } from "@reduxjs/toolkit";
 const authSlice = createSlice({
     name:"auth",
     initialState:{
-        role:localStorage.getItem("role") || "",
+        // role:localStorage.getItem("role") || "",
         token:localStorage.getItem("token") || "",
         isUserLoggedIn:localStorage.getItem("token")? true:false,
-        isUserLoggedIn:localStorage.getItem("role")? true:false,
+        // isUserLoggedIn:localStorage.getItem("role")? true:false,
         userFullName:""
     },
     reducers:{
@@ -15,9 +15,9 @@ const authSlice = createSlice({
             state.token = token
             state.isUserLoggedIn=true
             localStorage.setItem("token",token)
-            const role=action.payload.role
-            state.role = role
-            localStorage.setItem("role",role)
+            // const role=action.payload.role
+            // state.role = role
+            // localStorage.setItem("role",role)
         },
         removeToken:(state)=>{
             state.token = ""

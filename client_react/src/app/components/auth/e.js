@@ -3,7 +3,7 @@ import {useRegisterCustomerMutation } from "./authApiSlice";
 import { Button } from 'primereact/button';
 import { Password } from 'primereact/password';
 
-const Register=()=>{
+const E=()=>{
    const [value, setValue] = useState('');
    const [registerFunc,{isError,isSuccess,isLoading,data,error}] =  useRegisterCustomerMutation()
    const[formData,setFormData] = useState({
@@ -52,4 +52,4 @@ const Register=()=>{
    )
    
 }
-export default Register;
+export default E;
