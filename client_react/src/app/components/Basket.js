@@ -5,7 +5,7 @@ import { Dropdown } from 'primereact/dropdown';
 import { Rating } from 'primereact/rating';
 import { Tag } from 'primereact/tag';
 import { classNames } from 'primereact/utils';
-import { ProductService } from './service/ProductService';
+// import { ProductService } from './service/ProductService';
 
 export default function Basket() {
     const [products, setProducts] = useState([]);
@@ -18,7 +18,7 @@ export default function Basket() {
     ];
 
     useEffect(() => {
-        ProductService.getProductsSmall().then((data) => setProducts(data.slice(0, 5)));
+        // ProductService.getProductsSmall().then((data) => setProducts(data.slice(0, 5)));
     }, []);
 
     const getSeverity = (product) => {

@@ -1,7 +1,12 @@
+import CountryList from "./countries/CountryList";
+
 export default function HomePage(){
 
 
     return(
-        <div></div>
+        <div>
+            Home Page
+            <CountryList/>
+        </div>
     )
 }

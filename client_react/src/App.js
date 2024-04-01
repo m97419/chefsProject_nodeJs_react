@@ -1,46 +1,49 @@
 import logo from './logo.svg';
 import './App.css'
-import Register from './app/components/auth/Register';
-import CountryList from './app/components/countries/CountryList';
-import List from './app/components/countries/List';
-import {Route,Routes,Link,BrowserRouter} from 'react-router-dom';
-import Country from './app/components/countries/Country';
-import HomePage from './app/components/HomePage';
-import { useParams } from "react-router-dom";
-import Bssss from './app/components/countries/Bssss';
 import 'primereact/resources/themes/saga-orange/theme.css'
 import './assets/theme.css'
-
-import FooterDemo from './app/components/countries/exp';
-
-import New from './app/components/New';
-import Nice from './app/components/Nice';
-
+import {Route,Routes} from 'react-router-dom';
+import HomePage from './app/components/HomePage';
+import Login from './app/components/auth/Login'
+import Register from './app/components/auth/Register';
+import MyAccount from './app/components/auth/MyAccount'
+import Basket from './app/components/Basket'
+import Orders from './app/components/orders/Orders';
+import Country from './app/components/countries/Country';
+import CountryList from './app/components/countries/CountryList';
+import NavBar from './navBar';
+// import FooterDemo from './app/components/countries/exp';
+// import New from './app/components/New';
+// import Nice from './app/components/Nice';
+// import Bssss from './app/components/countries/Bssss';
 
 function App() {
-  // localStorage.setItem("basket",JSON.stringify([]))
+
   return (
     <div className="App">
+
+      <NavBar/>
       {/* <Country/> */}
       {/* <Nice/> */}
-<CountryList/>
-{/* <Bssss/> */}
+      {/* <Bssss/> */}
+      {/* <New/> */}
 
-{/* <New/> */}
-          <Routes> 
- <Route path='/' element={<HomePage/>}></Route> 
- <Route path="/country/:id" element={<Country />}></Route>
- <Route path="/countries" element={<CountryList/>}></Route>
- </Routes>
- <Link to="/country/1"></Link>
- <Link to="/countries"></Link>
-
- 
+      <Routes> 
+        <Route path='/' element={<HomePage/>}></Route> 
+        <Route path="/login" element={<Login/>}></Route>
+        <Route path="/register" element={<Register/>}></Route>
+        <Route path="/myAccount" element={<MyAccount/>}></Route>
+        <Route path="/basket" element={<Basket/>}></Route>
+        <Route path="/orders" element={<Orders/>}></Route>
+        <Route path="/country/:id" element={<Country />}></Route>
+        <Route path="/countries" element={<CountryList/>}></Route>
+      </Routes>
 
       {/* <List></List> */}
       {/* <BasicDemo></BasicDemo> */}
       {/* <Register/> */}
-   {/* <FooterDemo/> */}
+      {/* <FooterDemo/> */}
+
     </div>   
   );
 }
