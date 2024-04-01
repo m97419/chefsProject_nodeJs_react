@@ -30,8 +30,8 @@ useEffect(() => {
     if(isSuccess)
     setProducts(productsData);
 }, [isSuccess]);
-//  console.log(products[0].category[0].name);
-//  console.log(products[0].chef);
+//  console.log(products[0].log(products[0].category[0].name);
+//  console.chef);
 const getSeverity = (product) => {
     switch (product.inventoryStatus) {
         case 'INSTOCK':
@@ -51,7 +51,17 @@ const addItemToBusket= (product)=>{
 
     var products = localStorage.getItem("basket")
     products = products? JSON.parse(products) : []
-    products.push(product);
+    let flag= false
+    products=products.map(prdct=>{
+        if(prdct.id==product._id) {
+            flag=true
+            return {...prdct,count:prdct.count+1}
+        }
+        return prdct
+    })
+    if(!flag){
+        products.push({id:product._id,details:product, count:1});
+    }
     console.log(products, product);
     localStorage.setItem("basket",JSON.stringify(products))
 }
@@ -105,7 +115,7 @@ const gridItem = (product) => {
                 </div>
                 <div className="flex align-items-center justify-content-between">
                     <span className="text-2xl font-semibold">{product.price}</span>
-                    <Button icon="pi-cart-plus" rounded text raised aria-label="Filter" onClick={()=>addItemToBusket(product)}></Button>
+                    <Button icon="pi pi-cart-plus" rounded text raised aria-label="Filter" onClick={()=>addItemToBusket(product)}></Button>
                     {/* <Button icon="pi pi-shopping-cart" className="p-button-rounded" disabled={product.inventoryStatus === 'OUTOFSTOCK'}></Button> */}
                 </div>
             
