@@ -24,6 +24,7 @@ export default function Basket() {
     }
 
     const [basket, setBasket] = useState(getBasket())
+    const [empty, setEmpty] = useState(basket==[])
 
     // const onSortChange = (event) => {
     //     const value = event.value;
@@ -45,6 +46,7 @@ export default function Basket() {
 
     const refetch = () => {
         setBasket(getBasket());
+        setEmpty(basket==[]);
     }
 
     const listTemplate = (items) => {
@@ -55,16 +57,16 @@ export default function Basket() {
         return <div className="grid grid-nogutter">{list}</div>;
     };
 
-    const order = () => {
+    const order = async () => {
         //do order- api
-        localStorage.setItem("basket",JSON.stringify([]))
+        await localStorage.setItem("basket",JSON.stringify([]))
         refetch()
     }
 
     return (
-        <div className="card">
+        <div className="card"><br/><br/>
             <DataView value={basket} listTemplate={listTemplate}/> <br/>
-            <Button icon="pi pi-credit-card" disabled={basket==[]} raised aria-label="Filter" onClick={order}>&nbsp; to paying </Button>
+            <Button icon="pi pi-credit-card" disabled={empty} raised aria-label="Filter" onClick={order}>&nbsp; to paying </Button>
             {/* header={header()} sortField={sortField} sortOrder={sortOrder} /> */}
         </div>
     )
