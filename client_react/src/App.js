@@ -1,37 +1,37 @@
 import './App.css'
-import Register from './app/components/auth/Register';
-import CountryList from './app/components/countries/CountryList';
-import {Route,Routes, useNavigate} from 'react-router-dom';
-import Country from './app/components/countries/Country';
-import HomePage from './app/components/HomePage';
 import 'primereact/resources/themes/vela-orange/theme.css'
 import "primereact/resources/primereact.min.css"
 import "primeicons/primeicons.css"
 import "primeflex/primeflex.css"
 import './assets/theme.css'
-import Basket from './app/components/basket/Basket';
-import { Button } from 'primereact/button';
-
+import {Route,Routes, useNavigate} from 'react-router-dom';
+import HomePage from './app/components/HomePage';
+import Login from './app/components/auth/Login'
+import Register from './app/components/auth/Register';
+import MyAccount from './app/components/auth/MyAccount'
+import Basket from './app/components/Basket'
+import Orders from './app/components/orders/Orders';
+import Country from './app/components/countries/Country';
+import CountryList from './app/components/countries/CountryList';
+import NavBar from './navBar';
 
 function App() {
-  
-  {/* in nav bar... */}
-  const navigate = useNavigate()
-  const func =  ()=>{
-    navigate("/basket")
-  }
 
   return (
     <div className="App">
-      <CountryList/>
-      {/* in nav bar... */}
-      <Button onClick={func}>basket (template)</Button>
+      <NavBar/>
+   
       <Routes> 
-        <Route path='/' element={<HomePage/>}></Route> 
-        <Route path="/country/:id" element={<Country />}></Route>
-        <Route path="/countries" element={<CountryList/>}></Route>
-        <Route path="/basket" element={<Basket/>}></Route>
-      </Routes>
+          <Route path='/' element={<HomePage/>}></Route> 
+          <Route path="/login" element={<Login/>}></Route>
+          <Route path="/register" element={<Register/>}></Route>
+          <Route path="/myAccount" element={<MyAccount/>}></Route>
+          <Route path="/basket" element={<Basket/>}></Route>
+          <Route path="/orders" element={<Orders/>}></Route>
+          <Route path="/country/:id" element={<Country />}></Route>
+          <Route path="/countries" element={<CountryList/>}></Route>
+        </Routes>
+
     </div>   
   );
 }
