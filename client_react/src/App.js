@@ -1,5 +1,5 @@
 import './App.css'
-import 'primereact/resources/themes/vela-orange/theme.css'
+import 'primereact/resources/themes/saga-orange/theme.css'
 import "primereact/resources/primereact.min.css"
 import "primeicons/primeicons.css"
 import "primeflex/primeflex.css"
@@ -9,11 +9,11 @@ import HomePage from './app/components/HomePage';
 import Login from './app/components/auth/Login'
 import Register from './app/components/auth/Register';
 import MyAccount from './app/components/auth/MyAccount'
-import Basket from './app/components/Basket'
+import Basket from './app/components/basket/Basket'
 import Orders from './app/components/orders/Orders';
 import Country from './app/components/countries/Country';
 import CountryList from './app/components/countries/CountryList';
-import NavBar from './navBar';
+import NavBar from './app/components/navBar';
 
 function App() {
 

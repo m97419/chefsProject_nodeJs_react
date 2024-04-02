@@ -7,6 +7,7 @@ const NavBar = () => {
     const navigate=useNavigate()
 
     const myAccount = () => {
+        console.log("!!!!!!");
         if(localStorage.getItem("user")) {
             navigate(`/myAccount`)
         }
