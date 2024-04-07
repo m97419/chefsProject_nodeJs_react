@@ -4,7 +4,7 @@ const router= express.Router()
 const verifyJWT = require("../middleware/verifyJWT")
 const categoryController = require("../controllers/categoryController")
 
-router.use(verifyJWT)
+// router.use(verifyJWT)
 
 router.get("/",categoryController.getAllCategories)
 //router.get("/:id",categoryController,getCategoryById)

@@ -54,7 +54,7 @@ const Login=()=>{
     <br></br><br></br>
        <InputText value={user.name} placeholder="name" onChange={handlename}></InputText>
        <br></br><br></br>
-        <Password value={user.password} placeholder="password" onChange={handlepassword}  />
+        <Password  placeholder="password" onChange={handlepassword}  />
         <br></br><br></br>
         <Button onClick={handle} disabled={able}  ></Button>
 </div>
@@ -62,3 +62,4 @@ const Login=()=>{
     )
 }
 export default Login
+// value={user.password}

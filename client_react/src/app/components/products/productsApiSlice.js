@@ -1,11 +1,12 @@
-
 import ApiSlice from "../../apiSlice"
+
 const ordersApiSlice = ApiSlice.injectEndpoints({
     endpoints:(build)=>({
         getAllProducts:build.query({
             query:()=>({
                 url:"/api/product"
             })
+            ,providesTags:["prod"]
 
         }),
         getProductById:build.mutation({
@@ -19,21 +20,23 @@ const ordersApiSlice = ApiSlice.injectEndpoints({
                 url:"/api/product",
                 method:'POST',
                 body:product
-            })
-
+            }),
+            invalidatesTags:["prod"]
         }),
         updateProduct:build.mutation({
             query:(product)=>({
                 url:"/api/product",
-                method:'POST',
+                method:'PUT',
                 body:product
             })
 
         }),       
         deleteProduct:build.mutation({
             query:(id)=>({
-                url:`/api/product/${id}`,
+                url:"/api/product",
                 method:'DELETE',
+                body:id
+
             })
 
         }),
