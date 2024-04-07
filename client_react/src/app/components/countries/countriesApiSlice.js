@@ -1,5 +1,5 @@
 
-import ApiSlice from "../../ApiSlice"
+import ApiSlice from "../../apiSlice"
 const countriesApiSlice = ApiSlice.injectEndpoints({
     endpoints: (build) => ({
         getAllCountries: build.query({
