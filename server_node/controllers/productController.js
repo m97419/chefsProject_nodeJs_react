@@ -16,7 +16,8 @@ const createNewProduct = async (req,res)=>{
 }
 
 const getAllProducts = async (req,res)=>{
-    const products = await Product.find().lean()
+    const products = await Product.find().populate().lean()
+    console.log(products);
     if(!products?.length){
         return res.status(400).json({massage:'No products found'})
     }
@@ -27,9 +28,9 @@ const getProductById=async(req,res)=>{
     const {id}=req.params
     console.log(typeof(id));
     try{
-    const product = await Product.findById(id).lean()
-    console.log(product);
-    res.json(product)
+        const product = await Product.findById(id).lean()
+        console.log(product);
+        res.json(product)
 
     }
     catch(err){
@@ -67,13 +68,14 @@ const deleteProduct=async(req,res)=>{
         return res.status(400).json({message:'product not found'})
     }
     const result =await Product.deleteOne({_id:id})
-    const reply=`Task '${product.name}' ID ${product._id} deleted`
+    const reply=`Product '${product.name}' ID ${product._id} deleted`
     res.json(reply)
 
 }
 const getByCountry=async(req,res)=>{
     const {countryId}=req.params
-    const products = await Product.find({country:countryId}).populate("category","chef").lean()
+    const products = await Product.find({country:countryId}).populate("category").populate("chef").populate("country").lean()
+    console.log(products);
     if(!products){
         return res.status(400).json({message:'products not found'})
     }

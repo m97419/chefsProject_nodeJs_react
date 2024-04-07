@@ -19,7 +19,7 @@ const CountryList = () => {
      // else{
      //      console.log(countries);
      // }
-     const newcountries = countries.map(country=>{return{label:country.name,command:()=>{navigate(`/country/${country._id}`)}}})
+     const newcountries = countries.map(country=>{return{label:country.name,key:country._id,command:()=>{navigate(`/country/${country._id}`)}}})
      return (<div className="card">
           <Menubar  model={newcountries} />
 </div>
