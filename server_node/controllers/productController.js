@@ -3,7 +3,9 @@ const Category = require('../modules/Category')
 
 const createNewProduct = async (req,res)=>{
     // const picture =(req.file?.filename? req.file.filename:"") 
-    const{name,category,country,chef,price,picture} = req.body
+    const{name,category,country,chef,price} = req.body
+    picture=req.file.path
+    console.log(picture);
     if(!name || !price || !category || !country || !chef)
     return res.status(400).json({message: 'field are required!!'})
     const product = await Product.create({ name,category,country,chef,price,picture})
@@ -38,7 +40,8 @@ const getProductById=async(req,res)=>{
 
 const updateProduct=async(req,res)=>{
     // const picture =(req.file?.filename? req.file.filename:"") 
-    const {_id,name,category,price,picture}=req.body
+    const {_id,name,category,price}=req.body
+    picture=req.file.path
     if(!_id||!name||!price)
         return res.status(400).json({message:'fields are required'})
     const product = await Product.findById(_id).exec()
@@ -63,7 +66,7 @@ const deleteProduct=async(req,res)=>{
     if(!product){
         return res.status(400).json({message:'product not found'})
     }
-    const result =await Product.deleteOne()
+    const result =await Product.deleteOne({_id:id})
     const reply=`Task '${product.name}' ID ${product._id} deleted`
     res.json(reply)
 

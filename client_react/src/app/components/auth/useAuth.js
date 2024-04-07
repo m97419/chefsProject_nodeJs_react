@@ -7,7 +7,7 @@ const useAuth = ()=>{
     let chef = false
     if(token){
         const userDecode = jwtDecode(token)
-        console.log('userDecode',userDecode);
+        // console.log('userDecode',userDecode);
         const {_id,name,email,phone,role} = userDecode
        // isAdmin = roles === "Admin"
         //isUser = roles === "User"

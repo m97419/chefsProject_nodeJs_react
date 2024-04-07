@@ -8,6 +8,7 @@ import { Rating } from 'primereact/rating';
 import { Tag } from 'primereact/tag';
 import { classNames } from 'primereact/utils';
 import 'primeicons/primeicons.css';
+import { Image } from 'primereact/image';
 
 //import './assets/theme.css'
 
@@ -60,7 +61,7 @@ const listItem = (product, index) => {
     return (
         <div className="col-12" key={product._id}>
             <div className={classNames('flex flex-column xl:flex-row xl:align-items-start p-4 gap-4', { 'border-top-1 surface-border': index !== 0 })}>
-                <img className="picturesize" src={`http://localhost:7788/${product.picture}`} alt={product.picture} />
+                <Image className="picturesize" src={`http://localhost:7788/${product.picture}`} alt={product.picture} preview />
                 <div className="flex flex-column sm:flex-row justify-content-between align-items-center xl:align-items-start flex-1 gap-4">
                     <div className="flex flex-column align-items-center sm:align-items-start gap-3">
                         <div className="text-2xl font-bold text-900">{product.name}</div>

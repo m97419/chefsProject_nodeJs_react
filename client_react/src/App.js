@@ -10,25 +10,31 @@ import { useParams } from "react-router-dom";
 import Bssss from './app/components/countries/Bssss';
 import 'primereact/resources/themes/saga-orange/theme.css'
 import './assets/theme.css'
-
+import Table from './app/components/products/Table';
 import FooterDemo from './app/components/countries/FooterDemo';
 import "primereact/resources/primereact.min.css"
 import "primeicons/primeicons.css"
 import "primeflex/primeflex.css"
-import Register from './app/components/auth/RegisterChef';
+
 import Login from './app/components/auth/Login';
-import Gg from './app/Gg';
 import RegisterChef from './app/components/auth/RegisterChef';
 import RegisterCustomer from './app/components/auth/RegisterCustomer';
 import RegisterLogin from './app/components/auth/RegisterLogin';
+import AddCategory from './app/components/categories/AddCategory';
+import { OrderList } from 'primereact/orderlist';
+import OrdersChef from './app/components/orders/OrdersChef'
+
+
 function App() {
   // localStorage.setItem("basket",JSON.stringify([]))
   return (
     <div className="App">
+     <OrdersChef/>
       {/* <Gg/> */}
       {/* <Country/> */}
       {/* <Nice/> */}
-     
+   {/* <AddCategory/> */}
+     <Table/>
       <CountryList/>
       {/* <Register/> */}
       {/* <FooterDemo/> */}

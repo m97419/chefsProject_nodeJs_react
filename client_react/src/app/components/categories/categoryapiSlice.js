@@ -1,4 +1,4 @@
-import ApiSlice from "../../src/app/apiSlice";
+import ApiSlice from"../../apiSlice"
 
 const categoriesApiSlice = ApiSlice.injectEndpoints({
     endpoints:(build)=>({
@@ -27,7 +27,7 @@ const categoriesApiSlice = ApiSlice.injectEndpoints({
         deleteCategory:build.mutation({
             query:(id)=>({
                 url:`/api/category/${id}`,
-                method:'POST',
+                method:'DELETE',
             })
 
         })

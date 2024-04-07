@@ -7,6 +7,8 @@ export default function HomePage(){
             <br></br>
             Homepage
             <br></br>
+            {_id}
+            <br></br>
             {name}
             <br></br>
             {role}
