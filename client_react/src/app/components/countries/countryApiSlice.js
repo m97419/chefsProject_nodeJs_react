@@ -1,4 +1,4 @@
-import ApiSlice from "../../ApiSlice.js";
+import ApiSlice from "../../apiSlice";
 
 const countriesApiSlice = ApiSlice.injectEndpoints({
     endpoints:(build)=>({
