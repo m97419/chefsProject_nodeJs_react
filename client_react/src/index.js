@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from 'react-redux'
 import store from './app/store'
+import { PrimeReactProvider, PrimeReactContext } from 'primereact/api';
 // import "primereact/resources/themes/lara-light-cyan/theme.css";
 import {BrowserRouter as Router } from 'react-router-dom';
 

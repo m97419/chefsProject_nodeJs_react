@@ -7,7 +7,7 @@ import './assets/theme.css'
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import HomePage from './app/components/HomePage';
 import Login from './app/components/auth/Login'
-import Register from './app/components/auth/Register';
+import Register from './app/components/auth/RegisterChef';
 import MyAccount from './app/components/auth/MyAccount'
 import Basket from './app/components/basket/Basket'
 import Orders from './app/components/orders/Orders';
