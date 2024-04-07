@@ -8,6 +8,8 @@ import { Rating } from 'primereact/rating';
 import { Tag } from 'primereact/tag';
 import { classNames } from 'primereact/utils';
 import 'primeicons/primeicons.css';
+import { VirtualScroller } from 'primereact/virtualscroller';
+import { Avatar } from 'primereact/avatar';
 
 //import './assets/theme.css'
 
@@ -32,21 +34,18 @@ useEffect(() => {
 }, [isSuccess]);
 //  console.log(products[0].log(products[0].category[0].name);
 //  console.chef);
-const getSeverity = (product) => {
-    switch (product.inventoryStatus) {
-        case 'INSTOCK':
-            return 'success';
 
-        case 'LOWSTOCK':
-            return 'warning';
-
-        case 'OUTOFSTOCK':
-            return 'danger';
-
-        default:
-            return null;
-    }
+const itemTemplateCategory = (item, options) => {
+    const className = classNames('flex align-items-center p-2', {
+        'surface-hover': options.odd
+    });
+    return (
+        <div className={className} >
+            {item.name}
+        </div>
+    );
 };
+
 const addItemToBusket= (product)=>{
 
     var products = localStorage.getItem("basket")
@@ -69,19 +68,19 @@ const listItem = (product, index) => {
     return (
         <div className="col-12" key={product._id}>
             <div className={classNames('flex flex-column xl:flex-row xl:align-items-start p-4 gap-4', { 'border-top-1 surface-border': index !== 0 })}>
-                <img className="picturesize" src={`http://localhost:7788/${product.picture}`} alt={product.picture} />
+                <div className="flex align-items-center gap-3">
+                    <span className="flex align-items-center gap-2">
+                        <Avatar icon={product.chef.picture || "pi pi-user"} size="large" shape="circle" />
+                        <h5 >{product.chef.name}</h5>
+                    </span>
+                </div>
+                <img className="picturesize" src={`http://localhost:7788/uploads/${product.picture.split("\\")[2]}`} alt={product.picture} />
                 <div className="flex flex-column sm:flex-row justify-content-between align-items-center xl:align-items-start flex-1 gap-4">
                     <div className="flex flex-column align-items-center sm:align-items-start gap-3">
                         <div className="text-2xl font-bold text-900">{product.name}</div>
                         {/* <Rating value={product.rating} readOnly cancel={false}></Rating> */}
-                        <div className="flex align-items-center gap-3">
-                            <span className="flex align-items-center gap-2">
-                                <i className="pi pi-tag"></i>
-                                <span className="font-semibold">{product.category[0].name}</span>
-                            </span>
-                            <Tag value={product.country} severity={getSeverity(product)}></Tag>
-                        </div>
                     </div>
+                    <VirtualScroller items={product.category} itemSize={50} itemTemplate={itemTemplateCategory} className="border-1 surface-border border-round" style={{ width: '200px', height: 0, minHeight: '70px' }} />
                     <div className="flex sm:flex-column align-items-center sm:align-items-end gap-3 sm:gap-2">
                         <span className="text-2xl font-semibold">${product.price}</span>
                         <br></br>
@@ -102,16 +101,14 @@ const gridItem = (product) => {
             <div className="p-4 border-1 surface-border surface-card border-round">
                 <div className="flex flex-wrap align-items-center justify-content-between gap-2">
                     <div className="flex align-items-center gap-2">
-                        <i className="pi pi-tag"></i>
-                        <span className="font-semibold">{product.category[0].name}</span>
+                        <Avatar icon={product.chef.picture || "pi pi-user"} size="large" shape="circle" />
+                        <h5 >{product.chef.name}</h5>
                     </div>
-                  
-                    <Tag color="red" value={product.category[0].name} severity={getSeverity(product)}></Tag>
+                    <VirtualScroller items={product.category} itemSize={50} itemTemplate={itemTemplateCategory} className="border-1 surface-border border-round" style={{ width: '200px', height: 0, minHeight: '70px' }} />
                 </div>
                 <div className="flex flex-column align-items-center gap-3 py-5">
                     <img className="picturesize" src={`http://localhost:7788/${product.picture}`} alt={product.name} />
                     <div className="text-2xl font-bold">{product.name}</div>
-                    <Rating value={product.rating} readOnly cancel={false}></Rating>
                 </div>
                 <div className="flex align-items-center justify-content-between">
                     <span className="text-2xl font-semibold">{product.price}</span>
