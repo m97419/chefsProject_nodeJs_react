@@ -1,4 +1,5 @@
-import ApiSlice from"../../apiSlice"
+import ApiSlice from "../../apiSlice"
+
 const ordersApiSlice = ApiSlice.injectEndpoints({
     endpoints:(build)=>({
         getAllProducts:build.query({
