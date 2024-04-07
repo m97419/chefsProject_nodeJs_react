@@ -4,25 +4,26 @@ const router= express.Router()
 
 const verifyJWT = require("../middleware/verifyJWT")
 const productController = require("../controllers/productController")
+const multer=require('multer')
 
-// const storage = multer.diskStorage({
-//     destination: function (req, file, cb) {
-//       cb(null, './public')
-//     },
-//     filename: function (req, file, cb) {
-//       const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
-//       cb(null, file.fieldname + '-' + uniqueSuffix)
-//     }
-//   })
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, './public/uploads')
+    },
+    filename: function (req, file, cb) {
+      const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+      cb(null, file.fieldname + '-' + uniqueSuffix+file.originalname)
+    }
+  })
   
-//   const upload = multer({ storage: storage }) 
+  const upload = multer({ storage: storage }) 
 // router.use(verifyJWT)
 
 router.get("/",productController.getAllProducts)
 router.get("/:id",productController.getProductById)
 router.get("/country/:countryId",productController.getByCountry)
-router.post("/",productController.createNewProduct)
+router.post("/",upload.single("picture"),productController.createNewProduct)
 router.delete("/",productController.deleteProduct)
-router.put("/",productController.updateProduct)
+router.put("/",upload.single("picture"),productController.updateProduct)
 
 module.exports = router

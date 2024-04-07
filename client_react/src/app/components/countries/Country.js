@@ -8,6 +8,7 @@ import { Rating } from 'primereact/rating';
 import { Tag } from 'primereact/tag';
 import { classNames } from 'primereact/utils';
 import 'primeicons/primeicons.css';
+import { Image } from 'primereact/image';
 import { VirtualScroller } from 'primereact/virtualscroller';
 import { Avatar } from 'primereact/avatar';
 
@@ -68,6 +69,7 @@ const listItem = (product, index) => {
     return (
         <div className="col-12" key={product._id}>
             <div className={classNames('flex flex-column xl:flex-row xl:align-items-start p-4 gap-4', { 'border-top-1 surface-border': index !== 0 })}>
+                <Image className="picturesize" src={`http://localhost:7788/${product.picture}`} alt={product.picture} preview />
                 <div className="flex align-items-center gap-3">
                     <span className="flex align-items-center gap-2">
                         <Avatar icon={product.chef.picture || "pi pi-user"} size="large" shape="circle" />
