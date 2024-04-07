@@ -10,11 +10,13 @@ import { Avatar } from 'primereact/avatar';
 export default function BasketItem(prop) {
 
     const [deleteDialogVisiabe, setDeleteDialogVisiabe] = useState(false);
+    const [itemCount, setItemCount] = useState(prop.product.count);
 
     const changeCount= (productId, num)=>{
         const myBasket = JSON.parse(localStorage.getItem("basket"))
         const updateBasket = myBasket.map(prod=> prod.id== productId?{...prod,count:num}:prod)
         localStorage.setItem("basket",JSON.stringify(updateBasket))
+        setItemCount(num)
     }
 
     const deleteItem = () => {
@@ -41,10 +43,10 @@ export default function BasketItem(prop) {
                                 </div>
                             </div>
                             <div className="flex sm:flex-column align-items-center sm:align-items-end gap-3 sm:gap-2">
-                                <InputNumber value={prop.product.count} onValueChange={(e) => changeCount(prop.product.id,e.value)} showButtons buttonLayout="horizontal" incrementButtonClassName="p-button-text p-button-raised" decrementButtonClassName="p-button-text p-button-raised" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus" min={1}/>
+                                <InputNumber value={itemCount} onValueChange={(e) => changeCount(prop.product.id,e.value)} showButtons buttonLayout="horizontal" incrementButtonClassName="p-button-text p-button-raised" decrementButtonClassName="p-button-text p-button-raised" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus" min={1}/>
                             </div>
                             <div>
-                                <span className="text-2xl font-semibold">${prop.product.details.price*prop.product.count}</span>
+                                <span className="text-2xl font-semibold">${prop.product.details.price*itemCount}</span>
                             </div>
                             <div className="flex sm:flex-column align-items-center sm:align-items-end gap-3 sm:gap-2">
                                 <Button text icon="pi pi-trash" onClick={()=>setDeleteDialogVisiabe(true)}></Button>
