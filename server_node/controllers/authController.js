@@ -49,6 +49,7 @@ const login = async(req,res)=>{
     const registerChef = async(req,res)=>{
         const {name,password,email,phone} =req.body
         picture=req.file.path
+        console.log(` n ${name} p ${password} e ${email} p  ${phone}  p ${picture}`);
         if(!name || !password)
             return res.status(400).json({massage:'All field are required'})
     const duplicate = await Chef.findOne({name:name}).lean()
@@ -60,6 +61,8 @@ const login = async(req,res)=>{
     const hashedPwd = await bcrypt.hash(password,10)
     const chefObject = {name,password:hashedPwd,phone,email,picture,role:"chef"}
     const chef = Chef.create(chefObject);
+    if(chef)
+    console.log("chef");
     const foundChef = await Chef.findOne({name}).lean()
     if(foundChef){
         const chefInfo={
@@ -70,7 +73,7 @@ const login = async(req,res)=>{
             picture:foundChef.picture,
             role:"chef"
         }
-        // console.log(chefInfo);
+        
         const accessToken = jwt.sign(chefInfo,process.env.ACCESS_TOKEN_SECRET)
         return res.status(201).json({token:accessToken})
         }
@@ -83,19 +86,20 @@ const login = async(req,res)=>{
 
     const registerCustomer = async(req,res)=>{
         const {name,password,email,phone} =req.body
+        console.log(` n ${name} p ${password} e ${email} p  ${phone}  `);
         if(!name || !password){
             return res.status(400).json({massage:'All field are required'})
         }
-    const duplicate = await Chef.findOne({name:name}).lean()
+    const duplicate = await Customer.findOne({name:name}).lean()
         if(duplicate)
             return res.status(409).json({message:'Duplicate name'})
-    const duplicate2 = await Chef.findOne({name:name}).lean()
+    const duplicate2 = await Customer.findOne({name:name}).lean()
         if(duplicate2)
             return res.status(409).json({message:'Duplicate name'})
     const hashedPwd = await bcrypt.hash(password,10)
     const customerObject = {name,password:hashedPwd,phone,email,role:"customer"}
     const customer = Customer.create(customerObject)
-    const foundCustomer = await Chef.findOne({name}).lean()
+    const foundCustomer = await Customer.findOne({name}).lean()
     if(foundCustomer){
         const customerInfo={
             _id:foundCustomer._id,

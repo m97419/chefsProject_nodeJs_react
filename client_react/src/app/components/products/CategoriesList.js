@@ -68,11 +68,11 @@ export default function CategoriesList({setProduct}) {
         //  console.log(selectedCategories);
         //  console.log(`gval   ${e.value[0].name}`);
        
-        //  const d= e.value?.map(e=>e.id)  
+         const d= e.value?.map(e=>e.id)  
         //  console.log(`g delete${d}`);
          setProduct(prevState => ({
             ...prevState,
-            category: e.value
+            category: d
         }))
         // console.log(product);
     }

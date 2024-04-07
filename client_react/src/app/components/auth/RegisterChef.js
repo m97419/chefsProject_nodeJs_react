@@ -51,14 +51,16 @@ export default function RegisterChef() {
     }
     const handle = () => {
         console.log(user.name);
-        try {
-            const formData = new FormData();
+        const formData = new FormData();
             formData.append("name", user.name);
-            formData.append("passeord", user.password);
+            formData.append("password", user.password);
             formData.append("phone", user.phone);
             formData.append("email", user.email);
             formData.append("picture", selectedPicture);
-
+        
+        try {
+            
+           
 
             registerFunc(formData)
             //    setToken(user)
@@ -72,7 +74,7 @@ export default function RegisterChef() {
             <br></br><br></br>
             <InputText className="w-4" value={user.name} placeholder="name" onChange={handlename}></InputText>
             <br></br><br></br>
-            <Password  toggleMask style={{width:"33.3%"}}   value={user.password} placeholder="password" onChange={handlepassword} toggleMask />
+            <Password  toggleMask style={{width:"33.3%"}}   value={user.password} placeholder="password" onChange={handlepassword}  />
             <br></br><br></br>
             <InputText className="w-4" value={user.phone} placeholder="phone" onChange={(e) => {
                 setUser(prevState => ({

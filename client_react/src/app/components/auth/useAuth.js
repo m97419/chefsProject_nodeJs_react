@@ -16,4 +16,4 @@ const useAuth = ()=>{
     return {_id:"",name:"",email:"",phone:"",role:""}
 
 }
-export default useAuth 
+export default useAuth
