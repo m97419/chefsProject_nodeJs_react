@@ -7,7 +7,9 @@ import './assets/theme.css'
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import HomePage from './app/components/HomePage';
 import Login from './app/components/auth/Login'
-import Register from './app/components/auth/RegisterChef';
+import RegisterLogin from './app/components/auth/RegisterLogin';
+import RegisterChef from './app/components/auth/RegisterChef';
+import RegisterCustomer from './app/components/auth/RegisterCustomer';
 import MyAccount from './app/components/auth/MyAccount'
 import Basket from './app/components/basket/Basket'
 import Orders from './app/components/orders/Orders';
@@ -23,8 +25,10 @@ function App() {
       <NavBar/>
       <Routes>
         <Route path='/' element={<HomePage />}></Route>
+        <Route path="/auth" element={<RegisterLogin />}></Route>
         <Route path="/login" element={<Login />}></Route>
-        <Route path="/register" element={<Register />}></Route>
+        <Route path="/registerCustomer" element={<RegisterCustomer />}></Route>
+        <Route path="/registerChef" element={<RegisterChef />}></Route>
         <Route path="/myAccount" element={<MyAccount />}></Route>
         <Route path="/basket" element={<Basket />}></Route>
         <Route path="/orders" element={<Orders />}></Route>

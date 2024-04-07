@@ -7,11 +7,13 @@ const NavBar = () => {
     const navigate=useNavigate()
 
     const myAccount = () => {
-        console.log("!!!!!!");
-        if(localStorage.getItem("user")) {
+        console.log(localStorage.getItem("token"));
+        if(localStorage.getItem("token")) {
             navigate(`/myAccount`)
         }
-        navigate(`/login`)
+        else{
+            navigate(`/auth`)
+        }
     }
 
     const barArr = [
