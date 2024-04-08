@@ -23,7 +23,7 @@ const NavBar = () => {
         },
         {
             label:"products", 
-            command: ()=>{navigate(`/`)}
+            command: ()=>{navigate(`/countries`)}
         },
         {
             label:"my basket", 
