@@ -14,12 +14,14 @@ import Orders from './app/components/orders/Orders';
 import Country from './app/components/countries/Country';
 import CountryList from './app/components/countries/CountryList';
 import NavBar from './app/components/navBar';
+import Table from './app/components/products/Table'
 
 
 function App() {
 
   return (
     <div className="App">
+      <Table/>
       <Routes>
         <Route path='/' element={<HomePage />}></Route>
         <Route path="/login" element={<Login />}></Route>

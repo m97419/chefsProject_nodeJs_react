@@ -8,7 +8,7 @@ import { useCreateNewCategoryMutation } from '../categories/categoryapiSlice';
 import { InputNumber } from "primereact/inputnumber"
 import { InputText } from 'primereact/inputtext';
 
-export default function CategoriesList({setProduct}) {
+export default function CategoriesList({setCat}) {
     const { data: categoriesData = [], isLoadingcategories, isSuccess, isError, error, refetch } = useGetAllCategoriesQuery();
     const [selectedCategories, setSelectedCategories] = useState(null);
     const [categories, setCategories] = useState(null);
@@ -70,10 +70,11 @@ export default function CategoriesList({setProduct}) {
        
          const d= e.value?.map(e=>e.id)  
         //  console.log(`g delete${d}`);
-         setProduct(prevState => ({
-            ...prevState,
-            category: d
-        }))
+        setCat(e.value?.map(e=>e.id) );
+        //  setProduct(prevState => ({
+        //     ...prevState,
+        //     category: d
+        // }))
         // console.log(product);
     }
 

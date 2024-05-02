@@ -36,6 +36,7 @@ export default function Table() {
        
     });
     const [products, setProducts] = useState(null);
+    const [cat, setCat] = useState(null);
     const [statuses] = useState(['INSTOCK', 'LOWSTOCK', 'OUTOFSTOCK']);
     const { data: productsData = [], isLoading, isSuccess:isSuccessGet, isError:isErrorGet, error:errorGet, refetch } =useGetAllProductsQuery();
     const [createFunc,{isError:isErrorCreate,error:errorCreate,isSuccess:isSuccessCreate,data:dataCreate}]=useCreateNewProductMutation()
@@ -51,6 +52,7 @@ export default function Table() {
     const [selectedCountries, setSelectedCountries] = useState(null);
     const [countries,setCountries] =useState(null);
     const [selectedPicture, setSelectedPicture] = useState(null);
+ 
 
     useEffect(() => {
         const _countriesData  = countriesData.map(c=>{return{name:c.name,id:c._id}});
@@ -201,13 +203,16 @@ export default function Table() {
         }; 
         const addNewProduct=()=>{
             console.log(productCreate);
+            console.log(cat);
+            const category = cat
             const formData=new FormData();
             formData.append("picture",selectedPicture);
             formData.append("name",productCreate.name);
-            formData.append("category",productCreate.category);
+            formData.append("category",cat);
             formData.append("country",productCreate.country);
             formData.append("chef",productCreate.chef);
             formData.append("price",productCreate.price);
+            console.log(formData.category);
 
             createFunc(formData);
             setAddProductDialog(false)
@@ -293,7 +298,7 @@ export default function Table() {
             <Dialog visible={addProductDialog} footer={addProductDialogFooter} onHide={hideAddProductDialog} >
                 <div>
                     <InputText placeholder='name' onChange={handlename}></InputText><br></br><br></br>
-                     <CategoriesList setProduct={setProductCreate} /><br></br>
+                     <CategoriesList setCat={setCat} /><br></br>
                     {/* <MultiSelect value={selectedCategories} onChange={(e) =>setSelectedCategories(e.value)} options={categories} optionLabel="name" display="chip" 
                      filter placeholder="Select Categories"  className="w-full md:w-20rem" /><br></br> */}
                     <CountryList setProduct={setProductCreate}/><br></br>
