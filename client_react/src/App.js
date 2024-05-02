@@ -22,9 +22,9 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar/>
+      <NavBar />
       <Routes>
-        <Route path='/' element={<HomePage />}></Route>
+        <Route path='/' element={<HomePage/>}></Route>
         <Route path="/auth" element={<RegisterLogin />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/registerCustomer" element={<RegisterCustomer />}></Route>
@@ -32,8 +32,9 @@ function App() {
         <Route path="/myAccount" element={<MyAccount />}></Route>
         <Route path="/basket" element={<Basket />}></Route>
         <Route path="/orders" element={<Orders />}></Route>
-        <Route path="/country/:id" element={<Country />}></Route>
-        <Route path="/countries" element={<CountryList />}></Route>
+        <Route path="/countries/" element={<CountryList />}>
+          <Route path=":id" element={<Country />}/>
+        </Route>
       </Routes>
 
     </div>
