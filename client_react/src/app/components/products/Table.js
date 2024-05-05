@@ -10,18 +10,22 @@ import { Tag } from 'primereact/tag';
 import useAuth from "../auth/useAuth"
 import { useGetAllCountriesQuery } from '../countries/countriesApiSlice';
 import { useGetAllCategoriesQuery } from '../categories/categoryapiSlice';
+import { VirtualScroller } from 'primereact/virtualscroller';
+import { classNames } from 'primereact/utils';
 
 // import { ProductService } from './service/ProductService';
-import { useGetAllProductsQuery,useUpdateProductMutation,useDeleteProductMutation
-    ,useCreateNewProductMutation } from './productsApiSlice';
+import { useGetAllProductsByChefQuery,useUpdateProductMutation,useDeleteProductMutation
+    ,useCreateNewProductMutation, 
+    useGetByChefQuery} from './productsApiSlice';
 
 import { Button } from 'primereact/button';
 import CategoriesList from './CategoriesList';
-import CountryList from './CounriesList';
+import CountryList from './CountryList';
 import { FileUpload } from 'primereact/fileupload';
 import { Toast } from 'primereact/toast';
 export default function Table() {
     const {_id}=useAuth()
+
 
     let emptyProduct = {
         id: null,
@@ -38,7 +42,8 @@ export default function Table() {
     const [products, setProducts] = useState(null);
     const [cat, setCat] = useState(null);
     const [statuses] = useState(['INSTOCK', 'LOWSTOCK', 'OUTOFSTOCK']);
-    const { data: productsData = [], isLoading, isSuccess:isSuccessGet, isError:isErrorGet, error:errorGet, refetch } =useGetAllProductsQuery();
+    const { data: productsData = [], isLoading, isSuccess:isSuccessGet, isError:isErrorGet, error:errorGet, refetch } =useGetByChefQuery(_id);
+    // const { data: productsData = [], isLoading, isSuccess:isSuccessGet, isError:isErrorGet, error:errorGet, refetch } =useGetAllProductsByChefQuery(_id);
     const [createFunc,{isError:isErrorCreate,error:errorCreate,isSuccess:isSuccessCreate,data:dataCreate}]=useCreateNewProductMutation()
     const [updateFunc,{isError,error,isSuccess,data}]=useUpdateProductMutation();
     const [deleteFunc]=useDeleteProductMutation();
@@ -85,9 +90,9 @@ export default function Table() {
     //     setProducts(_products);}
     //     catch{}  
     // }
-    const getSeverity = (value) => {
+    // const getSeverity = (value) => {
     //    case
-    };
+    // };
     const onRowEditComplete = (e) => {
         // console.log(`onRowEditComplete${e.data.picture}`);
          let _products = [...products];
@@ -97,14 +102,17 @@ export default function Table() {
         //  newData.picture=(selectedPicture.objectURL+'/'+selectedPicture).namesplit("\\")[2]
     //  console.log(`newData ${newData.picture} `);
         _products[index] = newData;
+        console.log(selectedPicture);
+        const category = cat
         const formData=new FormData();
            formData.append("_id",e.newData._id);
             formData.append("picture",selectedPicture);
             formData.append("name",e.newData.name);
-            formData.append("category",e.newData.category);
+            formData.append("category",category);
             formData.append("country",e.newData.country);
             formData.append("chef",e.newData.chef);
             formData.append("price",e.newData.price);
+            console.log(formData.picture);
    try{
    
     // console.log(formData["id"]);
@@ -116,6 +124,9 @@ export default function Table() {
     };
 
     const textEditor = (options) => {
+        return <InputText type="text" value={options.value} onChange={(e) => options.editorCallback(e.target.value)} />;
+    };
+    const categoryEditor = (options) => {
         return <InputText type="text" value={options.value} onChange={(e) => options.editorCallback(e.target.value)} />;
     };
 
@@ -160,6 +171,28 @@ export default function Table() {
         // return rowData.name !== 'Green ';
         return rowData.name !== 'Blue Band';
     };
+    const itemTemplateCategory = (item, options) => {
+        const className = classNames('flex align-items-center p-2', {
+            'surface-hover': options.odd
+        });
+        return (
+            <div className={className} >
+                {item.name}
+            </div>
+        );
+    };
+
+const categoriesArr=(rowData)=>{
+    console.log(rowData.category);
+    const names = rowData.category.map(e=>e.name)
+    console.log(names);
+    return(
+    <VirtualScroller items={rowData.category} itemSize={50} itemTemplate={itemTemplateCategory}  className="border-1 surface-border border-round" style={{ width: '200px', height: 0, minHeight: '70px' }} />
+)
+// 
+}
+    
+
     
     const actionBodyTemplate = (rowData) => {
         return (
@@ -205,6 +238,7 @@ export default function Table() {
             console.log(productCreate);
             console.log(cat);
             const category = cat
+            console.log(selectedPicture);
             const formData=new FormData();
             formData.append("picture",selectedPicture);
             formData.append("name",productCreate.name);
@@ -212,7 +246,7 @@ export default function Table() {
             formData.append("country",productCreate.country);
             formData.append("chef",productCreate.chef);
             formData.append("price",productCreate.price);
-            console.log(formData.category);
+            console.log(formData.picture);
 
             createFunc(formData);
             setAddProductDialog(false)
@@ -275,6 +309,7 @@ export default function Table() {
             <DataTable value={products} editMode="row" dataKey="id" onRowEditComplete={onRowEditComplete} tableStyle={{ minWidth: '50rem' }}>
                 {/* <Column field="code" header="Code" editor={(options) => textEditor(options)} style={{ width: '20%' }}></Column> */}
                 <Column field="name" header="Name" editor={(options) => textEditor(options)} style={{ width: '20%' }}></Column>
+                <Column body={categoriesArr} header="Category" editor={(options) => categoryEditor(options)} style={{ width: '20%' }}></Column>
                 <Column field="picture" header="Picture" body={statusBodyTemplate} editor={(options) => statusEditor(options)} style={{ width: '20%' }}></Column>
                 <Column field="price" header="Price" body={priceBodyTemplate} editor={(options) => priceEditor(options)} style={{ width: '20%' }}></Column>
                 <Column header="Update" rowEditor={allowEdit}  headerStyle={{ width: '10%', minWidth: '8rem' }} bodyStyle={{ textAlign: 'center' }}></Column>

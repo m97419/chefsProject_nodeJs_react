@@ -71,6 +71,17 @@ const deleteOrder=async(req,res)=>{
     const reply=`Order ${orderId} deleted`
     res.json(reply)
 }
+const getOrderByChef=async(req,res)=>{
+    const {chefId}=req.params
+    const orders = await Product.find({})
+    orders.map(e=>e.products.map(f=>f.chef==chefId))
+    // const orders = await Product.find({chef:chefId}).populate("category").populate("chef").populate("country").lean()
+    console.log(products);
+    if(!products){
+        return res.status(400).json({message:'products not found'})
+    }
+    res.json(products)
+}
 
 module.exports={
     getAllOrders,
@@ -78,5 +89,6 @@ module.exports={
     createNewOrder,
     updateOrder,
     completeOrder,
-    deleteOrder
+    deleteOrder,
+    getOrderByChef
 }

@@ -9,6 +9,13 @@ const ordersApiSlice = ApiSlice.injectEndpoints({
             ,providesTags:["prod"]
 
         }),
+        getAllProductsByChef:build.query({
+            query:(chefId)=>({
+                url:`/api/product?chefId=${chefId}`
+            })
+            ,providesTags:["prod"]
+
+        }),
         getProductById:build.mutation({
             query:(id)=>({
                 url:`/api/product/${id}`
@@ -46,7 +53,14 @@ const ordersApiSlice = ApiSlice.injectEndpoints({
             })
 
         }),
+        getByChef:build.query({
+            query:(chefId)=>({
+                url:`/api/product/chef/${chefId}`
+            })
+
+        })
+
 
     })
 })
-export const{ useGetAllProductsQuery,useGetProductByIdMutation,useCreateNewProductMutation,useUpdateProductMutation,useDeleteProductMutation,useGetByCountryQuery }=ordersApiSlice
+export const{ useGetAllProductsQuery,useGetAllProductsByChefQuery,useGetProductByIdMutation,useCreateNewProductMutation,useUpdateProductMutation,useDeleteProductMutation,useGetByCountryQuery,useGetByChefQuery }=ordersApiSlice

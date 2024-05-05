@@ -6,11 +6,15 @@ const createNewProduct = async (req,res)=>{
     const{name,category,country,chef,price} = req.body
     picture=req.file.path
     console.log(picture);
+    console.log(`cat  ${category}`);
+    console.log("----------------------------------------------------");
+    const cat = category.split(",");
+    console.log(cat);
     if(!name || !price || !category || !country || !chef)
     return res.status(400).json({message: 'field are required!!'})
-    const product = await Product.create({ name,category,country,chef,price,picture})
+    const product = await Product.create({ name,category:cat,country,chef,price,picture})
     if(product)
-        return res.status(201).json({message: 'new product created'})
+        return res.status(201).json({message: `new product created ${Product.category}`})
     else
         return res.status(400).json({message:'invalid product'})
 }
@@ -20,6 +24,7 @@ const getAllProducts = async (req,res)=>{
     console.log(products);
     if(!products?.length){
         return res.status(400).json({massage:'No products found'})
+
     }
     res.json(products)
 }
@@ -41,8 +46,10 @@ const getProductById=async(req,res)=>{
 
 const updateProduct=async(req,res)=>{
     // const picture =(req.file?.filename? req.file.filename:"") 
+    console.log("nice");
     const {_id,name,category,price}=req.body
     picture=req.file.path
+    const cat = category.split(",");
     if(!_id||!name||!price)
         return res.status(400).json({message:'fields are required'})
     const product = await Product.findById(_id).exec()
@@ -53,7 +60,7 @@ const exit = await Category.findById(category).lean()
 if(!exit)
     return res.status(400).json({message:'category not exit'})
    product.name =name,
-   product.category=category,
+   product.category=cat,
    product.price = price,
    product.picture=picture
 
@@ -75,18 +82,37 @@ const deleteProduct=async(req,res)=>{
 const getByCountry=async(req,res)=>{
     const {countryId}=req.params
     const products = await Product.find({country:countryId}).populate("category").populate("chef").populate("country").lean()
+    console.log(products);  
+    if(!products){
+        return res.status(400).json({message:'products not found'})
+    }
+    res.json(products)
+}
+const getByChef=async(req,res)=>{
+    const {chefId}=req.params
+    const products = await Product.find({chef:chefId}).populate("category").populate("chef").populate("country").lean()
     console.log(products);
     if(!products){
         return res.status(400).json({message:'products not found'})
     }
     res.json(products)
 }
+// const getByCountry=async(req,res)=>{
+//     const {countryId}=req.params
+//     const products = await Product.find({country:countryId}).populate("category").populate("chef").populate("country").lean()
+//     console.log(products);
+//     if(!products){
+//         return res.status(400).json({message:'products not found'})
+//     }
+//     res.json(products)
+// }
 module.exports = {
     createNewProduct,
     getAllProducts,
     getProductById,
     updateProduct,
     deleteProduct,
-    getByCountry
+    getByCountry,
+    getByChef
 
 }

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { ListBox } from 'primereact/listbox';
 import { useGetAllCountriesQuery } from "./countriesApiSlice";
 import Country from "../countries/Country"
-import { Link, Route, Routes } from 'react-router-dom';
+import { Link, Outlet, Route, Routes } from 'react-router-dom';
 import { Menubar } from 'primereact/menubar';
 import {useNavigate} from "react-router-dom"
 const CountryList = () => {
@@ -20,8 +20,10 @@ const CountryList = () => {
      //      console.log(countries);
      // }
      const newcountries = countries.map(country=>{return{label:country.name,key:country._id,command:()=>{navigate(`/country/${country._id}`)}}})
-     return (<div className="card">
+     // const newcountries = countries.map(country => { return { label: country.name, key: country._id, command: () => { navigate(`/countries/${country._id}`); } }; })
+    return (<div className="card">
           <Menubar  model={newcountries} />
+          {/* <Outlet/> */}
 </div>
          
  

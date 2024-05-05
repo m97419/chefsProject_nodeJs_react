@@ -15,14 +15,22 @@ import Country from './app/components/countries/Country';
 import CountryList from './app/components/countries/CountryList';
 import NavBar from './app/components/navBar';
 import Table from './app/components/products/Table'
+import RegisterLogin from './app/components/auth/RegisterLogin';
+import RegisterChef from './app/components/auth/RegisterChef';
+import RegisterCustomer from './app/components/auth/RegisterCustomer';
+
 
 
 function App() {
 
   return (
     <div className="App">
-      <Table/>
+      <NavBar></NavBar>
+      {/* <Table/> */}
       <Routes>
+      <Route path="/auth" element={<RegisterLogin />}></Route>
+      <Route path="/registerCustomer" element={<RegisterCustomer />}></Route>
+        <Route path="/registerChef" element={<RegisterChef />}></Route>
         <Route path='/' element={<HomePage />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
@@ -31,6 +39,12 @@ function App() {
         <Route path="/orders" element={<Orders />}></Route>
         <Route path="/country/:id" element={<Country />}></Route>
         <Route path="/countries" element={<CountryList />}></Route>
+        <Route path="/table" element={<Table />}></Route>
+
+        {/* <Route path="/countries/" element={<CountryList />}>
+          <Route path=":id" element={
+          <Country />}/>
+        </Route> */}
       </Routes>
 
     </div>

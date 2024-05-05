@@ -22,6 +22,7 @@ const storage = multer.diskStorage({
 router.get("/",productController.getAllProducts)
 router.get("/:id",productController.getProductById)
 router.get("/country/:countryId",productController.getByCountry)
+router.get("/chef/:chefId",productController.getByChef)
 router.post("/",upload.single("picture"),productController.createNewProduct)
 router.delete("/",productController.deleteProduct)
 router.put("/",upload.single("picture"),productController.updateProduct)

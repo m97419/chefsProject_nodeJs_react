@@ -8,6 +8,7 @@ router.use(verifyJWT)
 
 router.get("/",orderController.getAllOrders)
 router.get("/:id",orderController.getOrderById)
+router.get("/chef/:chefId",orderController.getOrderByChef)
 router.post("/",orderController.createNewOrder)
 router.delete("/",orderController.deleteOrder)
 router.put("/",orderController.updateOrder)

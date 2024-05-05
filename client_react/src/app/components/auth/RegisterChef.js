@@ -63,7 +63,7 @@ export default function RegisterChef() {
            
 
             registerFunc(formData)
-            //    setToken(user)
+               setToken(user)
 
 
         }

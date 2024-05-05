@@ -43,7 +43,14 @@ const ordersApiSlice = ApiSlice.injectEndpoints({
                 method:'POST',
             })
 
+        }),
+        getOrderByChef:build.query({
+            query:(chefId)=>({
+                url:`/api/orderr/chef/${chefId}`
+            })
+
         })
+
     })
 })
-export const{ useGetAllOrdersQuery,useGetOrderByIdMutation,useCreateNewOrderMutation,useCompleteOrderMutation,useDeleteOrderMutation }=ordersApiSlice
+export const{ useGetAllOrdersQuery,useGetOrderByIdMutation,useCreateNewOrderMutation,useCompleteOrderMutation,useDeleteOrderMutation,useGetOrderByChefQuery }=ordersApiSlice
