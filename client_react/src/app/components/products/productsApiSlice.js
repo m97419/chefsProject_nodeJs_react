@@ -19,7 +19,8 @@ const ordersApiSlice = ApiSlice.injectEndpoints({
         getProductById:build.mutation({
             query:(id)=>({
                 url:`/api/product/${id}`
-            })
+            }),
+            providesTags:["prod"]
 
         }),
         createNewProduct:build.mutation({
@@ -35,7 +36,8 @@ const ordersApiSlice = ApiSlice.injectEndpoints({
                 url:"/api/product",
                 method:'PUT',
                 body:product
-            })
+            }),
+            invalidatesTags:["prod"]
 
         }),       
         deleteProduct:build.mutation({
@@ -44,19 +46,23 @@ const ordersApiSlice = ApiSlice.injectEndpoints({
                 method:'DELETE',
                 body:id
 
-            })
+            }),
+            invalidatesTags:["prod"]
 
         }),
         getByCountry:build.query({
             query:(countryId)=>({
                 url:`/api/product/country/${countryId}`
-            })
+            }),
+            providesTags:["prod"]
+
 
         }),
         getByChef:build.query({
             query:(chefId)=>({
                 url:`/api/product/chef/${chefId}`
-            })
+            }),
+            providesTags:["prod"]
 
         })
 

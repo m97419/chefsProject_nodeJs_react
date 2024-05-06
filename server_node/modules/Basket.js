@@ -1,16 +1,13 @@
 const mongoose = require('mongoose')
-const orderSchema = new mongoose.Schema({
-    // products:{
-    //     type:[mongoose.Schema.Types.ObjectId],
-    //     required:true,
-    //     ref:"Product"
-
-    // },
+const basketSchema = new mongoose.Schema({
     products:{
-        type:[mongoose.Schema.Types.ObjectId],
+        type:mongoose.Schema.Types.ObjectId,
         required:true,
-        ref:"Basket"
+        ref:"Product"
 
+    },
+    count:{
+        type:Number
     },
     customer:{
         type:mongoose.Schema.Types.ObjectId,
@@ -27,4 +24,4 @@ const orderSchema = new mongoose.Schema({
    },{
     timestamps:true
 })
-module.exports = mongoose.model('Order',orderSchema)
+module.exports = mongoose.model('Basket',basketSchema)

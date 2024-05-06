@@ -51,10 +51,11 @@ const NavBar = () => {
 
     return (
         
-        <div className="card">
+        <div className="card" style={{ position: 'sticky',  zIndex: 10000 }} >
             {role!="chef" && <Menubar model={barArr} />}
             {role=="chef"&& <Menubar model={barArrChef} />}
         </div>
     )
 }
 export default NavBar
+

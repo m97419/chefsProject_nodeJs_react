@@ -7,6 +7,9 @@ import { InputNumber } from 'primereact/inputnumber';
 import BasketItem from './BasketItem';
 import { Dialog } from 'primereact/dialog';
 import { InputText } from 'primereact/inputtext';
+import useAuth from '../auth/useAuth';
+import { useCreateNewOrderMutation } from '../orders/ordersApiSlice';
+import { useCreateNewBasketMutation } from './basketApiSlice';
 
 export default function Basket() {
     // const [sortKey, setSortKey] = useState('');
@@ -16,7 +19,8 @@ export default function Basket() {
     //     { label: 'Price High to Low', value: '!price' },
     //     { label: 'Price Low to High', value: 'price' }
     // ];
-
+const {_id}=useAuth();
+const [addFunc, { data: data = [], isLoading, isSuccess, isError, error }] = useCreateNewBasketMutation()
     const getBasket = () => {
         const myBasket = JSON.parse(localStorage.getItem("basket"))
 
@@ -50,6 +54,25 @@ export default function Basket() {
     const refetch = () => {
         setBasket(getBasket());
         setEmpty(basket==[]);
+        console.log(basket);
+        const s=[]
+        // const updateBasket = basket.map(
+            
+        //  )
+        // const products=basket.map(e=>e._id)
+        try{
+            basket.map(e=>{ console.log(e.id);
+                console.log(e.count)
+                    addFunc({products:e.id,customer:_id,count:e.count})})
+
+        // addFunc({products,customer:_id})
+    }
+        catch(err){
+            console.log(err);
+        }
+
+
+        // products,customer
     }
 
     const listTemplate = (items) => {

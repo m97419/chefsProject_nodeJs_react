@@ -102,22 +102,30 @@ export default function Table() {
         //  newData.picture=(selectedPicture.objectURL+'/'+selectedPicture).namesplit("\\")[2]
     //  console.log(`newData ${newData.picture} `);
         _products[index] = newData;
+        // console.log(selectedPicture);
+        console.log(e.newData.name);
+        console.log(e.newData.picture);
         console.log(selectedPicture);
-        const category = cat
+        const picture=selectedPicture
+        var category = cat
+        if (cat==null)
+          category= e.newData.category.map(e=>e._id);
+        // if(selectedPicture)
+        // picture=e.newData.picture
+       
         const formData=new FormData();
            formData.append("_id",e.newData._id);
             formData.append("picture",selectedPicture);
             formData.append("name",e.newData.name);
             formData.append("category",category);
-            formData.append("country",e.newData.country);
-            formData.append("chef",e.newData.chef);
+            // formData.append("country",e.newData.country);
             formData.append("price",e.newData.price);
-            console.log(formData.picture);
+            
    try{
    
     // console.log(formData["id"]);
        updateFunc(formData);     
-       setProducts(_products);
+    //    setProducts(_products);
        refetch();}
        catch{console.log(error);}
         
@@ -126,11 +134,33 @@ export default function Table() {
     const textEditor = (options) => {
         return <InputText type="text" value={options.value} onChange={(e) => options.editorCallback(e.target.value)} />;
     };
+    const priceEditor = (options) => {
+        return <InputNumber  value={options.value} onValueChange={(e) => {console.log(e.target.value);    options.editorCallback(e.target.value)}} mode="currency" currency="USD" locale="en-US" />;
+    };
+    // const priceEditor = (options) => {
+    //     return <InputNumber  value={options.value} onChange={(e) => {options.editorCallback(e.target.value)}} mode="currency" currency="USD" locale="en-US" />;
+    // };
+    // value={options.value}
+    // const categoryEditor = (options) => {
+    //     return <InputText type="text" value={options.value} onChange={(e) => options.editorCallback(e.target.value)} />;
+    // };
     const categoryEditor = (options) => {
-        return <InputText type="text" value={options.value} onChange={(e) => options.editorCallback(e.target.value)} />;
+        return (
+           <CategoriesList setCat={setCat}/>
+            // <Dropdown
+            //     value={options.value}
+            //     options={statuses}
+            //     onChange={(e) => options.editorCallback(e.value)}
+            //     placeholder="Select a Status"
+            //     // itemTemplate={(option) => {
+            //     //     return <Tag value={option} severity={getSeverity(option)}></Tag>;
+            //     // }}
+            // />
+        );
     };
 
     const statusEditor = (options) => {
+        // setSelectedPicture(options.picture)
         return (
             <div className="card flex justify-content-center">
                     <FileUpload name="demo[]" auto accept="image/*" maxFileSize={1000000000000000} emptyTemplate={<p className="m-0">upload picture</p>}
@@ -152,9 +182,7 @@ export default function Table() {
         );
     };
 
-    const priceEditor = (options) => {
-        return <InputNumber value={options.value} onValueChange={(e) => options.editorCallback(e.value)} mode="currency" currency="USD" locale="en-US" />;
-    };
+   
 
     const statusBodyTemplate = (rowData) => {
         // console.log(rowData.picture);
@@ -249,7 +277,8 @@ const categoriesArr=(rowData)=>{
             console.log(formData.picture);
 
             createFunc(formData);
-            setAddProductDialog(false)
+            setAddProductDialog(false);
+            refetch()
         };
         const handlename = (e)=>{
             setProductCreate(prevState => ({

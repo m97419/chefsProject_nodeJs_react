@@ -16,7 +16,7 @@ const ordersApiSlice = ApiSlice.injectEndpoints({
         }),
         createNewOrder:build.mutation({
             query:(order)=>({
-                url:"/api/customer",
+                url:"/api/order",
                 method:'POST',
                 body:order
             })

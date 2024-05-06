@@ -11,6 +11,7 @@ export default function BasketItem(prop) {
 
     const [deleteDialogVisiabe, setDeleteDialogVisiabe] = useState(false);
     const [itemCount, setItemCount] = useState(prop.product.count);
+    const [orderProducts,setOrderProducts]=useState(null);
 
     const changeCount= (productId, num)=>{
         const myBasket = JSON.parse(localStorage.getItem("basket"))

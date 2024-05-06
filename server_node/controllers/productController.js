@@ -45,10 +45,11 @@ const getProductById=async(req,res)=>{
 }
 
 const updateProduct=async(req,res)=>{
-    // const picture =(req.file?.filename? req.file.filename:"") 
+ 
+    const picture =(req.file?.filename? req.file.filename:"") 
     console.log("nice");
     const {_id,name,category,price}=req.body
-    picture=req.file.path
+    // picture=req.file.path
     const cat = category.split(",");
     if(!_id||!name||!price)
         return res.status(400).json({message:'fields are required'})
@@ -56,13 +57,15 @@ const updateProduct=async(req,res)=>{
     if(!product)
         return res.status(400).json({message:'product not found'})
 
-const exit = await Category.findById(category).lean()
-if(!exit)
-    return res.status(400).json({message:'category not exit'})
+// const exit = await Category.findById(category).lean()
+// if(!exit)
+//     return res.status(400).json({message:'category not exit'})
+if(picture!=null&& picture!="")
+    product.picture=picture
    product.name =name,
    product.category=cat,
-   product.price = price,
-   product.picture=picture
+   product.price = price
+//    product.picture=picture
 
     const updateProduct=await product.save()
     res.json(`${updateProduct.name} updated`)

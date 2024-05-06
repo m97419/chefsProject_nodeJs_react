@@ -43,7 +43,9 @@ const login = async(req,res)=>{
         }
             const accessToken = jwt.sign(customerInfo,process.env.ACCESS_TOKEN_SECRET)
            return res.json({token:accessToken})}
-    }
+        }
+    
+    
 
 
     const registerChef = async(req,res)=>{
