@@ -1,11 +1,13 @@
 import ApiSlice from"../../apiSlice"
 
+ 
 const categoriesApiSlice = ApiSlice.injectEndpoints({
     endpoints:(build)=>({
         getAllCategories:build.query({
             query:()=>({
                 url:"/api/category/"
             })
+            ,providesTags:["category"]
 
         }),
         createNewCategory:build.mutation({
@@ -13,7 +15,8 @@ const categoriesApiSlice = ApiSlice.injectEndpoints({
                 url:"/api/category/",
                 method:'POST',
                 body:category
-            })
+            }),
+            invalidatesTags:["category"]
 
         }),
         updateCategory:build.mutation({
@@ -21,14 +24,17 @@ const categoriesApiSlice = ApiSlice.injectEndpoints({
                 url:"/api/category/",
                 method:'PUT',
                 body:category
-            })
+            }),
+            invalidatesTags:["category"]
 
         }),    
         deleteCategory:build.mutation({
             query:(id)=>({
                 url:`/api/category/${id}`,
                 method:'DELETE',
-            })
+            }),
+            invalidatesTags:["category"]
+
 
         })
     })

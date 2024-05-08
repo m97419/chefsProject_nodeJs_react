@@ -5,15 +5,24 @@ import { DataView, DataViewLayoutOptions } from 'primereact/dataview';
 import { Rating } from 'primereact/rating';
 import { Tag } from 'primereact/tag';
 import { classNames } from 'primereact/utils';
-import { useGetAllOrdersQuery } from './ordersApiSlice';
-export default function OrdersChef() {
+import { useGetBasketByChef1Query } from '../basket/basketApiSlice';
+import useAuth from '../auth/useAuth';
+export default function OrdersChef({prod}) {
     const [products, setProducts] = useState([]);
     const [layout, setLayout] = useState('grid');
-    const { data: ordersData = [], isLoading, isSuccess, isError, error, refetch } =useGetAllOrdersQuery()
+    // const { data: ordersData = [], isLoading, isSuccess, isError, error, refetch } =useGetAllOrdersQuery()
+    const {_id} = useAuth()
+   
+    const { data: ordersData = [], isLoading, isSuccess, isError, error, refetch } =useGetBasketByChef1Query({chefId:_id})
+    const [orders, setOrders] = useState([]);
     useEffect(() => {
+        console.log("ordersData"+ordersData);
         // ProductService.getProducts().then((data) => setProducts(data.slice(0, 12)));
         setProducts(ordersData)
+         console.log("_id"+_id);
+        // console.log(orders);
     }, [isSuccess]);
+   
 
     const getSeverity = (product) => {
         switch (product.inventoryStatus) {
@@ -35,15 +44,15 @@ export default function OrdersChef() {
         return (
             <div className="col-12" key={product.id}>
                 <div className={classNames('flex flex-column xl:flex-row xl:align-items-start p-4 gap-4', { 'border-top-1 surface-border': index !== 0 })}>
-                    <img className="w-9 sm:w-16rem xl:w-10rem shadow-2 block xl:block mx-auto border-round" src={`https://primefaces.org/cdn/primereact/images/product/${product.image}`} alt={product.name} />
+                    <img className="w-9 sm:w-16rem xl:w-10rem shadow-2 block xl:block mx-auto border-round" src={`http://localhost:7788/uploads/${product.products.picture.split("\\")[2]}`} alt={product.name} />
                     <div className="flex flex-column sm:flex-row justify-content-between align-items-center xl:align-items-start flex-1 gap-4">
                         <div className="flex flex-column align-items-center sm:align-items-start gap-3">
                             <div className="text-2xl font-bold text-900">{product.name}</div>
-                            <Rating value={product.rating} readOnly cancel={false}></Rating>
+                            <Rating value={product.name} readOnly cancel={false}></Rating>
                             <div className="flex align-items-center gap-3">
                                 <span className="flex align-items-center gap-2">
                                     <i className="pi pi-tag"></i>
-                                    <span className="font-semibold">{product.category}</span>
+                                    <span className="font-semibold">{product.name}</span>
                                 </span>
                                 <Tag value={product.inventoryStatus} severity={getSeverity(product)}></Tag>
                             </div>
@@ -70,7 +79,7 @@ export default function OrdersChef() {
                         <Tag value={product.inventoryStatus} severity={getSeverity(product)}></Tag>
                     </div>
                     <div className="flex flex-column align-items-center gap-3 py-5">
-                        <img className="w-9 shadow-2 border-round" src={`https://primefaces.org/cdn/primereact/images/product/${product.image}`} alt={product.name} />
+                        <img className="w-9 shadow-2 border-round" src={`http://localhost:7788/uploads/${product.products.picture.split("\\")[2]}`}  alt={product.name} />
                         <div className="text-2xl font-bold">{product.name}</div>
                         <Rating value={product.rating} readOnly cancel={false}></Rating>
                     </div>

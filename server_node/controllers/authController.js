@@ -49,8 +49,10 @@ const login = async(req,res)=>{
 
 
     const registerChef = async(req,res)=>{
+        try{
+        const picture =(req.file?.filename? req.file.filename:"") 
         const {name,password,email,phone} =req.body
-        picture=req.file.path
+        // picture=req.file.path
         console.log(` n ${name} p ${password} e ${email} p  ${phone}  p ${picture}`);
         if(!name || !password)
             return res.status(400).json({massage:'All field are required'})
@@ -81,12 +83,18 @@ const login = async(req,res)=>{
         }
         else
             return res.status(400).json({message:'Oooof! Invalid user recived'})  
+    }
+    catch(err){
+        return res.status(500).json({message:"error in server"})
+
+    }
 }
 
 
     
 
     const registerCustomer = async(req,res)=>{
+        try{
         const {name,password,email,phone} =req.body
         console.log(` n ${name} p ${password} e ${email} p  ${phone}  `);
         if(!name || !password){
@@ -114,6 +122,11 @@ const login = async(req,res)=>{
         return res.status(201).json({token:accessToken})}
         else
             return res.status(400).json({message:'Oooof! Invalid user recived'}) 
+    }
+    catch(err){
+        return res.status(500).json({message:"error in server"})
+
+    }
     }
 
  

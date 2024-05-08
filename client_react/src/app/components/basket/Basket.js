@@ -61,8 +61,11 @@ const [addFunc, { data: data = [], isLoading, isSuccess, isError, error }] = use
         //  )
         // const products=basket.map(e=>e._id)
         try{
+            if(_id=="")
+            return(<h1>noooooooooooo</h1>)
+        else
             basket.map(e=>{ console.log(e.id);
-                console.log(e.count)
+                // console.log("e.products.chef"+e.products.chef)
                     addFunc({products:e.id,customer:_id,count:e.count})})
 
         // addFunc({products,customer:_id})
@@ -92,7 +95,8 @@ const [addFunc, { data: data = [], isLoading, isSuccess, isError, error }] = use
     return (
         <div className="card"><br/><br/>
             <DataView value={basket} listTemplate={listTemplate}/> <br/>
-            <Button icon="pi pi-credit-card" disabled={empty} raised aria-label="Filter" onClick={()=>setOrderVisible(true)}>&nbsp; to paying </Button>
+            <Button icon="pi pi-credit-card" disabled={empty || _id=="" } raised aria-label="Filter" onClick={()=>setOrderVisible(true)}>&nbsp; to paying </Button>
+            {/* <Button icon="pi pi-credit-card" disabled={true} raised aria-label="Filter" onClick={()=>setOrderVisible(true)}>&nbsp; to paying </Button> */}
             {/* header={header()} sortField={sortField} sortOrder={sortOrder} /> */}
             <Dialog
             className='w-3'
@@ -136,7 +140,7 @@ const [addFunc, { data: data = [], isLoading, isSuccess, isError, error }] = use
                             <InputText keyfilter="pnum" className="bg-white-alpha-20 border-none p-1 text-primary-50 w-1 text-xl" type="password"></InputText>&nbsp;</div>
                         </div></div>
                         <div className="flex align-items-center gap-2">
-                            <Button label="For-Payment" onClick={(e) => {hide(e); order()}} text className="p-3 w-full text-primary-50 border-1 border-white-alpha-30 hover:bg-white-alpha-10"></Button>
+                            <Button label="For-Payment"  onClick={(e) => {hide(e); order()}} text className="p-3 w-full text-primary-50 border-1 border-white-alpha-30 hover:bg-white-alpha-10"></Button>
                             <Button label="Cancel" onClick={(e) => hide(e)} text className="p-3 w-full text-primary-50 border-1 border-white-alpha-30 hover:bg-white-alpha-10"></Button>
                         </div>
                     </div>

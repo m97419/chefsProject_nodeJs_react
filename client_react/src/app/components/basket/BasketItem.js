@@ -28,7 +28,7 @@ export default function BasketItem(prop) {
     }
     // const t=
 
-
+console.log("prop.product.details"+prop.product.details);
     return (
         <>
             <div className="col-12" key={prop.product._id}>
@@ -68,6 +68,7 @@ export default function BasketItem(prop) {
                         <Button icon="pi pi-check" onClick={() => {setDeleteDialogVisiabe(false); deleteItem();}} autoFocus />
                     </div>
                 </Dialog>
+             
             </>
     )
 }

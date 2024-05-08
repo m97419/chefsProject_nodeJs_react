@@ -14,6 +14,7 @@ export default function RegisterChef() {
     const [registerFunc, { isError, isSuccess, isLoading, data, error }] = useRegisterChefMutation()
     const navigate = useNavigate()
     const [able, setAble] = useState(true)
+    const [able1, setAble1] = useState(true)
     const [user, setUser] = useState({
         name: "",
         password: "",
@@ -59,15 +60,12 @@ export default function RegisterChef() {
             formData.append("picture", selectedPicture);
         
         try {
-            
-           
-
-            registerFunc(formData)
+           const r = registerFunc(formData)
+        //    console.log("r.status"+r.);
                setToken(user)
-
-
+            //    return res.status(409).json({message:'Duplicate name'})
         }
-        catch { console.log(error); }
+        catch { console.log("error"+error); }
     }
     return (
         <div className="primereact/resources/themes/saga-orange/theme.css">

@@ -69,7 +69,7 @@ const listItem = (product, index) => {
     return (
         <div className="col-12" key={product._id}>
             <div className={classNames('flex flex-column xl:flex-row xl:align-items-start p-4 gap-4', { 'border-top-1 surface-border': index !== 0 })}>
-                {/* <Image className="picturesize" src={`http://localhost:7788/${product.picture.split("\\")[2]}`} alt={product.picture} preview /> */}
+                {/* <Image className="picturesize" src={`http://localhost:7788/uploads/${product.picture.split("\\")[2]}`} alt={product.picture} preview /> */}
                 <div className="flex align-items-center gap-3">
                     <span className="flex align-items-center gap-2">
                         {/* <Avatar icon={product.chef.picture || "pi pi-user"} size="large" shape="circle" /> */}
@@ -90,11 +90,18 @@ const listItem = (product, index) => {
                       {console.log(product.category)}  
                       <span className="text-2xl font-semibold">${product.price}</span>
                         <br></br>
+                        <Button icon="pi pi-cart-plus" rounded text raised aria-label="Filter" onClick={()=>addItemToBusket(product)}></Button>
                         {/* <Button icon="pi-cart-plus"  rounded text raised aria-label="Filter" onClick={()=>addItemToBusket(product)}/> */}
                         <br></br>
                         <br></br>
                         {/* <Button icon="pi pi-shopping-cart" className="p-button-rounded" disabled={product.inventoryStatus === 'OUTOFSTOCK'}></Button> */}
                     </div>
+                    <div className="flex align-items-center justify-content-between">
+                 
+                   
+                    {/* <Button icon="pi pi-shopping-cart" className="p-button-rounded" disabled={product.inventoryStatus === 'OUTOFSTOCK'}></Button> */}
+                </div>
+            
                 </div>
             </div>
         </div>
@@ -153,7 +160,8 @@ const listTemplate = (products, layout) => {
 //===========================
 return(
     <div className="card">
-        <div>{id}</div>
+        {/* ggggggggggggggggg
+        <div>{id}</div> */}
     <DataView value={products} listTemplate={listTemplate} layout={layout} header={header()} />
 </div>  
 )

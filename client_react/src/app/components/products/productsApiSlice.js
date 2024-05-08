@@ -6,7 +6,7 @@ const ordersApiSlice = ApiSlice.injectEndpoints({
             query:()=>({
                 url:"/api/product"
             })
-            ,providesTags:["prod"]
+            ,providesTags:["product"]
 
         }),
         getAllProductsByChef:build.query({
@@ -54,7 +54,7 @@ const ordersApiSlice = ApiSlice.injectEndpoints({
             query:(countryId)=>({
                 url:`/api/product/country/${countryId}`
             }),
-            providesTags:["prod"]
+            providesTags:["prodc"]
 
 
         }),

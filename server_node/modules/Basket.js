@@ -14,6 +14,11 @@ const basketSchema = new mongoose.Schema({
         required:true,
         ref:"Customer"
     },
+    // chef:{
+    //     type:mongoose.Schema.Types.ObjectId,
+    //     required:true,
+    //     ref:"Chef"
+    // },
     date:{
         type:mongoose.Schema.Types.Date,
         default:()=>new Date()

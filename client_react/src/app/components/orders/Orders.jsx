@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useGetBasketByChef1Query } from '../basket/basketApiSlice';
 import useAuth from '../auth/useAuth';
+import OrdersChef from './OrdersChef';
 
 export default function Orders() {
     const {_id} = useAuth
@@ -10,10 +11,11 @@ export default function Orders() {
         console.log("ordersData"+ordersData);
         // ProductService.getProducts().then((data) => setProducts(data.slice(0, 12)));
         setOrders(ordersData)
-        console.log(orders);
+        // console.log(orders);
     }, [isSuccess]);
     return (
         <>
+        {/* <OrdersChef prod={orders} /> */}
             Orders Page
             hhhhhhh
         

@@ -2,6 +2,7 @@ require("dotenv").config()
 const express= require("express")
 
 const cors=require("cors")
+const errorHandler= require("./middleware/errorHandler")
 
 const corsOptions=require("./config/corsOptions")
 const connectDB = require("./config/dbConn")
@@ -14,6 +15,7 @@ connectDB()
  app.use(cors(corsOptions))
 app.use(express.json())
 app.use(express.static("public"))
+app.use(errorHandler)
 
 app.use("/api/category",require("./routes/categoryRoute"))
 app.use("/api/chef",require("./routes/chefRoute"))

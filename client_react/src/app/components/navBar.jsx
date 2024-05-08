@@ -30,7 +30,7 @@ const NavBar = () => {
         },
         {
             label:"products", 
-            command: ()=>{navigate(`/`)}
+            command: ()=>{navigate(`/countries`)}
         },
         {
             label:"my basket", 
@@ -40,6 +40,7 @@ const NavBar = () => {
             label:"orders", 
             command: ()=>{navigate(`/orders`)}
         },
+
 
     ]
     const barArrChef=[...barArr,
@@ -51,7 +52,7 @@ const NavBar = () => {
 
     return (
         
-        <div className="card" style={{ position: 'sticky',  zIndex: 10000 }} >
+        <div className="card" style={{ position: 'sticky',top:0,  zIndex: 10000 }} >
             {role!="chef" && <Menubar model={barArr} />}
             {role=="chef"&& <Menubar model={barArrChef} />}
         </div>

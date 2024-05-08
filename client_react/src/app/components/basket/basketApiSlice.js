@@ -8,10 +8,12 @@ const basketApiSlice = ApiSlice.injectEndpoints({
         //     })
 
         // }),
+       
         getBasketByChef1:build.query({
             query:(chefId)=>({
                 url:`/api/basket/chef/${chefId}`
             })
+            ,providesTags:["basket"]
 
         }),
         createNewBasket:build.mutation({
@@ -20,6 +22,7 @@ const basketApiSlice = ApiSlice.injectEndpoints({
                 method:'POST',
                 body:basket
             })
+           , invalidatesTags:["basket"]
 
         }),
         // getByCountry:build.query({
