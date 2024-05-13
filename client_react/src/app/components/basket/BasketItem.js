@@ -25,15 +25,16 @@ export default function BasketItem(prop) {
         localStorage.setItem("basket",JSON.stringify(updateBasket))
         prop.refetch()
     }
+    console.log(prop.product.details);
 
     return (
         <>
             <div className="col-12" key={prop.product._id}>
-                    <div className={classNames('flex flex-column xl:flex-row xl:align-items-start p-4 gap-4', { 'border-top-1 surface-border': prop.index !== 0 })}>
+                    {/* <div className={classNames('flex flex-column xl:flex-row xl:align-items-start p-4 gap-4', { 'border-top-1 surface-border': prop.index !== 0 })}>
                         <div>
                             <Avatar icon={prop.product.details.chef.picture || "pi pi-user"} size="large" shape="circle" />
                             <h5 >{prop.product.details.chef.name}</h5>
-                        </div>&nbsp;&nbsp;&nbsp;
+                        </div>&nbsp;&nbsp;&nbsp; */}
                         <img className="w-9 sm:w-16rem xl:w-10rem shadow-2 block xl:block mx-auto border-round picturesize" src={`http://localhost:7788/${prop.product.details.picture}`} alt={prop.product.name} />
                         <div className="flex flex-column sm:flex-row justify-content-between align-items-center xl:align-items-start flex-1 gap-4">
                             <div className="flex flex-column align-items-center sm:align-items-start gap-3">

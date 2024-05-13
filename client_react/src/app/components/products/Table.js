@@ -87,6 +87,7 @@ export default function Table() {
     //    case
     };
     const onRowEditComplete = (e) => {
+        console.log("onroweditor");
         // console.log(`onRowEditComplete${e.data.picture}`);
          let _products = [...products];
     //    console.log(`bnmhm${selectedPicture.objectURL+selectedPicture.name}`);
@@ -95,6 +96,8 @@ export default function Table() {
         //  newData.picture=(selectedPicture.objectURL+'/'+selectedPicture).namesplit("\\")[2]
     //  console.log(`newData ${newData.picture} `);
         _products[index] = newData;
+        // console.log(e.newData.chef);
+        
         const formData=new FormData();
            formData.append("_id",e.newData._id);
             formData.append("picture",selectedPicture);
@@ -103,13 +106,16 @@ export default function Table() {
             formData.append("country",e.newData.country);
             formData.append("chef",e.newData.chef);
             formData.append("price",e.newData.price);
-   try{
+            console.log(row);
+            console.log(ptice);
+            console.log(e.newData.ptice);
+//    try{
    
-    // console.log(formData["id"]);
-       updateFunc(formData);     
-       setProducts(_products);
-       refetch();}
-       catch{console.log(error);}
+//     // console.log(formData["id"]);
+//        updateFunc(formData);     
+//        setProducts(_products);
+//        refetch();}
+//        catch{console.log(error);}
         
     };
 
@@ -268,13 +274,13 @@ export default function Table() {
         <div className="card p-fluid">
             <Button onClick={addProduct}>add product</Button>
             <DataTable value={products} editMode="row" dataKey="id" onRowEditComplete={onRowEditComplete} tableStyle={{ minWidth: '50rem' }}>
-                {/* <Column field="code" header="Code" editor={(options) => textEditor(options)} style={{ width: '20%' }}></Column> */}
+                <Column field="code" header="Code" editor={(options) => textEditor(options)} style={{ width: '20%' }}></Column>
                 <Column field="name" header="Name" editor={(options) => textEditor(options)} style={{ width: '20%' }}></Column>
                 <Column field="picture" header="Picture" body={statusBodyTemplate} editor={(options) => statusEditor(options)} style={{ width: '20%' }}></Column>
                 <Column field="price" header="Price" body={priceBodyTemplate} editor={(options) => priceEditor(options)} style={{ width: '20%' }}></Column>
                 <Column header="Update" rowEditor={allowEdit}  headerStyle={{ width: '10%', minWidth: '8rem' }} bodyStyle={{ textAlign: 'center' }}></Column>
                 <Column header="Delete" body={actionBodyTemplate} headerStyle={{ width: '10%', minWidth: '8rem' }} bodyStyle={{ textAlign: 'center' }}></Column>
-                {/* <Column  exportable={false}  style={{ minWidth: '12rem' }}  bodyStyle={{ textAlign: 'center' }}></Column> */}
+                <Column  exportable={false}  style={{ minWidth: '12rem' }}  bodyStyle={{ textAlign: 'center' }}></Column>
             </DataTable>
             <Dialog visible={deleteProductDialog} style={{ width: '32rem' }} footer={deleteProductDialogFooter} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Confirm" modal  onHide={hideDeleteProductDialog}>
             {/*  */}
