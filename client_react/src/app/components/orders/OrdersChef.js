@@ -12,8 +12,8 @@ export default function OrdersChef({prod}) {
     const [layout, setLayout] = useState('grid');
     // const { data: ordersData = [], isLoading, isSuccess, isError, error, refetch } =useGetAllOrdersQuery()
     const {_id} = useAuth()
-   
-    const { data: ordersData = [], isLoading, isSuccess, isError, error, refetch } =useGetBasketByChef1Query({chefId:_id})
+   console.log(_id);
+    const { data: ordersData = [], isLoading, isSuccess, isError, error, refetch } =useGetBasketByChef1Query(_id)
     const [orders, setOrders] = useState([]);
     useEffect(() => {
         console.log("ordersData"+ordersData);

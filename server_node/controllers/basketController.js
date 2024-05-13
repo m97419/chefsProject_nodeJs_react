@@ -43,7 +43,46 @@ catch(err){
 }
 }
 
-const getBasketByChef1=async(req,res)=>{
+//--------------------------------------
+
+async function getBasketsForChef(req,res) {
+    try {
+        const chefId = req.params.chefId;
+        console.log(chefId);
+
+        // מצא את כל המוצרים ששייכים לשף הנתון
+        const products = await Product.find({ chef: chefId });
+        console.log(products);
+        if (!products || products.length === 0) {
+            return [];
+        }
+
+        // אסוף את כל המזהים של המוצרים הללו
+        const productIds = products.map(product => product._id);
+        console.log("uuuuuuuuuuuu");
+        console.log(productIds);
+
+        // מצא את כל הסלים שמכילים מוצרים ששייכים לשף הנתון באמצעות Promise.all
+        const basketPromises = productIds.map(productId => {
+            return  Basket.find({ products: productId });
+        });
+        console.log("iiiiiii");
+        console.log(basketPromises);
+
+        const basketsArray = await Promise.all(basketPromises);
+        const baskets = basketsArray.flat();
+        console.log(baskets);
+        return res.json(basketsArray) ;
+    } catch (error) {
+        console.log(error);
+        // throw new Error('שגיאה בעת קבלת הסלים של השף');
+    }
+}
+
+// ד---------------------------------------------
+
+
+const getBasketByChef3=async(req,res)=>{
     try{
     const baskets = await Basket.find().populate("products").lean()
     console.log(baskets[7].products);
@@ -55,6 +94,48 @@ catch(err){
 
 }
 }
+const getBasketByChef1=async(req,res)=>{
+    try{
+       const {chefId}= req.params
+    const baskets = await Basket.find({},{products:1}).populate("products").exec()
+    if (!baskets)
+        return res.status(400).json({ message: 'No orders found' })
+    console.log(baskets[7].products);
+    console.log("lllllllllllll");
+    const products = await Promise.all(baskets.map(async(b)=>{
+        console.log(b.products._id);
+        const product= await Product.findById(b.products._id).lean().populate("chef",{_id:1})
+        console.log("kkkkkkkkkk");
+        console.log(product.chef._id);
+        const s = await Chef.findById(product.chef._id)
+        console.log("s"+s);
+        console.log("yyyyyyyrrrrryyyyyyyyy");
+console.log(chefId);
+console.log(s._id);
+        if(s._id==chefId)
+       
+        console.log("yes");
+    else
+        console.log("no");
+        return product
+    }))
+    return res.json(baskets)
+    
+}
+catch(err){
+    return res.status(500).json({message:"error in server"})
+
+}}
+// const getFavoriteWatches = async (req, res) => {
+//     const user = await User.findById(req.user._id).exec()
+//     if (!user)
+//         return res.status(400).json({ message: 'No user found' })
+//     const userWithWatches = await Promise.all(user.watches.map(async (id)=>{
+//         const watch=await Watch.findById(id).lean().populate('company',{imageUrl:1})
+//         return watch
+//     }))
+//     res.json(userWithWatches)
+// }
 // const updateOrder=async(req,res)=>{
 //     const {_id,products,customer}=req.body
 //     if(!_id||!products||!customer){
@@ -173,6 +254,7 @@ return res.json(e)
 // }
 module.exports={
     getBasketByChef1,
-    createNewBasket
+    createNewBasket,
+    getBasketsForChef
 
 }

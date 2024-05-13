@@ -5,7 +5,7 @@ import OrdersChef from './OrdersChef';
 
 export default function Orders() {
     const {_id} = useAuth
-    const { data: ordersData = [], isLoading, isSuccess, isError, error, refetch } =useGetBasketByChef1Query({chefId:_id})
+    const { data: ordersData = [], isLoading, isSuccess, isError, error, refetch } =useGetBasketByChef1Query(_id)
     const [orders, setOrders] = useState([]);
     useEffect(() => {
         console.log("ordersData"+ordersData);
