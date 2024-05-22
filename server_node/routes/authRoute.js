@@ -14,11 +14,10 @@ const storage = multer.diskStorage({
     }
   })
   
-  const upload = multer({ storage: storage }) 
-
-
+  const upload = multer({ storage: storage })
+  // app.use(errorHandler)
 router.post("/login",errorHandler,authController.login)
 router.post("/registerChef",errorHandler,upload.single("picture"),authController.registerChef)
 router.post("/registerCustomer",authController.registerCustomer)
-
+// app.use(errorHandler)
 module.exports =router
