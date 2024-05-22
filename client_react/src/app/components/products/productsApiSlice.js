@@ -1,6 +1,6 @@
 import ApiSlice from "../../apiSlice"
 
-const ordersApiSlice = ApiSlice.injectEndpoints({
+const productsApiSlice = ApiSlice.injectEndpoints({
     endpoints:(build)=>({
         getAllProducts:build.query({
             query:()=>({
@@ -9,18 +9,25 @@ const ordersApiSlice = ApiSlice.injectEndpoints({
             ,providesTags:["product"]
 
         }),
-        getAllProductsByChef:build.query({
-            query:(chefId)=>({
-                url:`/api/product?chefId=${chefId}`
-            })
-            ,providesTags:["prod"]
+        // getAllProductsByChef:build.query({
+        //     query:(chefId)=>({
+        //         url:`/api/product?chefId=${chefId}`
+        //     })
+        //     ,providesTags:["prod"]
 
-        }),
+        // }),
+        getByChef:build.query({
+            query:(chefId)=>({
+                url:`/api/product/chef/${chefId}`
+            }),
+            providesTags:["prod"]
+        })
+,
         getProductById:build.mutation({
             query:(id)=>({
                 url:`/api/product/${id}`
-            }),
-            providesTags:["prod"]
+            })
+            // providesTags:["prod"]
 
         }),
         createNewProduct:build.mutation({
@@ -38,7 +45,6 @@ const ordersApiSlice = ApiSlice.injectEndpoints({
                 body:product
             }),
             invalidatesTags:["prod"]
-
         }),       
         deleteProduct:build.mutation({
             query:(id)=>({
@@ -57,16 +63,8 @@ const ordersApiSlice = ApiSlice.injectEndpoints({
             providesTags:["prodc"]
 
 
-        }),
-        getByChef:build.query({
-            query:(chefId)=>({
-                url:`/api/product/chef/${chefId}`
-            }),
-            providesTags:["prod"]
-
         })
-
 
     })
 })
-export const{ useGetAllProductsQuery,useGetAllProductsByChefQuery,useGetProductByIdMutation,useCreateNewProductMutation,useUpdateProductMutation,useDeleteProductMutation,useGetByCountryQuery,useGetByChefQuery }=ordersApiSlice
+export const{ useGetAllProductsQuery,useGetProductByIdMutation,useCreateNewProductMutation,useUpdateProductMutation,useDeleteProductMutation,useGetByCountryQuery,useGetByChefQuery }=productsApiSlice

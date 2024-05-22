@@ -25,6 +25,11 @@ export default function CategoriesList({setCat}) {
         setCategories(_categoriesData)
 
     }, [isSuccess])
+    useEffect(() => {
+        const _categoriesData = categoriesData.map(c => { return { name: c.name, id: c._id } });
+        setCategories(_categoriesData)
+
+    }, [categoriesData])
     const CaegoryDialog = () => {
         setAddCaegoryDialog(true)
     }
@@ -81,7 +86,8 @@ export default function CategoriesList({setCat}) {
     const addCategotyDialogFooter = (
         <React.Fragment>
             <Button label="Cancel" icon="pi pi-times" outlined onClick={hideAddCaegoryDialog} />
-            <Button label="Add" icon="pi pi-check" onClick={handle} />
+           { category.name!= null && category.name != "" && category.code!= 0 &&                             
+           <Button label="Add" icon="pi pi-check" onClick={handle} />}
         </React.Fragment>
     );
     return (

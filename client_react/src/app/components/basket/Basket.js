@@ -93,7 +93,9 @@ const [addFunc, { data: data = [], isLoading, isSuccess, isError, error }] = use
     }
 
     return (
-        <div className="card"><br/><br/>
+        // background-color: #282c34;
+        <div className="card "  ><br/><br/>
+        {/* */}
             <DataView value={basket} listTemplate={listTemplate}/> <br/>
             <Button icon="pi pi-credit-card" disabled={empty || _id=="" } raised aria-label="Filter" onClick={()=>setOrderVisible(true)}>&nbsp; to paying </Button>
             {/* <Button icon="pi pi-credit-card" disabled={true} raised aria-label="Filter" onClick={()=>setOrderVisible(true)}>&nbsp; to paying </Button> */}

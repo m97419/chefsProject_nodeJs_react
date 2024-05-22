@@ -23,6 +23,9 @@ const [products, setProducts] = useState([]);
 const [layout, setLayout] = useState('grid');
 
 
+
+
+
 //const {data:countries=[],isLoading,isSuccess,isError,error,refetch} = useGetAllCountriesQuery()
 
 // useEffect(() => {
@@ -74,7 +77,7 @@ const listItem = (product, index) => {
                     <span className="flex align-items-center gap-2">
                         {/* <Avatar icon={product.chef.picture || "pi pi-user"} size="large" shape="circle" /> */}
                         <Avatar icon={<img src={`http://localhost:7788/uploads/${product.chef.picture.split("\\")[2]}`}></img>
-                                || "pi pi-user"} size="large" shape="circle" />
+                                || "pi pi-user"} size="xlarge" shape="circle" />
                         <h5 >{product.chef.name}</h5>
                     </span>
                 </div>
@@ -115,7 +118,7 @@ const gridItem = (product) => {
                 <div className="flex flex-wrap align-items-center justify-content-between gap-2">
                     <div className="flex align-items-center gap-2">
                     <Avatar icon={<img src={`http://localhost:7788/uploads/${product.chef.picture.split("\\")[2]}`}></img>
-                                || "pi pi-user"} size="large" shape="circle" />
+                                || "pi pi-user"} size="xlarge" shape="circle" />
                         {/* <Avatar icon={product.chef.picture || "pi pi-user"} size="large" shape="circle" /> */}
                         <h5 >{product.chef.name}</h5>
                     </div>
@@ -125,6 +128,11 @@ const gridItem = (product) => {
                     <img className="picturesize" src={`http://localhost:7788/uploads/${product.picture.split("\\")[2]}`} alt={product.name} />
                     <div className="text-2xl font-bold">{product.name}</div>
                 </div>
+                {/* <div className="flex align-items-center justify-content-between">
+                    <span className="text-2xl font-semibold">{product.price}</span>
+                    <Button icon="pi pi-cart-plus" rounded text raised aria-label="Filter" onClick={()=>addItemToBusket(product)}></Button>
+                    {/* <Button icon="pi pi-shopping-cart" className="p-button-rounded" disabled={product.inventoryStatus === 'OUTOFSTOCK'}></Button> */}
+                {/* </div> */} 
                 <div className="flex align-items-center justify-content-between">
                     <span className="text-2xl font-semibold">{product.price}</span>
                     <Button icon="pi pi-cart-plus" rounded text raised aria-label="Filter" onClick={()=>addItemToBusket(product)}></Button>

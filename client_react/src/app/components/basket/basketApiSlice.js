@@ -2,18 +2,25 @@
 import ApiSlice from "../../apiSlice"
 const basketApiSlice = ApiSlice.injectEndpoints({
     endpoints:(build)=>({
-        // getAllOrders:build.query({
-        //     query:()=>({
-        //         url:"/api/order"
-        //     })
-
-        // }),
-       
         getBasketByChef1:build.query({
             query:(chefId)=>({
                 url:`/api/basket/chef/${chefId}`
             })
             ,providesTags:["basket"]
+
+        }),
+        completeBasket:build.mutation({
+            query:(id)=>({
+                url:`/api/basket/${id}`,
+                method:'PUT',
+            })
+            , invalidatesTags:["basket"]
+        }),
+        getBasketByCustomer:build.query({
+            query:(customerId)=>({
+                url:`/api/basket/customer/${customerId}`
+            })
+            // ,providesTags:["basket"]
 
         }),
         createNewBasket:build.mutation({
@@ -25,39 +32,8 @@ const basketApiSlice = ApiSlice.injectEndpoints({
            , invalidatesTags:["basket"]
 
         }),
-        // getByCountry:build.query({
-        //     query:(countryId)=>({
-        //         url:`/api/product/country/${countryId}`
-        //     }),
-        // updateOrder:build.mutation({
-        //     query:(order)=>({
-        //         url:"/api/order",
-        //         method:'PUT',
-        //         body:order
-        //     })
-
-        // }),
-        // completeOrder:build.mutation({
-        //     query:(id)=>({
-        //         url:`/api/order/${id}`,
-        //         method:'PUT',
-        //     })
-
-        // }),       
-        //  deleteOrder:build.mutation({
-        //     query:(id)=>({
-        //         url:`/api/order/${id}`,
-        //         method:'POST',
-        //     })
-
-        // }),
-        // getOrderByChef:build.query({
-        //     query:(chefId)=>({
-        //         url:`/api/orderr/chef/${chefId}`
-        //     })
-
-        // })
+     
 
     })
 })
-export const{ useCreateNewBasketMutation,useGetBasketByChef1Query }=basketApiSlice
+export const{ useCreateNewBasketMutation,useGetBasketByChef1Query,useGetBasketByCustomerQuery,useCompleteBasketMutation }=basketApiSlice

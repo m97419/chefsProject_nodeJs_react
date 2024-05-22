@@ -85,6 +85,7 @@ const login = async(req,res)=>{
             return res.status(400).json({message:'Oooof! Invalid user recived'})  
     }
     catch(err){
+        console.log(err);
         return res.status(500).json({message:"error in server"})
 
     }
