@@ -1,12 +1,18 @@
 const Order = require('../modules/Order')
 
 const getAllOrders = async (req,res)=>{
+    try{
     const orders = await Order.find({customer:req.user._id}).lean()
     console.log(orders);
     if(!orders?.length){
         return res.status(400).json({massage:'No orders found'})
     }
     res.json(orders)
+}
+catch(err){
+    return res.status(500).json({message:"error in server"})
+
+}
 }
 
 const getOrderById=async(req,res)=>{
@@ -22,6 +28,7 @@ const getOrderById=async(req,res)=>{
 }
 
 const createNewOrder = async (req,res)=>{
+    try{
     const{products,customer} = req.body
     if(!products?.length || !customer)
     return res.status(400).json({message: 'field are required!!'})
@@ -33,8 +40,14 @@ const createNewOrder = async (req,res)=>{
         return res.status(400).json({message:'invalid order'})
     }
 }
+catch(err){
+    return res.status(500).json({message:"error in server"})
+
+}
+}
 
 const updateOrder=async(req,res)=>{
+    try{
     const {_id,products,customer}=req.body
     if(!_id||!products||!customer){
         return res.status(400).json({message:'fields are required'})
@@ -48,8 +61,14 @@ const updateOrder=async(req,res)=>{
     const updatedOrder=await order.save()
     res.json(`${updatedOrder._id} updated`)
 }
+catch(err){
+    return res.status(500).json({message:"error in server"})
+
+}
+}
 
 const completeOrder = async(req, res)=>{
+    try{
     const {id}=req.params
     const order = await Order.findById(id).exec()
     if(!order){
@@ -59,8 +78,14 @@ const completeOrder = async(req, res)=>{
     const updatedOrder = await order.save()
     res.json(`${updatedOrder._id} updated`)
 }
+catch(err){
+    return res.status(500).json({message:"error in server"})
+
+}
+}
 
 const deleteOrder=async(req,res)=>{
+    try{
     const {id} = req.body
     const order= await Order.findById(id).exec()
     if(!order){
@@ -71,6 +96,29 @@ const deleteOrder=async(req,res)=>{
     const reply=`Order ${orderId} deleted`
     res.json(reply)
 }
+catch(err){
+    return res.status(500).json({message:"error in server"})
+
+}
+}
+const getOrderByChef=async(req,res)=>{
+    try{
+    const {chefId}=req.params
+    const orders = await Product.find({})
+    orders.map(e=>e.products.map(f=>f.chef==chefId))
+    // const orders = await Product.find({chef:chefId}).populate("category").populate("chef").populate("country").lean()
+    console.log(products);
+    if(!products){
+        return res.status(400).json({message:'products not found'})
+    }
+    res.json(products)
+}
+catch(err){
+    return res.status(500).json({message:"error in server"})
+
+}
+
+}
 
 module.exports={
     getAllOrders,
@@ -78,5 +126,6 @@ module.exports={
     createNewOrder,
     updateOrder,
     completeOrder,
-    deleteOrder
+    deleteOrder,
+    getOrderByChef
 }

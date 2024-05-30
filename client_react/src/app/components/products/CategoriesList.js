@@ -8,7 +8,7 @@ import { useCreateNewCategoryMutation } from '../categories/categoryapiSlice';
 import { InputNumber } from "primereact/inputnumber"
 import { InputText } from 'primereact/inputtext';
 
-export default function CategoriesList({setProduct}) {
+export default function CategoriesList({setCat}) {
     const { data: categoriesData = [], isLoadingcategories, isSuccess, isError, error, refetch } = useGetAllCategoriesQuery();
     const [selectedCategories, setSelectedCategories] = useState(null);
     const [categories, setCategories] = useState(null);
@@ -25,6 +25,11 @@ export default function CategoriesList({setProduct}) {
         setCategories(_categoriesData)
 
     }, [isSuccess])
+    useEffect(() => {
+        const _categoriesData = categoriesData.map(c => { return { name: c.name, id: c._id } });
+        setCategories(_categoriesData)
+
+    }, [categoriesData])
     const CaegoryDialog = () => {
         setAddCaegoryDialog(true)
     }
@@ -68,19 +73,21 @@ export default function CategoriesList({setProduct}) {
         //  console.log(selectedCategories);
         //  console.log(`gval   ${e.value[0].name}`);
        
-        //  const d= e.value?.map(e=>e.id)  
+         const d= e.value?.map(e=>e.id)  
         //  console.log(`g delete${d}`);
-         setProduct(prevState => ({
-            ...prevState,
-            category: e.value
-        }))
+        setCat(e.value?.map(e=>e.id) );
+        //  setProduct(prevState => ({
+        //     ...prevState,
+        //     category: d
+        // }))
         // console.log(product);
     }
 
     const addCategotyDialogFooter = (
         <React.Fragment>
             <Button label="Cancel" icon="pi pi-times" outlined onClick={hideAddCaegoryDialog} />
-            <Button label="Add" icon="pi pi-check" onClick={handle} />
+           { category.name!= null && category.name != "" && category.code!= 0 &&                             
+           <Button label="Add" icon="pi pi-check" onClick={handle} />}
         </React.Fragment>
     );
     return (

@@ -20,21 +20,22 @@ const CountryList = () => {
      // else{
      //      console.log(countries);
      // }
-     const newcountries = countries.map(country => { return { label: country.name, key: country._id, command: () => { navigate(`/countries/${country._id}`); } }; })
-     return (<div className="card">
-          <Menubar model={newcountries} />
+     // const newcountries = countries.map(country=>{return{label:country.name,key:country._id,command:()=>{navigate(`/country/${country._id}`)}}})
+     const newcountries = countries.map(country => { return { label: country.name, key: country._id, command: () => { navigate(`/countries/${country._id}`) } }; })
+     console.log(newcountries);
+     return (<div className="card" style={{ position: 'sticky',top:15,  zIndex: 9999 }} >
+          <Menubar  model={newcountries} />
           <Outlet/>
-     </div>
-
+</div>
 
      )
 
 }
 export default CountryList
-
+// style={{ position: 'sticky',top:15,  zIndex: 10000 }}
 {/* 
 //onChange={(e) => setSelectedCountry(e.value)} */}
 {/* <div className="card flex justify-content-center">
                <ListBox filter value={selectedCountry} onChange={onclick} options={countries} optionLabel="name" className="w-full md:w-14rem" />
           </div> */}
-{/* {countries?.map((country)=><Country country={country}/>)} */ }
+          {/* {countries?.map((country)=><Country country={country}/>)} */}

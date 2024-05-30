@@ -11,9 +11,10 @@ const useAuth = ()=>{
         const {_id,name,email,phone,role} = userDecode
        // isAdmin = roles === "Admin"
         //isUser = roles === "User"
+        console.log("token"+_id);
         return {_id,name,email,phone,role}
     }
     return {_id:"",name:"",email:"",phone:"",role:""}
 
 }
-export default useAuth 
+export default useAuth

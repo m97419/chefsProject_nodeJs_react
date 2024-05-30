@@ -42,32 +42,90 @@ export default function RegisterCustomer() {
             setAble(false)
         else
             setAble(true)}
-    const handle = () => { console.log(user.name); 
-        try{
-   registerFunc(user)
+        const handle = () => { console.log(user.name); 
+            try{
+    registerFunc(user)
 //    setToken(user)
 }
 catch{console.log(error);} }
     return (
         <div className="primereact/resources/themes/saga-orange/theme.css">
-            <br></br><br></br>
-               <InputText value={user.name} placeholder="name" onChange={handlename}></InputText>
-                     <br></br><br></br>
-                     <Password value={user.password} placeholder="password" onChange={handlepassword} toggleMask />
-                <br></br><br></br>
-            <InputText value={user.phone} placeholder="phone" onChange={(e) => {
+             <div className="g" >
+        <section>
+            <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+            <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+            <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+            <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+             <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+              <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+               <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+               <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+                <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+                <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+                <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+                <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+                 <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+                 <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+                 <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+             <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+<span></span><span></span>
+   <div class="signin">
+
+    <div class="content">
+
+<h2>register</h2>
+     <div class="form">
+
+      <div class="inputBox">
+        <InputText required onChange={handlename} ></InputText><i>Username</i>
+       {/* <input type="text" required> <i>Username</i> */}
+
+      </div>
+
+      <div class="inputBox">
+        <InputText type="password" required  onChange={handlepassword}   ></InputText> <i>Password</i> 
+       {/* <input type="password" required>*/}
+
+      </div>
+      <div class="inputBox">
+      <InputText  onChange={(e) => {
                 setUser(prevState => ({
                     ...prevState,
                     phone: e.target.value}));
-                 }}></InputText>
-                     <br></br><br></br>
-              <InputText value={user.email} placeholder="email" onChange={(e) => {
+                 }}></InputText> <i>Phone</i> 
+
+      </div>
+      <div class="inputBox">
+      <InputText onChange={(e) => {
                 setUser(prevState => ({
                     ...prevState,
-                    email: e.target.value}))}}></InputText>
-            <br></br><br></br>
-            
-            <Button onClick={handle} disabled={able}  ></Button>
+                    email: e.target.value}))}}></InputText><i>Email</i> 
+
+      </div>
+
+       <div class="links"> 
+   
+      </div>
+      
+
+      <div class="inputBox">
+        
+<Button type="submit" disabled={able} onClick={()=>handle()}  >Register </Button>
+       {/* <input type="submit" value="Login"> */}
+
+      </div>
+
+     </div>
+
+    </div>
+
+   </div>
+
+  </section> 
+  </div>
+  
+    
+
         </div>
     )
 }
