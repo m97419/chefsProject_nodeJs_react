@@ -9,8 +9,8 @@ export default function RegisterLogin(){
         
         <div>
             <br></br> <br></br> <br></br>
-    <Button  onClick={registerchef} >RegisterChef</Button>&nbsp;&nbsp;&nbsp;
-    <Button icon="pi pi-user" onClick={registercustomer}>&nbsp;&nbsp;RegisterCustomer</Button>&nbsp;&nbsp;&nbsp;
+    <Button  onClick={registerchef} >Register Chef</Button>&nbsp;&nbsp;&nbsp;
+    <Button icon="pi pi-user" onClick={registercustomer}>&nbsp;&nbsp;Register Customer</Button>&nbsp;&nbsp;&nbsp;
     <Button onClick={Login}>Login</Button>
     </div>
 )}

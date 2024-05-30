@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #282c34;
 }
 
 .App-logo {
@@ -23,6 +24,10 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+/* div{
+  background-color: #282c34;
+
+} */
 
 .App-link {
   color: #61dafb;

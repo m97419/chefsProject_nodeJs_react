@@ -51,6 +51,7 @@ const login = async(req,res)=>{
     const registerChef = async(req,res)=>{
         try{
         const picture =(req.file?.filename? req.file.filename:"") 
+        console.log(picture);
         const {name,password,email,phone} =req.body
         // picture=req.file.path
         console.log(` n ${name} p ${password} e ${email} p  ${phone}  p ${picture}`);
@@ -64,7 +65,7 @@ const login = async(req,res)=>{
             return res.status(409).json({message:'Duplicate name'})
     const hashedPwd = await bcrypt.hash(password,10)
     const chefObject = {name,password:hashedPwd,phone,email,picture,role:"chef"}
-    const chef = Chef.create(chefObject);
+    const chef = await Chef.create(chefObject);
     if(chef)
     console.log("chef");
     const foundChef = await Chef.findOne({name}).lean()
@@ -85,6 +86,7 @@ const login = async(req,res)=>{
             return res.status(400).json({message:'Oooof! Invalid user recived'})  
     }
     catch(err){
+        console.log(err);
         return res.status(500).json({message:"error in server"})
 
     }
@@ -108,7 +110,7 @@ const login = async(req,res)=>{
             return res.status(409).json({message:'Duplicate name'})
     const hashedPwd = await bcrypt.hash(password,10)
     const customerObject = {name,password:hashedPwd,phone,email,role:"customer"}
-    const customer = Customer.create(customerObject)
+    const customer = await Customer.create(customerObject)
     const foundCustomer = await Customer.findOne({name}).lean()
     if(foundCustomer){
         const customerInfo={

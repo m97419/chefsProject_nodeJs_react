@@ -24,6 +24,24 @@ const getBasketById=async(req,res)=>{
     }
 }
 
+const completeBasket = async(req, res)=>{
+    try{
+    const {id}=req.params
+    console.log("completeBasket");
+    const order = await Basket.findById(id).exec()
+    if(!order){
+        return res.status(400).json({message:'Order not found'})
+    }
+    order.done = true
+    // order.done = True
+    const updatedOrder = await order.save()
+    res.json(`${updatedOrder._id} updated`)
+}
+catch(err){
+    return res.status(500).json({message:"error in server"})
+
+}
+}
 const createNewBasket= async (req,res)=>{
     try{
     const{products,customer,count} = req.body
@@ -45,7 +63,7 @@ catch(err){
 
 //--------------------------------------
 
-async function getBasketsForChef(req,res) {
+async function getBasketsForChef333(req,res) {
     try {
         const chefId = req.params.chefId;
         console.log(chefId);
@@ -64,14 +82,15 @@ async function getBasketsForChef(req,res) {
 
         // מצא את כל הסלים שמכילים מוצרים ששייכים לשף הנתון באמצעות Promise.all
         const basketPromises = productIds.map(productId => {
-            return  Basket.find({ products: productId });
+            return  Basket.find({ products: productId })
         });
         console.log("iiiiiii");
         console.log(basketPromises);
 
         const basketsArray = await Promise.all(basketPromises);
         const baskets = basketsArray.flat();
-        console.log(baskets);
+        console.log("baskets",baskets.products);
+        console.log("basketsArray",basketsArray);
         return res.json(basketsArray) ;
     } catch (error) {
         console.log(error);
@@ -126,53 +145,42 @@ catch(err){
     return res.status(500).json({message:"error in server"})
 
 }}
-// const getFavoriteWatches = async (req, res) => {
-//     const user = await User.findById(req.user._id).exec()
-//     if (!user)
-//         return res.status(400).json({ message: 'No user found' })
-//     const userWithWatches = await Promise.all(user.watches.map(async (id)=>{
-//         const watch=await Watch.findById(id).lean().populate('company',{imageUrl:1})
-//         return watch
-//     }))
-//     res.json(userWithWatches)
-// }
-// const updateOrder=async(req,res)=>{
-//     const {_id,products,customer}=req.body
-//     if(!_id||!products||!customer){
-//         return res.status(400).json({message:'fields are required'})
-//     }
-//     const order = await Order.findById(_id).exec()
-//     if(!order){
-//         return res.status(400).json({message:'Order not found'})
-//     }
-//     order.products=products
-//     order.customer=customer
-//     const updatedOrder=await order.save()
-//     res.json(`${updatedOrder._id} updated`)
-// }
+// ===================
 
-// const completeOrder = async(req, res)=>{
-//     const {id}=req.params
-//     const order = await Order.findById(id).exec()
-//     if(!order){
-//         return res.status(400).json({message:'Order not found'})
-//     }
-//     order.done = True
-//     const updatedOrder = await order.save()
-//     res.json(`${updatedOrder._id} updated`)
-// }
+// const Basket = require('./basketModel');
+// const Product = require('./productModel');
+const getBasketsForChef=async(req,res)=>{
+    try{
+       const {chefId}= req.params
+    const products = await Product.find({ 'chef': chefId });
+    const productIds = products.map(product => product._id);
 
-// const deleteOrder=async(req,res)=>{
-//     const {id} = req.body
-//     const order= await Order.findById(id).exec()
-//     if(!order){
-//         return res.status(400).json({message:'Order not found'})
-//     }
-//     orderId = order._id
-//     const result =await order.deleteOne()
-//     const reply=`Order ${orderId} deleted`
-//     res.json(reply)
-// }
+    const orders = await Basket.find({ 'products': { $in: productIds } }).populate('products').populate('customer');
+console.log(orders[0]);
+
+    return res.json(orders);
+}
+catch(err){
+    console.log(err);
+}}
+
+const getBasketsForCustomer=async(req,res)=>{
+    try{
+    const {customerId}= req.params
+    console.log("cc");
+    console.log(customerId);
+    const orders = await Basket.find({ 'customer':customerId }).populate('products')
+console.log(orders[0]);
+
+    return res.json(orders);
+}
+catch(err){
+    console.log(err);
+}}
+
+
+
+// ==========================
 const getBasketByChef2=async(req,res)=>{
 const baskets = await Basket.find().lean()
 const r= await Promise.all(baskets.map(async(b)=>{const product=await Product.find({b:b._id}).lean()
@@ -255,6 +263,8 @@ return res.json(e)
 module.exports={
     getBasketByChef1,
     createNewBasket,
-    getBasketsForChef
+    getBasketsForChef,
+    getBasketsForCustomer,
+    completeBasket
 
 }

@@ -25,6 +25,10 @@ export default function CountryList({setProduct}) {
         console.log(countries);
 
     }, [isSuccess])
+    useEffect(() => {
+        const _countriesData  = countriesData.map(c=>{return{name:c.name,id:c._id}});
+        setCountries(_countriesData)
+    }, [countriesData])
     
     const select=(e)=>{
         setSelectedCountries(e.value);
@@ -66,20 +70,17 @@ export default function CountryList({setProduct}) {
         const addCountryDialogFooter = (
             <React.Fragment>
                 <Button label="Cancel" icon="pi pi-times" outlined onClick={hideAddCountryDialog} />
-                <Button label="Add" icon="pi pi-check" onClick={handle} />
+               {country.name!= null && country.name!="" &&<Button label="Add" icon="pi pi-check" onClick={handle} />}
             </React.Fragment>
         );
        
-       
-       
-
-    
     return(
         <div className="card flex justify-content-center">
        
         <Dropdown value={selectedCountries} onChange={select} options={countries} optionLabel="name" 
     placeholder="Select a Country" className="w-full md:w-20rem" />&nbsp;
     {/* className="w-full md:w-20rem" />  */}
+
       <Button onClick={CountryDialog}>AddCountry</Button>
       <Dialog visible={addCountryDialog} footer={addCountryDialogFooter} onHide={hideAddCountryDialog}  >
                 <div>
