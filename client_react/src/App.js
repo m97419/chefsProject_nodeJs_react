@@ -18,8 +18,6 @@ import CountryList from './app/components/countries/CountryList';
 import NavBar from './app/components/navBar';
 import Table from './app/components/products/Table'
 import RegisterLogin from './app/components/auth/RegisterLogin';
-import RegisterChef from './app/components/auth/RegisterChef';
-import RegisterCustomer from './app/components/auth/RegisterCustomer';
 import OrdersChef from './app/components/orders/OrdersChef'
 import NewAuth from './app/components/auth/NewAuth'
 import OrdersCustomer from './app/components/orders/OrdersCustomer'
@@ -43,8 +41,6 @@ function App() {
         <Route path='/' element={<HomePage />}></Route>
         {/* <Route path="/login" element={<Login />}></Route> */}
         <Route path="/login" element={<Login />}></Route>
-        <Route path="/registerCustomer" element={<RegisterCustomer />}></Route>
-        <Route path="/registerChef" element={<RegisterChef />}></Route>
         <Route path="/myAccount" element={<MyAccount />}></Route>
         <Route path="/basket" element={<Basket />}></Route>
         <Route path="/orders" element={<OrdersChef/> }></Route>
