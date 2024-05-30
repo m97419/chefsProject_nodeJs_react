@@ -46,10 +46,15 @@ export default function RegisterChef() {
             password: e.target.value
         }))
         if (e.target.value != "" && e.target.value != null && user.name != "" && user.name != null && selectedPicture!=null)
+        if (e.target.value != "" && e.target.value != null && user.name != "" && user.name != null && selectedPicture!=null)
             setAble(false)
         else
             setAble(true)
     }
+  const check=()=>  {if (user.password != "" && user.password != null && user.name != "" && user.name != null && selectedPicture!=null)
+            setAble(false)
+        else
+            setAble(true)}
   const check=()=>  {if (user.password != "" && user.password != null && user.name != "" && user.name != null && selectedPicture!=null)
             setAble(false)
         else
@@ -72,6 +77,35 @@ export default function RegisterChef() {
         catch { console.log("error"+error); }
     }
     return (
+        // <div className="primereact/resources/themes/saga-orange/theme.css">
+        //     <br></br><br></br>
+        //     <InputText className="w-4" value={user.name} placeholder="name" onChange={handlename}></InputText>
+        //     <br></br><br></br>
+        //     <Password  toggleMask style={{width:"33.3%"}}   value={user.password} placeholder="password" onChange={handlepassword}  />
+        //     <br></br><br></br>
+        //     <InputText className="w-4" value={user.phone} placeholder="phone" onChange={(e) => {
+        //         setUser(prevState => ({
+        //             ...prevState,
+        //             phone: e.target.value
+        //         }));
+        //     }}></InputText>
+        //     <br></br><br></br>
+        //     <InputText className="w-4" value={user.email} placeholder="email" onChange={(e) => {
+        //         setUser(prevState => ({
+        //             ...prevState,
+        //             email: e.target.value
+        //         }))
+        //     }}></InputText>
+        //     <br></br><br></br>
+        //     <div className="card flex justify-content-center" >
+        //         <FileUpload style={{width:"33.3%"}}  name="demo[]" auto accept="image/*" maxFileSize={1000000000000000} emptyTemplate={<p className="m-0">upload picture</p>}
+        //             uploadLabel='&nbsp;העלאה' cancelLabel='&nbsp;ביטול' chooseLabel='choose &nbsp;'
+        //                            /**/ customUpload uploadHandler={(e) => setSelectedPicture(e.files[0])} />
+
+        //     </div>
+
+        //     <Button onClick={handle} disabled={able}  ></Button>
+        // </div>
         // <div className="primereact/resources/themes/saga-orange/theme.css">
         //     <br></br><br></br>
         //     <InputText className="w-4" value={user.name} placeholder="name" onChange={handlename}></InputText>
@@ -172,6 +206,30 @@ uploadLabel='&nbsp;העלאה' cancelLabel='&nbsp;ביטול' chooseLabel='choos
     
  </div>
 
+  <div class="links"> 
+
+ </div>
+ 
+
+ <div class="inputBox">
+   
+<Button type="submit" disabled={able} onClick={()=>handle()}  >Register </Button>
+  {/* <input type="submit" value="Login"> */}
+
+ </div>
+
+</div>
+
+</div>
+
+</div>
+
+</section> 
+</div>
+
+
+
+   </div>
   <div class="links"> 
 
  </div>

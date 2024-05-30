@@ -25,7 +25,7 @@ app.use("/api/order",require("./routes/orderRoute"))
 app.use("/api/product",require("./routes/productRoute"))
 app.use("/api/country",require("./routes/countryRoute"))
 app.use("/api/basket",require("./routes/basketRoute"))
-
+app.use(errorHandler)
 
 app.get('/uploads/:filename', (req, res) => {
     const imagePath = path.join(__dirname, '/public/uploads/', req.params.filename);
