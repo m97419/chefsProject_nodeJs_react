@@ -22,11 +22,13 @@ const NavBar = () => {
 // dispatch(removeToken())
 
     const myAccount = () => {
-        console.log("!!!!!!");
-        if(localStorage.getItem("user")) {
+        console.log(localStorage.getItem("token"));
+        if(localStorage.getItem("token")) {
             navigate(`/myAccount`)
         }
-        navigate(`/auth`)
+        else{
+            navigate(`/auth`)
+        }
     }
 
     const linkStyle = { my: 2, color: 'primary', display: 'block', margin: '0.5rem 0.5rem' }
