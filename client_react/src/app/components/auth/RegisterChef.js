@@ -14,13 +14,30 @@ export default function RegisterChef() {
     const [registerFunc, { isError, isSuccess, isLoading, data, error }] = useRegisterChefMutation()
     const navigate = useNavigate()
     const [able, setAble] = useState(true)
+    const [able1, setAble1] = useState(true)
+    const [selectedPicture,setSelectedPicture]= useState(null)
     const [user, setUser] = useState({
         name: "",
         password: "",
         phone: "",
         email: ""
     })
-    const [selectedPicture, setSelectedPicture] = useState(null);
+    // const handle = () => {
+    //     console.log(user.name);
+    //     const formData = new FormData();
+    //         formData.append("name", user.name);
+    //         formData.append("password", user.password);
+    //         formData.append("phone", user.phone);
+    //         formData.append("email", user.email);
+    //         formData.append("picture", selectedPicture);
+        
+    //     try {
+    //        const r = registerFunc(formData)
+    //     //    console.log("r.status"+r.);
+    //            setToken(user)
+    //         //    return res.status(409).json({message:'Duplicate name'})
+    //     }
+    //     catch { console.log("error"+error); }}
     const dispatch = useDispatch()
     useEffect(() => {
         if (isSuccess) {
@@ -44,62 +61,211 @@ export default function RegisterChef() {
             ...prevState,
             password: e.target.value
         }))
-        if (e.target.value != "" && e.target.value != null && user.name != "" && user.name != null)
+        if (e.target.value != "" && e.target.value != null && user.name != "" && user.name != null && selectedPicture!=null)
+        if (e.target.value != "" && e.target.value != null && user.name != "" && user.name != null && selectedPicture!=null)
             setAble(false)
         else
             setAble(true)
     }
+ 
+  const check=()=>  {if (user.password != "" && user.password != null && user.name != "" && user.name != null && selectedPicture!=null)
+            setAble(false)
+        else
+            setAble(true)}
     const handle = () => {
         console.log(user.name);
-        try {
-            const formData = new FormData();
+        const formData = new FormData();
             formData.append("name", user.name);
-            formData.append("passeord", user.password);
+            formData.append("password", user.password);
             formData.append("phone", user.phone);
             formData.append("email", user.email);
             formData.append("picture", selectedPicture);
-
-
-            registerFunc(formData)
-            //    setToken(user)
-
-
+        
+        try {
+           const r = registerFunc(formData)
+        //    console.log("r.status"+r.);
+               setToken(user)
+            //    return res.status(409).json({message:'Duplicate name'})
         }
-        catch { console.log(error); }
+        catch { console.log("error"+error); }
     }
     return (
+        // <div className="primereact/resources/themes/saga-orange/theme.css">
+        //     <br></br><br></br>
+        //     <InputText className="w-4" value={user.name} placeholder="name" onChange={handlename}></InputText>
+        //     <br></br><br></br>
+        //     <Password  toggleMask style={{width:"33.3%"}}   value={user.password} placeholder="password" onChange={handlepassword}  />
+        //     <br></br><br></br>
+        //     <InputText className="w-4" value={user.phone} placeholder="phone" onChange={(e) => {
+        //         setUser(prevState => ({
+        //             ...prevState,
+        //             phone: e.target.value
+        //         }));
+        //     }}></InputText>
+        //     <br></br><br></br>
+        //     <InputText className="w-4" value={user.email} placeholder="email" onChange={(e) => {
+        //         setUser(prevState => ({
+        //             ...prevState,
+        //             email: e.target.value
+        //         }))
+        //     }}></InputText>
+        //     <br></br><br></br>
+        //     <div className="card flex justify-content-center" >
+        //         <FileUpload style={{width:"33.3%"}}  name="demo[]" auto accept="image/*" maxFileSize={1000000000000000} emptyTemplate={<p className="m-0">upload picture</p>}
+        //             uploadLabel='&nbsp;העלאה' cancelLabel='&nbsp;ביטול' chooseLabel='choose &nbsp;'
+        //                            /**/ customUpload uploadHandler={(e) => setSelectedPicture(e.files[0])} />
+
+        //     </div>
+
+        //     <Button onClick={handle} disabled={able}  ></Button>
+        // </div>
+        // <div className="primereact/resources/themes/saga-orange/theme.css">
+        //     <br></br><br></br>
+        //     <InputText className="w-4" value={user.name} placeholder="name" onChange={handlename}></InputText>
+        //     <br></br><br></br>
+        //     <Password  toggleMask style={{width:"33.3%"}}   value={user.password} placeholder="password" onChange={handlepassword}  />
+        //     <br></br><br></br>
+        //     <InputText className="w-4" value={user.phone} placeholder="phone" onChange={(e) => {
+        //         setUser(prevState => ({
+        //             ...prevState,
+        //             phone: e.target.value
+        //         }));
+        //     }}></InputText>
+        //     <br></br><br></br>
+        //     <InputText className="w-4" value={user.email} placeholder="email" onChange={(e) => {
+        //         setUser(prevState => ({
+        //             ...prevState,
+        //             email: e.target.value
+        //         }))
+        //     }}></InputText>
+        //     <br></br><br></br>
+        //     <div className="card flex justify-content-center" >
+        //         <FileUpload style={{width:"33.3%"}}  name="demo[]" auto accept="image/*" maxFileSize={1000000000000000} emptyTemplate={<p className="m-0">upload picture</p>}
+        //             uploadLabel='&nbsp;העלאה' cancelLabel='&nbsp;ביטול' chooseLabel='choose &nbsp;'
+        //                            /**/ customUpload uploadHandler={(e) => setSelectedPicture(e.files[0])} />
+
+        //     </div>
+
+        //     <Button onClick={handle} disabled={able}  ></Button>
+        // </div>
         <div className="primereact/resources/themes/saga-orange/theme.css">
-            <br></br><br></br>
-            <InputText className="w-4" value={user.name} placeholder="name" onChange={handlename}></InputText>
-            <br></br><br></br>
-            <Password  toggleMask style={{width:"33.3%"}}   value={user.password} placeholder="password" onChange={handlepassword} toggleMask />
-            <br></br><br></br>
-            <InputText className="w-4" value={user.phone} placeholder="phone" onChange={(e) => {
-                setUser(prevState => ({
-                    ...prevState,
-                    phone: e.target.value
-                }));
-            }}></InputText>
-            <br></br><br></br>
-            <InputText className="w-4" value={user.email} placeholder="email" onChange={(e) => {
-                setUser(prevState => ({
-                    ...prevState,
-                    email: e.target.value
-                }))
-            }}></InputText>
-            <br></br><br></br>
-            <div className="card flex justify-content-center" >
-                <FileUpload style={{width:"33.3%"}}  name="demo[]" auto accept="image/*" maxFileSize={1000000000000000} emptyTemplate={<p className="m-0">upload picture</p>}
+        <div className="g" >
+   <section>
+       {/* <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+       <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+       <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+       <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+         <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+          <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+          <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+           <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+           <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+           <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+           <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+            <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+            <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+            <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+<span></span><span></span> */}
+<div class="signin">
+
+<div class="content">
+
+<h2>register</h2>
+<div class="form">
+
+ <div class="inputBox">
+   <InputText required onChange={handlename} ></InputText><i>Username</i>
+  {/* <input type="text" required> <i>Username</i> */}
+
+ </div>
+
+ <div class="inputBox">
+   <InputText type="password" required  onChange={handlepassword}   ></InputText> <i>Password</i> 
+  {/* <input type="password" required>*/}
+
+ </div>
+ <div class="inputBox">
+ <InputText  onChange={(e) => {
+           setUser(prevState => ({
+               ...prevState,
+               phone: e.target.value}));
+            }}></InputText> <i>Phone</i> 
+
+ </div>
+ <div class="inputBox">
+ <InputText onChange={(e) => {
+           setUser(prevState => ({
+               ...prevState,
+               email: e.target.value}))}}></InputText><i>Email</i> 
+
+ </div>
+ <div class="inputBox">
+ 
+ <FileUpload   name="demo[]" auto accept="image/*" maxFileSize={1000000000000000} emptyTemplate={<p className="m-0">upload picture</p>}
+
+uploadLabel='&nbsp;העלאה' cancelLabel='&nbsp;ביטול' chooseLabel='choose &nbsp;'
+                customUpload
+ uploadHandler={(e) => {setSelectedPicture(e.files[0]);check()}}
+ 
+ ></FileUpload>
+   {/* <div className="card flex justify-content-center" > */}
+               {/* <FileUpload style={{width:"33.3%"}}  name="demo[]" auto accept="image/*" maxFileSize={1000000000000000} emptyTemplate={<p className="m-0">upload picture</p>}
                     uploadLabel='&nbsp;העלאה' cancelLabel='&nbsp;ביטול' chooseLabel='choose &nbsp;'
-                                   /**/ customUpload uploadHandler={(e) => setSelectedPicture(e.files[0])} />
+                                  customUpload uploadHandler={(e) => setSelectedPicture(e.files[0])} /> */}
 
-            </div>
+            {/* </div> */}
+    
+ </div>
 
-            <Button onClick={handle} disabled={able}  ></Button>
-        </div>
+  <div class="links"> 
+
+ </div>
+ 
+
+ <div class="inputBox">
+   
+<Button type="submit" disabled={able} onClick={()=>handle()}  >Register </Button>
+  {/* <input type="submit" value="Login"> */}
+
+ </div>
+
+</div>
+
+</div>
+
+</div>
+
+{/* </section>  */}
+{/* </div>
+
+
+
+   </div> */}
+  <div class="links"> 
+
+ </div>
+ 
+
+ <div class="inputBox">
+   
+<Button type="submit" disabled={able} onClick={()=>handle()}  >Register </Button>
+  {/* <input type="submit" value="Login"> */}
+
+ </div>
+
+ {/* </div>
+
+// </div>
+
+// </div> */}
+
+</section> 
+</div>
+
+
+
+</div>
     )
 }
-
-
-
-

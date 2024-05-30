@@ -7,7 +7,10 @@ const authApiSlice = ApiSlice.injectEndpoints({
                 method:'POST',
                 body:registerChef
             })
+          
+
         }),
+      
         registerCustomer:build.mutation({
             query:(registerCustomer)=>({
                 url:"/api/auth/registerCustomer",

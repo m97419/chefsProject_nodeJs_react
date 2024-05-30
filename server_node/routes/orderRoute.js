@@ -4,10 +4,11 @@ const router= express.Router()
 const verifyJWT = require("../middleware/verifyJWT")
 const orderController = require("../controllers/orderController")
 
-router.use(verifyJWT)
+// router.use(verifyJWT)
 
 router.get("/",orderController.getAllOrders)
 router.get("/:id",orderController.getOrderById)
+router.get("/chef/:chefId",orderController.getOrderByChef)
 router.post("/",orderController.createNewOrder)
 router.delete("/",orderController.deleteOrder)
 router.put("/",orderController.updateOrder)

@@ -4,9 +4,8 @@ export default function HomePage(){
 
     return(
         <div>
-
-            Home Page
-            <CountryList/>
+             <img src={`http://localhost:7788/uploads/j.jpg`}></img>
+            {/* <CountryList/> */}
         </div>
     )
 }

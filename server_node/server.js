@@ -2,6 +2,7 @@ require("dotenv").config()
 const express= require("express")
 
 const cors=require("cors")
+const errorHandler= require("./middleware/errorHandler")
 
 const corsOptions=require("./config/corsOptions")
 const connectDB = require("./config/dbConn")
@@ -14,6 +15,7 @@ connectDB()
  app.use(cors(corsOptions))
 app.use(express.json())
 app.use(express.static("public"))
+app.use(errorHandler)
 
 app.use("/api/category",require("./routes/categoryRoute"))
 app.use("/api/chef",require("./routes/chefRoute"))
@@ -22,6 +24,8 @@ app.use("/api/auth",require("./routes/authRoute"))
 app.use("/api/order",require("./routes/orderRoute"))
 app.use("/api/product",require("./routes/productRoute"))
 app.use("/api/country",require("./routes/countryRoute"))
+app.use("/api/basket",require("./routes/basketRoute"))
+app.use(errorHandler)
 
 app.get('/uploads/:filename', (req, res) => {
     const imagePath = path.join(__dirname, '/public/uploads/', req.params.filename);
