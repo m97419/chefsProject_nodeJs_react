@@ -8,7 +8,7 @@ import { useCreateNewCategoryMutation } from '../categories/categoryapiSlice';
 import { InputNumber } from "primereact/inputnumber"
 import { InputText } from 'primereact/inputtext';
 
-export default function CategoriesList({setCat}) {
+export default function CategoriesList({ setCat }) {
     const { data: categoriesData = [], isLoadingcategories, isSuccess, isError, error, refetch } = useGetAllCategoriesQuery();
     const [selectedCategories, setSelectedCategories] = useState(null);
     const [categories, setCategories] = useState(null);
@@ -67,34 +67,24 @@ export default function CategoriesList({setCat}) {
 
         }
     }
-    const product=(e)=>{
-        
-         setSelectedCategories(e.value);
-        //  console.log(selectedCategories);
-        //  console.log(`gval   ${e.value[0].name}`);
-       
-         const d= e.value?.map(e=>e.id)  
-        //  console.log(`g delete${d}`);
-        setCat(e.value?.map(e=>e.id) );
-        //  setProduct(prevState => ({
-        //     ...prevState,
-        //     category: d
-        // }))
-        // console.log(product);
+    const product = (e) => {
+        setSelectedCategories(e.value);
+        const d = e.value?.map(e => e.id)
+        setCat(e.value?.map(e => e.id));
     }
 
     const addCategotyDialogFooter = (
         <React.Fragment>
             <Button label="Cancel" icon="pi pi-times" outlined onClick={hideAddCaegoryDialog} />
-           { category.name!= null && category.name != "" && category.code!= 0 &&                             
-           <Button label="Add" icon="pi pi-check" onClick={handle} />}
+            {category.name != null && category.name != "" && category.code != 0 &&
+                <Button label="Add" icon="pi pi-check" onClick={handle} />}
         </React.Fragment>
     );
     return (
         <div className="card flex justify-content-center">
             <MultiSelect value={selectedCategories} onChange={product} options={categories} optionLabel="name" display="chip"
-             maxSelectedLabels={3}
-   filter placeholder="Select Categories" className="w-full md:w-20rem" /> &nbsp;
+                maxSelectedLabels={3}
+                filter placeholder="Select Categories" className="w-full md:w-20rem" /> &nbsp;
             <Button onClick={CaegoryDialog}>AddCategory</Button>
             <Dialog visible={addCaegoryDialog} footer={addCategotyDialogFooter} onHide={hideAddCaegoryDialog}  >
                 <div>

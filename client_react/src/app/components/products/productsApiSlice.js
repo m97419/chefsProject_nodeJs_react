@@ -3,19 +3,12 @@ import ApiSlice from "../../apiSlice"
 const productsApiSlice = ApiSlice.injectEndpoints({
     endpoints:(build)=>({
         getAllProducts:build.query({
-            query:()=>({
-                url:"/api/product"
+            query:(str)=>({
+                url:`/api/product?${str}`
             })
             ,providesTags:["product"]
 
         }),
-        // getAllProductsByChef:build.query({
-        //     query:(chefId)=>({
-        //         url:`/api/product?chefId=${chefId}`
-        //     })
-        //     ,providesTags:["prod"]
-
-        // }),
         getByChef:build.query({
             query:(chefId)=>({
                 url:`/api/product/chef/${chefId}`

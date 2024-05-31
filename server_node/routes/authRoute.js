@@ -1,7 +1,6 @@
 const express = require("express")
 const router = express.Router()
 const authController = require("../controllers/authController")
-const errorHandler = require("../middleware/errorHandler")
 const multer=require('multer')
 
 const storage = multer.diskStorage({
@@ -15,9 +14,9 @@ const storage = multer.diskStorage({
   })
   
   const upload = multer({ storage: storage })
-  // app.use(errorHandler)
-router.post("/login",errorHandler,authController.login)
-router.post("/registerChef",errorHandler,upload.single("picture"),authController.registerChef)
+
+router.post("/login",authController.login)
+router.post("/registerChef",upload.single("picture"),authController.registerChef)
 router.post("/registerCustomer",authController.registerCustomer)
-// app.use(errorHandler)
+
 module.exports =router

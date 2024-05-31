@@ -8,8 +8,10 @@ const ApiSlice = createApi({
         prepareHeaders:(headers,{getState})=>{
             const token = getState().auth.token
             const role = getState().auth.role
-            if(token)
+            if(token){
                 headers.set("authorization",`Bearer ${token}`)
+                console.log("tookken");
+            }
             console.log(headers);
             return headers
         }

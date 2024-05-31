@@ -32,6 +32,11 @@
 .App-link {
   color: #61dafb;
 }
+.app-image {
+  /* width: 100%; Adjust the width as needed */
+  height: 100%; /* Maintain aspect ratio */
+  display: block; /* Prevent extra space below image */
+}
 
 @keyframes App-logo-spin {
   from {
@@ -41,3 +46,4 @@
     transform: rotate(360deg);
   }
 }
+

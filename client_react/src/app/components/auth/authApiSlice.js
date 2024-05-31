@@ -7,7 +7,7 @@ const authApiSlice = ApiSlice.injectEndpoints({
                 method:'POST',
                 body:registerChef
             })
-          
+ 
 
         }),
       

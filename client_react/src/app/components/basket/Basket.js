@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Button } from 'primereact/button';
 import { DataView } from 'primereact/dataview';
 // import { Dropdown } from 'primereact/dropdown';
@@ -10,6 +10,8 @@ import { InputText } from 'primereact/inputtext';
 import useAuth from '../auth/useAuth';
 import { useCreateNewOrderMutation } from '../orders/ordersApiSlice';
 import { useCreateNewBasketMutation } from './basketApiSlice';
+import { Toast } from 'primereact/toast';
+
 
 export default function Basket() {
     // const [sortKey, setSortKey] = useState('');
@@ -31,8 +33,15 @@ const [addFunc, { data: data = [], isLoading, isSuccess, isError, error }] = use
 
     const [basket, setBasket] = useState(getBasket())
     const [empty, setEmpty] = useState(basket==[])
+    const [success,setSuccess]= useState(false);
     const [orderVisible, setOrderVisible] = useState(false)
+    const toast = useRef(null);
+  
 
+    useEffect(() => {
+        if(isSuccess)
+        setSuccess(true);
+    }, [isSuccess]);
     // const onSortChange = (event) => {
     //     const value = event.value;
 
@@ -65,10 +74,7 @@ const [addFunc, { data: data = [], isLoading, isSuccess, isError, error }] = use
             return(<h1>noooooooooooo</h1>)
         else
             basket.map(e=>{ console.log(e.id);
-                // console.log("e.products.chef"+e.products.chef)
                     addFunc({products:e.id,customer:_id,count:e.count})})
-
-        // addFunc({products,customer:_id})
     }
         catch(err){
             console.log(err);
@@ -90,15 +96,26 @@ const [addFunc, { data: data = [], isLoading, isSuccess, isError, error }] = use
         //do order- api
         await localStorage.setItem("basket",JSON.stringify([]))
         refetch()
+
     }
 
     return (
         // background-color: #282c34;
-        <div className="card "  ><br/><br/>
+        <div className="card " >
+            <div>
+            <br></br>
+            <br></br><br></br>
+            {success && <h1>הזמנתך בוצעה בהצלחה</h1>}
+            </div>
+             
+            {/* <br/><br/> */}
         {/* */}
             <DataView value={basket} listTemplate={listTemplate}/> <br/>
-            <Button icon="pi pi-credit-card" disabled={empty || _id=="" } raised aria-label="Filter" onClick={()=>setOrderVisible(true)}>&nbsp; to paying </Button>
-            {/* <Button icon="pi pi-credit-card" disabled={true} raised aria-label="Filter" onClick={()=>setOrderVisible(true)}>&nbsp; to paying </Button> */}
+            <Button icon="pi pi-credit-card" disabled={empty || _id=="" }  onClick={(e) => { order()}}  raised aria-label="Filter" >&nbsp; to paying </Button>
+            {/* onClick={()=>setOrderVisible(true)} */}
+            
+        {/* <Button icon="pi pi-credit-card" disabled={true} raised aria-label="Filter" onClick={()=>setOrderVisible(true)}>&nbsp; to paying </Button> */}
+ 
             {/* header={header()} sortField={sortField} sortOrder={sortOrder} /> */}
             <Dialog
             className='w-3'

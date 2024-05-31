@@ -28,8 +28,6 @@ import { FileUpload } from 'primereact/fileupload';
 import { Toast } from 'primereact/toast';
 export default function Table() {
     const { _id } = useAuth()
-
-
     let emptyProduct = {
         id: null,
         name: '',
@@ -144,6 +142,7 @@ export default function Table() {
 
             // console.log(formData["id"]);
             updateProduct(formData);
+        
 
         }
         catch { console.log(error); }
@@ -278,8 +277,6 @@ export default function Table() {
         setDeleteProductDialog(false);
         setProduct(emptyProduct);
         console.log(`delete${product.id}`);
-
-        // toast.current.show({ severity: 'success', summary: 'Successful', detail: 'Product Deleted', life: 3000 });
     };
     const addNewProduct = () => {
         console.log(productCreate);
@@ -294,9 +291,9 @@ export default function Table() {
         formData.append("chef", productCreate.chef);
         formData.append("price", productCreate.price);
         console.log(formData.picture);
-
         createNewProduct(formData);
         setAddProductDialog(false);
+        
         // refetch()
     };
     const handlename = (e) => {
@@ -304,10 +301,6 @@ export default function Table() {
             ...prevState,
             name: e.target.value
         }))
-        // if(e.target.value!="" && e.target.value!=null)
-        //     setAble(false)
-        // else
-        //     setAble(true) }
     }
 
     const handleCountry = (e) => {
