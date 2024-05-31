@@ -5,14 +5,15 @@ import { useGetAllCountriesQuery } from "./countriesApiSlice";
 import Country from "../countries/Country"
 import { Link, Outlet, Route, Routes } from 'react-router-dom';
 import { Menubar } from 'primereact/menubar';
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom"
+import HomePage from "../HomePage";
 const CountryList = () => {
      const { data: countries = [], isLoading, isSuccess, isError, error, refetch } = useGetAllCountriesQuery()
-     const navigate=useNavigate()
+     const navigate = useNavigate()
      // while(isLoading){
      //      console.log("loading!!!!!!!!!!!!!!!!!!!!!!!!");
      // // }
-     if(isError){
+     if (isError) {
           console.log(error);
           console.log("error!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
      }
@@ -26,9 +27,7 @@ const CountryList = () => {
           <Menubar  model={newcountries} />
           <Outlet/>
 </div>
-         
-    
- 
+
      )
 
 }
@@ -36,9 +35,7 @@ export default CountryList
 // style={{ position: 'sticky',top:15,  zIndex: 10000 }}
 {/* 
 //onChange={(e) => setSelectedCountry(e.value)} */}
- {/* <div className="card flex justify-content-center">
+{/* <div className="card flex justify-content-center">
                <ListBox filter value={selectedCountry} onChange={onclick} options={countries} optionLabel="name" className="w-full md:w-14rem" />
           </div> */}
           {/* {countries?.map((country)=><Country country={country}/>)} */}
-
-          

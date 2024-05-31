@@ -51,6 +51,7 @@ const login = async(req,res)=>{
     const registerChef = async(req,res)=>{
         try{
         const picture =(req.file?.filename? req.file.filename:"") 
+        console.log(picture);
         const {name,password,email,phone} =req.body
         // picture=req.file.path
         console.log(picture);
@@ -65,7 +66,7 @@ const login = async(req,res)=>{
             return res.status(409).json({message:'Duplicate name'})
     const hashedPwd = await bcrypt.hash(password,10)
     const chefObject = {name,password:hashedPwd,phone,email,picture,role:"chef"}
-    const chef =await Chef.create(chefObject);
+    const chef = await Chef.create(chefObject);
     if(chef)
     console.log("chef");
     const foundChef = await Chef.findOne({name}).lean()

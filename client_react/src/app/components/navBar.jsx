@@ -33,8 +33,16 @@ const NavBar = () => {
             return <Button label="כניסה" icon="pi pi-spinner" onClick={() => { navigate(`/login`) }} />
         else
             return <Button label="יציאה" icon="pi pi-power-off" onClick={() => { dispatch(removeToken()); navigate(`/`) }} />
-
     }
+    // const myAccount = () => {
+    //     console.log(localStorage.getItem("token"));
+    //     if(localStorage.getItem("token")) {
+    //         navigate(`/myAccount`)
+    //     }
+    //     else{
+    //         navigate(`/auth`)
+    //     }
+    // }
 
     const linkStyle = { my: 2, color: 'primary', display: 'block', margin: '0.5rem 0.5rem' }
     const linkStyleActive = { borderBottom: '2px solid #1976d2', borderRadius: '0' }
