@@ -23,6 +23,9 @@ const [products, setProducts] = useState([]);
 const [layout, setLayout] = useState('grid');
 
 
+
+
+
 //const {data:countries=[],isLoading,isSuccess,isError,error,refetch} = useGetAllCountriesQuery()
 
 // useEffect(() => {
@@ -69,10 +72,12 @@ const listItem = (product, index) => {
     return (
         <div className="col-12" key={product._id}>
             <div className={classNames('flex flex-column xl:flex-row xl:align-items-start p-4 gap-4', { 'border-top-1 surface-border': index !== 0 })}>
-                <Image className="picturesize" src={`http://localhost:7788/${product.picture}`} alt={product.picture} preview />
+                {/* <Image className="picturesize" src={`http://localhost:7788/uploads/${product.picture.split("\\")[2]}`} alt={product.picture} preview /> */}
                 <div className="flex align-items-center gap-3">
                     <span className="flex align-items-center gap-2">
-                        <Avatar icon={product.chef.picture || "pi pi-user"} size="large" shape="circle" />
+                        {/* <Avatar icon={product.chef.picture || "pi pi-user"} size="large" shape="circle" /> */}
+                        <Avatar icon={<img src={`http://localhost:7788/uploads/${product.chef.picture.split("\\")[2]}`}></img>
+                                || "pi pi-user"} size="xlarge" shape="circle" />
                         <h5 >{product.chef.name}</h5>
                     </span>
                 </div>
@@ -83,14 +88,23 @@ const listItem = (product, index) => {
                         {/* <Rating value={product.rating} readOnly cancel={false}></Rating> */}
                     </div>
                     <VirtualScroller items={product.category} itemSize={50} itemTemplate={itemTemplateCategory} className="border-1 surface-border border-round" style={{ width: '200px', height: 0, minHeight: '70px' }} />
+                    
                     <div className="flex sm:flex-column align-items-center sm:align-items-end gap-3 sm:gap-2">
-                        <span className="text-2xl font-semibold">${product.price}</span>
+                      {console.log(product.category)}  
+                      <span className="text-2xl font-semibold">${product.price}</span>
                         <br></br>
+                        <Button icon="pi pi-cart-plus" rounded text raised aria-label="Filter" onClick={()=>addItemToBusket(product)}></Button>
                         {/* <Button icon="pi-cart-plus"  rounded text raised aria-label="Filter" onClick={()=>addItemToBusket(product)}/> */}
                         <br></br>
                         <br></br>
                         {/* <Button icon="pi pi-shopping-cart" className="p-button-rounded" disabled={product.inventoryStatus === 'OUTOFSTOCK'}></Button> */}
                     </div>
+                    <div className="flex align-items-center justify-content-between">
+                 
+                   
+                    {/* <Button icon="pi pi-shopping-cart" className="p-button-rounded" disabled={product.inventoryStatus === 'OUTOFSTOCK'}></Button> */}
+                </div>
+            
                 </div>
             </div>
         </div>
@@ -103,15 +117,22 @@ const gridItem = (product) => {
             <div className="p-4 border-1 surface-border surface-card border-round">
                 <div className="flex flex-wrap align-items-center justify-content-between gap-2">
                     <div className="flex align-items-center gap-2">
-                        <Avatar icon={product.chef.picture || "pi pi-user"} size="large" shape="circle" />
+                    <Avatar icon={<img src={`http://localhost:7788/uploads/${product.chef.picture.split("\\")[2]}`}></img>
+                                || "pi pi-user"} size="xlarge" shape="circle" />
+                        {/* <Avatar icon={product.chef.picture || "pi pi-user"} size="large" shape="circle" /> */}
                         <h5 >{product.chef.name}</h5>
                     </div>
                     <VirtualScroller items={product.category} itemSize={50} itemTemplate={itemTemplateCategory} className="border-1 surface-border border-round" style={{ width: '200px', height: 0, minHeight: '70px' }} />
                 </div>
                 <div className="flex flex-column align-items-center gap-3 py-5">
-                    <img className="picturesize" src={`http://localhost:7788/${product.picture}`} alt={product.name} />
+                    <img className="picturesize" src={`http://localhost:7788/uploads/${product.picture.split("\\")[2]}`} alt={product.name} />
                     <div className="text-2xl font-bold">{product.name}</div>
                 </div>
+                {/* <div className="flex align-items-center justify-content-between">
+                    <span className="text-2xl font-semibold">{product.price}</span>
+                    <Button icon="pi pi-cart-plus" rounded text raised aria-label="Filter" onClick={()=>addItemToBusket(product)}></Button>
+                    {/* <Button icon="pi pi-shopping-cart" className="p-button-rounded" disabled={product.inventoryStatus === 'OUTOFSTOCK'}></Button> */}
+                {/* </div> */} 
                 <div className="flex align-items-center justify-content-between">
                     <span className="text-2xl font-semibold">{product.price}</span>
                     <Button icon="pi pi-cart-plus" rounded text raised aria-label="Filter" onClick={()=>addItemToBusket(product)}></Button>
@@ -147,7 +168,8 @@ const listTemplate = (products, layout) => {
 //===========================
 return(
     <div className="card">
-        <div>{id}</div>
+        {/* ggggggggggggggggg
+        <div>{id}</div> */}
     <DataView value={products} listTemplate={listTemplate} layout={layout} header={header()} />
 </div>  
 )
