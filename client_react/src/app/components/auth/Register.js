@@ -16,8 +16,7 @@ import { setToken } from "./authSlice";
 import { useDispatch } from "react-redux";
 import { useRegisterCustomerMutation, useRegisterChefMutation } from './authApiSlice';
 import { FileUpload } from 'primereact/fileupload';
-// import { CountryService } from '../service/CountryService';
-// import './FormDemo.css';
+
 
 export default function Register(prop) {
     const [showMessage, setShowMessage] = useState(false);

@@ -51,6 +51,7 @@ const login = async(req,res)=>{
     const registerChef = async(req,res)=>{
         try{
         const picture =(req.file?.filename? req.file.filename:"") 
+        console.log(picture);
         const {name,password,email,phone} =req.body
         // picture=req.file.path
         console.log(picture);
@@ -76,7 +77,7 @@ const login = async(req,res)=>{
             name:foundChef.name,
             phone:foundChef.phone,
             email:foundChef.email,
-            picture:foundChef.picture,
+            // picture:foundChef.picture,
             role:"chef"
         }
         

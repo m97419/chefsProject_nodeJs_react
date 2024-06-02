@@ -41,7 +41,6 @@ export default function CountryList({ setProduct }) {
     }
     const hideAddCountryDialog = () => {
         setAddCountryDialog(false)
-
     }
     const handlename = (e) => {
         setCountry(prevState => ({

@@ -1,6 +1,19 @@
+// import 'primereact/resources/themes/saga-orange/theme.css'
+// import{useParams} from "react-router-dom"
+// import { useGetByCountryQuery } from "../products/productsApiSlice";
+// import React, { useState, useEffect } from 'react';
+// import { Button } from 'primereact/button';
+// import { DataView, DataViewLayoutOptions } from 'primereact/dataview';
+// import { Rating } from 'primereact/rating';
+// import { Tag } from 'primereact/tag';
+// import { classNames } from 'primereact/utils';
+// import 'primeicons/primeicons.css';
+// import { Image } from 'primereact/image';
+// import { VirtualScroller } from 'primereact/virtualscroller';
+// import { Avatar } from 'primereact/avatar';
 import 'primereact/resources/themes/saga-orange/theme.css'
 import { useParams } from "react-router-dom"
-import { useGetAllProductsQuery, useGetByCountryQuery } from "../products/productsApiSlice";
+import { useGetByCountryQuery } from "../products/productsApiSlice";
 import React, { useState, useEffect } from 'react';
 import { Button } from 'primereact/button';
 import { DataView, DataViewLayoutOptions } from 'primereact/dataview';
@@ -11,25 +24,33 @@ import 'primeicons/primeicons.css';
 import { Image } from 'primereact/image';
 import { VirtualScroller } from 'primereact/virtualscroller';
 import { Avatar } from 'primereact/avatar';
-import CountryDesign from './CountryDesign';
-import ChefDesign from '../chefs/ChefDesign';
-import { Chip } from 'primereact/chip';
+import { Chips } from "primereact/chips";
+
+// //import './assets/theme.css'
 
 
-const CountryNew = () => {
-    const { str } = useParams();
-    const split = str.split("=")[0];
-    const { data: productsData = [], isLoading, isSuccess, isError, error, refetch } = useGetAllProductsQuery(str);
-
+const Country = () => {
+    const { id } = useParams();
+    const { data: productsData = [], isLoading, isSuccess, isError, error, refetch } = useGetByCountryQuery(id)
+    //--------------------------------------//
     const [products, setProducts] = useState([]);
     const [layout, setLayout] = useState('grid');
+    const [value, setValue] = useState(["nbmbnf", "ncuidhug"]);
 
+}
+
+    //const {data:countries=[],isLoading,isSuccess,isError,error,refetch} = useGetAllCountriesQuery()
+
+    // useEffect(() => {
+    //     ProductService.getProducts().then((data) => setProducts(data.slice(0, 12)));
+    // }, []);
 
     useEffect(() => {
         if (isSuccess)
             setProducts(productsData);
-        console.log(productsData);
     }, [isSuccess]);
+    //  console.log(products[0].log(products[0].category[0].name);
+    //  console.chef);
 
     const itemTemplateCategory = (item, options) => {
         const className = classNames('flex align-items-center p-2', {
@@ -64,8 +85,10 @@ const CountryNew = () => {
         return (
             <div className="col-12" key={product._id}>
                 <div className={classNames('flex flex-column xl:flex-row xl:align-items-start p-4 gap-4', { 'border-top-1 surface-border': index !== 0 })}>
+                    {/* <Image className="picturesize" src={`http://localhost:7788/uploads/${product.picture.split("\\")[2]}`} alt={product.picture} preview /> */}
                     <div className="flex align-items-center gap-3">
                         <span className="flex align-items-center gap-2">
+                            {/* <Avatar icon={product.chef.picture || "pi pi-user"} size="large" shape="circle" /> */}
                             <Avatar icon={<img src={`http://localhost:7788/uploads/${product.chef.picture.split("\\")[2]}`}></img>
                                 || "pi pi-user"} size="xlarge" shape="circle" />
                             <h5 >{product.chef.name}</h5>
@@ -75,22 +98,27 @@ const CountryNew = () => {
                     <div className="flex flex-column sm:flex-row justify-content-between align-items-center xl:align-items-start flex-1 gap-4">
                         <div className="flex flex-column align-items-center sm:align-items-start gap-3">
                             <div className="text-2xl font-bold text-900">{product.name}</div>
+                            {/* <Rating value={product.rating} readOnly cancel={false}></Rating> */}
+            
                         </div>
-                        <div className="card flex flex-wrap gap-2">
-                        {product?.category?.map((category, index) => (
-                            <Chip key={index} label={category.name} />
-                        ))}
-                    </div>
 
+                        <VirtualScroller items={product.category} itemSize={50} itemTemplate={itemTemplateCategory} className="border-1 surface-border border-round" style={{ width: '200px', height: 0, minHeight: '70px' }} />
+
+                        {/*  <Chips value={product.category}/> */}
                         <div className="flex sm:flex-column align-items-center sm:align-items-end gap-3 sm:gap-2">
                             {console.log(product.category)}
                             <span className="text-2xl font-semibold">${product.price}</span>
                             <br></br>
                             <Button icon="pi pi-cart-plus" rounded text raised aria-label="Filter" onClick={() => addItemToBusket(product)}></Button>
+                            {/* <Button icon="pi-cart-plus"  rounded text raised aria-label="Filter" onClick={()=>addItemToBusket(product)}/> */}
                             <br></br>
                             <br></br>
+                            {/* <Button icon="pi pi-shopping-cart" className="p-button-rounded" disabled={product.inventoryStatus === 'OUTOFSTOCK'}></Button> */}
                         </div>
                         <div className="flex align-items-center justify-content-between">
+
+
+                            {/* <Button icon="pi pi-shopping-cart" className="p-button-rounded" disabled={product.inventoryStatus === 'OUTOFSTOCK'}></Button> */}
                         </div>
 
                     </div>
@@ -105,24 +133,28 @@ const CountryNew = () => {
                 <div className="p-4 border-1 surface-border surface-card border-round">
                     <div className="flex flex-wrap align-items-center justify-content-between gap-2">
                         <div className="flex align-items-center gap-2">
-                            <Avatar icon={<img src={`http://localhost:7788/uploads/${product.chef.picture}`}></img>
+                            <Avatar icon={<img src={`http://localhost:7788/uploads/${product.chef.picture.split("\\")[2]}`}></img>
                                 || "pi pi-user"} size="xlarge" shape="circle" />
+                            {/* <Avatar icon={product.chef.picture || "pi pi-user"} size="large" shape="circle" /> */}
                             <h5 >{product.chef.name}</h5>
                         </div>
+                        {/* <Chips value={value}/>
+                    <Chips value={product.category}/> */}
+                        <VirtualScroller items={product.category} itemSize={50} itemTemplate={itemTemplateCategory} className="border-1 surface-border border-round" style={{ width: '200px', height: 0, minHeight: '70px' }} />
                     </div>
-                   
                     <div className="flex flex-column align-items-center gap-3 py-5">
                         <img className="picturesize" src={`http://localhost:7788/uploads/${product.picture.split("\\")[2]}`} alt={product.name} />
                         <div className="text-2xl font-bold">{product.name}</div>
-                        <div className="card flex flex-wrap gap-2">
-                        {product?.category?.map((category, index) => (
-                            <Chip key={index} label={category.name} />
-                        ))}
                     </div>
-                    </div>
+                    {/* <div className="flex align-items-center justify-content-between">
+                    <span className="text-2xl font-semibold">{product.price}</span>
+                    <Button icon="pi pi-cart-plus" rounded text raised aria-label="Filter" onClick={()=>addItemToBusket(product)}></Button>
+                    {/* <Button icon="pi pi-shopping-cart" className="p-button-rounded" disabled={product.inventoryStatus === 'OUTOFSTOCK'}></Button> */}
+                    {/* </div> */}
                     <div className="flex align-items-center justify-content-between">
                         <span className="text-2xl font-semibold">{product.price}</span>
                         <Button icon="pi pi-cart-plus" rounded text raised aria-label="Filter" onClick={() => addItemToBusket(product)}></Button>
+                        {/* <Button icon="pi pi-shopping-cart" className="p-button-rounded" disabled={product.inventoryStatus === 'OUTOFSTOCK'}></Button> */}
                     </div>
 
                 </div>
@@ -151,19 +183,20 @@ const CountryNew = () => {
         );
     };
 
+    //===========================
     return (
         <div className="card">
-            {split == "country" && <CountryDesign country={products[0]?.country} ></CountryDesign>}
-            {split == "chef" && <ChefDesign chef={products[0]?.chef}></ChefDesign>}
+            {/* ggggggggggggggggg
+        <div>{id}</div> */}
             <DataView value={products} listTemplate={listTemplate} layout={layout} header={header()} />
         </div>
     )
 
 
-}
+// }
 
 
 
 
 
-export default CountryNew
+// export default Country
