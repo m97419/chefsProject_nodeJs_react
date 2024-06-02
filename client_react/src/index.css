@@ -16,6 +16,12 @@ code {
     width: 80%;
     height: 80%;
   
+}
+
+.picturesizebig{
+  width: 100%;
+  height: 100%;
+
   
 }
 .gold{
@@ -30,18 +36,19 @@ code {
   box-sizing: border-box;
   font-family: 'Quicksand', sans-serif;
 } */
-.g
+/* .g
 {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  height: 100vh;
   background: #000000;
 }
 section
 {
-  position: absolute;
-  width: 100vw;
+  /* position:absolute; */
+  /* width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -85,7 +92,7 @@ section span:hover
 {
   background:hsl(54, 94%, 45%);
 /*   //========= */
-  transition: 0s;
+  /* transition: 0s;
 }
 
 section .signin
@@ -97,16 +104,16 @@ section .signin
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px;
-  border-radius: 4px;
+  padding: 40px; */
+  /* border-radius: 4px;
   box-shadow: 0 15px 35px rgba(0,0,0,9);
 }
 section .signin .content
 {
   position: relative;
   width: 100%;
-  display: flex;
-  justify-content: center;
+  display: flex; */
+  /* justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 40px;
@@ -137,8 +144,8 @@ section .signin .content .form .inputBox input
   border: none;
   outline: none;
   padding: 25px 10px 7.5px;
-  border-radius: 4px;
-  color: #fff;
+  border-radius: 4px; */
+  /* color: #fff;
   font-weight: 500;
   font-size: 1em;
 }
@@ -160,8 +167,8 @@ section .signin .content .form .inputBox i
   color: #fff;
 }
 .signin .content .form .links
-{
-  position: relative;
+{ */
+  /* position: relative;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -205,4 +212,4 @@ input[type="submit"]:active
     width: calc(20vw - 2px);
     height: calc(20vw - 2px);
   }
-}
+}  */

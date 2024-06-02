@@ -1,0 +1,136 @@
+[{
+  "_id": {
+    "$oid": "6658e8d3a427f205988bfdfa"
+  },
+  "name": "jake",
+  "password": "$2b$10$hfDppG5sfTLcrow5r.X0teU2YkMpZuQeMBPnLkSdDzwDQd29HnDo6",
+  "phone": "0546753201",
+  "email": "jakebaker@gmail.com",
+  "picture": "picture-1717102803436-328821907OGjYydBHPSZwBNFIeaZydezYvrrJFtVdjHDkjWveNQxJPyHyKWdIMLLcBTtjQZnk.webp",
+  "createdAt": {
+    "$date": "2024-05-30T21:00:03.539Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T21:00:03.539Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6658ebaaa427f205988bfe05"
+  },
+  "name": "סנרי לנג",
+  "password": "$2b$10$Kfy/gi27T7jIEHjKHZB/auCwwaYR0y/xep0/qbRustxo5PICGACOi",
+  "phone": "0546230875",
+  "email": "senrylang@gmail.com",
+  "picture": "picture-1717103530814-772931740DbEbWrLJOxOvEvHDCEXAMiRNDTAETOARfCBUwenYSlrZezKPivoznIRDroEDSJgg.webp",
+  "createdAt": {
+    "$date": "2024-05-30T21:12:10.898Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T21:12:10.898Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6658ecd9a427f205988bfe0b"
+  },
+  "name": "yeri",
+  "password": "$2b$10$rHzHebowQ9W059rKhps7suwm9hT6AXetzuNz4qRTIS49k/TVnr2qG",
+  "phone": "0726290786",
+  "email": "yeri@gmail.com",
+  "picture": "picture-1717103832949-822059850ysInGNwOUOcjpDiWvNwqAEsUTEncqCRdFppjjhPmJUmuruDFBlKagkmgsjlgnmTN.webp",
+  "createdAt": {
+    "$date": "2024-05-30T21:17:13.028Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T21:17:13.028Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6658ee39a427f205988bfe12"
+  },
+  "name": "מיקי ליקי",
+  "password": "$2b$10$6Tpr3GTxzu/..pHAJhX9v.TLG..vjGM1oq8uzexet7gBaeEgnn.0e",
+  "phone": "0982344218",
+  "email": "mikiliki@gmail.com",
+  "picture": "picture-1717104185368-115178521YLxQaRitwjPjVxQkXUGdTFVAkOkHUFWfvpslgUmpdxUQfrHzlrsszWtsTnBwsTFs.webp",
+  "createdAt": {
+    "$date": "2024-05-30T21:23:05.477Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T21:23:05.477Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6658ef3fa427f205988bfe19"
+  },
+  "name": "jikjn",
+  "password": "$2b$10$Djg97e6IGGczQpSZ/JOrN.MSYiPqUUsLuvQW3WqBTgTm7gT5IX.Vy",
+  "phone": "",
+  "email": "",
+  "picture": "picture-1717104447359-766533300uafrnsIxInJkLnAVrqOtTlOMcLdOjJHrSZVBfoEIIkCLgbQrqcixHUaKHHtYZqtU.webp",
+  "createdAt": {
+    "$date": "2024-05-30T21:27:27.437Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T21:27:27.437Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6658f0fda427f205988bfe3a"
+  },
+  "name": "bar",
+  "password": "$2b$10$CEWQdrrqpEHrbo2gcVNjl.sd1xxShEr0MzN3yrm4LdY3B0x0F9kzK",
+  "phone": "09883208765",
+  "email": "bar@gmail.com",
+  "picture": "picture-1717104893428-497026444uafrnsIxInJkLnAVrqOtTlOMcLdOjJHrSZVBfoEIIkCLgbQrqcixHUaKHHtYZqtU.webp",
+  "createdAt": {
+    "$date": "2024-05-30T21:34:53.509Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T21:34:53.509Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6658f1cca427f205988bfe3f"
+  },
+  "name": "הארי",
+  "password": "$2b$10$HOI/ToTrPYZhEPnUswquqOt2wxBzn0jRDWc1CklpDIJknNYPEbz.C",
+  "phone": "0673217804",
+  "email": "hary@gmail.com",
+  "picture": "picture-1717105100107-227193058kDNskvBBYWkZsOvfQHIMeXsumOgPzTsxGTQrsbrXZNPOITETDutXePmRTwCnPdcU.webp",
+  "createdAt": {
+    "$date": "2024-05-30T21:38:20.186Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T21:38:20.186Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6658f2ffa427f205988bfe49"
+  },
+  "name": "פטרי",
+  "password": "$2b$10$2oXBSBVQFp6yLt2DNa5RUOkKQCpdh6MZJ3LnSwkdoHwVMzS2YoFsq",
+  "phone": "0743271064",
+  "email": "petry@gmail.com",
+  "picture": "picture-1717105407794-521255897dd.jpg.webp",
+  "createdAt": {
+    "$date": "2024-05-30T21:43:27.873Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T21:43:27.873Z"
+  },
+  "__v": 0
+}]

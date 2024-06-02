@@ -1,0 +1,48 @@
+[{
+  "_id": {
+    "$oid": "6658f015a427f205988bfe2b"
+  },
+  "name": "kik",
+  "password": "$2b$10$w3QIrVkEQVuzwTVZkA/.au6U5F9bdasvlAaTLw5Fudkn5ptuXNWwe",
+  "phone": "",
+  "email": "",
+  "createdAt": {
+    "$date": "2024-05-30T21:31:01.913Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T21:31:01.913Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6658f04fa427f205988bfe34"
+  },
+  "name": "jjjj",
+  "password": "$2b$10$J7y1O55tTcz6tViEGzVzKeriCQi/i6bXrIb9AdELtCxSXKcrqKmUa",
+  "phone": "",
+  "email": "",
+  "createdAt": {
+    "$date": "2024-05-30T21:31:59.654Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T21:31:59.654Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6658f9c6a427f205988bfe9e"
+  },
+  "name": "שני",
+  "password": "$2b$10$FCRX1FhIXsyiKwYxLzjrB.wlWbZ9nh1jMdt2zJ0vxGhAGBZ1OuaqO",
+  "phone": "",
+  "email": "",
+  "createdAt": {
+    "$date": "2024-05-30T22:12:22.318Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T22:12:22.318Z"
+  },
+  "__v": 0
+}]

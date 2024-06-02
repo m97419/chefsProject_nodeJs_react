@@ -1,7 +1,6 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Button } from 'primereact/button';
 import { DataView } from 'primereact/dataview';
-// import { Dropdown } from 'primereact/dropdown';
 import { classNames } from 'primereact/utils';
 import { InputNumber } from 'primereact/inputnumber';
 import BasketItem from './BasketItem';
@@ -10,15 +9,11 @@ import { InputText } from 'primereact/inputtext';
 import useAuth from '../auth/useAuth';
 import { useCreateNewOrderMutation } from '../orders/ordersApiSlice';
 import { useCreateNewBasketMutation } from './basketApiSlice';
+import { Toast } from 'primereact/toast';
+
 
 export default function Basket() {
-    // const [sortKey, setSortKey] = useState('');
-    // const [sortOrder, setSortOrder] = useState(0);
-    // const [sortField, setSortField] = useState('');
-    // const sortOptions = [
-    //     { label: 'Price High to Low', value: '!price' },
-    //     { label: 'Price Low to High', value: 'price' }
-    // ];
+ 
 const {_id}=useAuth();
 const [addFunc, { data: data = [], isLoading, isSuccess, isError, error }] = useCreateNewBasketMutation()
     const getBasket = () => {
@@ -31,51 +26,26 @@ const [addFunc, { data: data = [], isLoading, isSuccess, isError, error }] = use
 
     const [basket, setBasket] = useState(getBasket())
     const [empty, setEmpty] = useState(basket==[])
+    const [success,setSuccess]= useState(false);
     const [orderVisible, setOrderVisible] = useState(false)
+    const toast = useRef(null);
+  
 
-    // const onSortChange = (event) => {
-    //     const value = event.value;
-
-    //     if (value.indexOf('!') === 0) {
-    //         setSortOrder(-1);
-    //         setSortField(value.substring(1, value.length));
-    //         setSortKey(value);
-    //     } else {
-    //         setSortOrder(1);
-    //         setSortField(value);
-    //         setSortKey(value);
-    //     }
-    // };
-
-    // const header = () => {
-    //     return <Dropdown options={sortOptions} value={sortKey} optionLabel="label" placeholder="Sort By Price" onChange={onSortChange} className="w-full sm:w-14rem" />;
-    // };
-
+    useEffect(() => {
+        if(isSuccess)
+        setSuccess(true);
+    }, [isSuccess]);
     const refetch = () => {
         setBasket(getBasket());
         setEmpty(basket==[]);
-        console.log(basket);
         const s=[]
-        // const updateBasket = basket.map(
-            
-        //  )
-        // const products=basket.map(e=>e._id)
         try{
-            if(_id=="")
-            return(<h1>noooooooooooo</h1>)
-        else
-            basket.map(e=>{ console.log(e.id);
-                // console.log("e.products.chef"+e.products.chef)
-                    addFunc({products:e.id,customer:_id,count:e.count})})
-
-        // addFunc({products,customer:_id})
+            if(_id!="")
+            basket.map(e=>{addFunc({products:e.id,customer:_id,count:e.count})})
     }
         catch(err){
             console.log(err);
         }
-
-
-        // products,customer
     }
 
     const listTemplate = (items) => {
@@ -87,19 +57,20 @@ const [addFunc, { data: data = [], isLoading, isSuccess, isError, error }] = use
     };
 
     const order = async () => {
-        //do order- api
         await localStorage.setItem("basket",JSON.stringify([]))
         refetch()
+
     }
 
     return (
-        // background-color: #282c34;
-        <div className="card "  ><br/><br/>
-        {/* */}
+        <div className="card" >
+            <div>
+            <br></br>
+            <br></br><br></br>
+            {success && <h1>הזמנתך בוצעה בהצלחה</h1>}
+            </div>
             <DataView value={basket} listTemplate={listTemplate}/> <br/>
-            <Button icon="pi pi-credit-card" disabled={empty || _id=="" } raised aria-label="Filter" onClick={()=>setOrderVisible(true)}>&nbsp; to paying </Button>
-            {/* <Button icon="pi pi-credit-card" disabled={true} raised aria-label="Filter" onClick={()=>setOrderVisible(true)}>&nbsp; to paying </Button> */}
-            {/* header={header()} sortField={sortField} sortOrder={sortOrder} /> */}
+            <Button icon="pi pi-credit-card" disabled={empty || _id=="" }  onClick={(e) => { order()}}  raised aria-label="Filter" >&nbsp; to paying </Button>
             <Dialog
             className='w-3'
                 visible={orderVisible}
