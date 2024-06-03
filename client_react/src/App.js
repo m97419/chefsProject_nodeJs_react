@@ -1,5 +1,5 @@
 import './App.css'
-import 'primereact/resources/themes/saga-orange/theme.css'
+import 'primereact/resources/themes/vela-orange/theme.css'
 import "primereact/resources/primereact.min.css"
 import "primeicons/primeicons.css"
 import "primeflex/primeflex.css"
@@ -19,6 +19,7 @@ import ChooseChef from './app/components/chefs/ChooseChef'
 import CountryNew from './app/components/countries/CountryNew'
 import ChooseCountry from './app/components/countries/ChooseCountry'
 import Animation from './app/components/Animation'
+import LoginDesign from './app/components/auth/LoginDesign'
 
 
 
@@ -31,7 +32,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Animation />}></Route>
         <Route path='/auth' element={<HomePage />}></Route>
-        <Route path="/login" element={<Login />}></Route>
+        <Route path="/login" element={<LoginDesign />}></Route>
         <Route path="/registerCustomer" element={<RegisterCustomer />}></Route>
         <Route path="/registerChef" element={<RegisterChef />}></Route>
         <Route path="/basket" element={<Basket />}></Route>
