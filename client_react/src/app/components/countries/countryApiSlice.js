@@ -8,6 +8,12 @@ const countriesApiSlice = ApiSlice.injectEndpoints({
             })
 
         }),
+        getCountryById:build.query({
+            query:(id)=>({
+                url:`/api/countries/${id}`
+            })
+
+        }),
         addcountry:build.mutation({
             query:(country)=>({
                 url:"/api/countries",
@@ -18,4 +24,4 @@ const countriesApiSlice = ApiSlice.injectEndpoints({
         })
     })
 })
-export const {useGetAllCountriesQuery,useAddcountryMutation}=countriesApiSlice
+export const {useGetAllCountriesQuery,useGetCountryByIdQuery,useAddcountryMutation}=countriesApiSlice

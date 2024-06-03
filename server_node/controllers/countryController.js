@@ -2,10 +2,11 @@ const Country=require('../modules/Country')
 
 const createNewCountry = async (req,res)=>{
     try{
-    const{name,fictures,flag} = req.body
+    const{name,flag} = req.body
+    const picture =(req.file?.filename? req.file.filename:"") 
     if(!name)
         return res.status(400).json({message: 'Name is required!!'})
-    const country = await Country.create({ name,fictures,flag})
+    const country = await Country.create({ name,pictures:picture,flag})
     if(country)
         return res.status(201).json({message: 'New country created'})
     else

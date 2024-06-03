@@ -2,7 +2,7 @@ const express = require("express")
 const router= express.Router()
 
 const verifyJWT = require("../middleware/verifyJWT")
-const verifyCHEF= require("../middleware/verifyCHEF")
+const verifyCHEF= require("../middleware/verifyCHEF_CUSTOMRE")
 const categoryController = require("../controllers/categoryController")
 
 // router.use(verifyJWT)

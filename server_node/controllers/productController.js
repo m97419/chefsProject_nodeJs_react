@@ -27,19 +27,69 @@ catch(err){
 
 const getAllProducts = async (req,res)=>{
     try{
-    const products = await Product.find().populate().lean()
-    console.log(products);
+    const  {chef, country} = req.query;
+    console.log(country);
+    if(country&&chef){
+        console.log("7&&");
+    const products = await Product.find({chef,country}).populate("category").populate("chef").populate("country").lean()
     if(!products?.length){
         return res.status(400).json({massage:'No products found'})
-
     }
+    console.log(products);
+   return res.json(products)
+}
+if(chef){
+    const products = await Product.find({chef}).populate("category").populate("chef").populate("country").lean()
+    if(!products?.length){
+        return res.status(400).json({massage:'No products found'})
+    }
+    console.log(products);
+    return res.json(products)
+}
+if(country){
+    const products = await Product.find({country}).populate("category").populate("chef").populate("country").lean()
+    if(!products?.length){
+        return res.status(400).json({massage:'No products found'})
+    }
+    console.log(products);
     res.json(products)
 }
+else{
+    const products = await Product.find().populate("category").populate("chef").populate("country").lean()
+    if(!products?.length){
+        return res.status(400).json({massage:'No products found'})
+    }
+    console.log(products);
+    res.json(products)
+}
+ 
+    // res.json(products)
+}
 catch(err){
+    console.log(err);
     return res.status(500).json({message:"error in server"})
 
 }
 }
+// ==========
+// app.get('/api/v1/search',(req,res)=>{
+//     const {q,limit} = req.query;
+//     let filterProducts = [...products];
+//     if(q){
+//     filterProducts = filterProducts.filter(product=>{
+//     return product.name.startsWith(q)
+//     })
+//     }
+//     if(limit){
+//     filterProducts= filterProducts.slice(0, Number(limit))
+//     }
+//     res.json(filterProducts)
+//     })
+    
+
+
+
+// ============
 
 const getProductById=async(req,res)=>{
     try{

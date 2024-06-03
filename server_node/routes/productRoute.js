@@ -1,7 +1,7 @@
 const express = require("express")
 const router= express.Router()
 // const multer=require('multer')
-const verifyCHEF= require("../middleware/verifyCHEF")
+const verifyCHEF= require("../middleware/verifyCHEF_CUSTOMRE")
 const verifyJWT = require("../middleware/verifyJWT")
 const productController = require("../controllers/productController")
 const multer=require('multer')
