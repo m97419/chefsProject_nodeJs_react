@@ -44,7 +44,6 @@ export default function RegisterChef() {
         else
             setAble(true)}
             const handle = () => {
-                console.log(user.name);
                 const formData = new FormData();
                     formData.append("name", user.name);
                     formData.append("password", user.password);

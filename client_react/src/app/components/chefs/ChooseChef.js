@@ -21,8 +21,6 @@ export default function ChooseChef() {
     }, [isSuccess]);
 
     const handle = (chef) => {
-        console.log("chef");
-        console.log(`chef=${chef}`);
         navigate(`/countrynew/chef=${chef}`)
 
     }

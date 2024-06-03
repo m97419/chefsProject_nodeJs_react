@@ -1,5 +1,4 @@
 const verifyCHEF = (req,res,next)=>{
-    console.log(req.user.role);
     if(req.user && req.user.role === "chef"){
         next()
     }
@@ -9,7 +8,6 @@ const verifyCHEF = (req,res,next)=>{
     }
 }
 const verifyCUSTOMER = (req,res,next)=>{
-    console.log(req.user.role);
     if(req.user && req.user.role === "customer"){
         next()
     }

@@ -12,7 +12,6 @@ const Animation=()=>{
             const interval = setInterval(() => {
                 setCurrentIndex(prevIndex => (prevIndex + 1) % productsData.length);
             }, 1000); // משנה את התמונה כל 3 שניות - ניתן לשנות את הזמן כרצונך
-            console.log(productsData[currentIndex]);
             return () => clearInterval(interval);
         }
     }, [isSuccess, productsData]);

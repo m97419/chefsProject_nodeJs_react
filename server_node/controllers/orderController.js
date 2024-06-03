@@ -3,7 +3,6 @@ const Order = require('../modules/Order')
 const getAllOrders = async (req,res)=>{
     try{
     const orders = await Order.find({customer:req.user._id}).lean()
-    console.log(orders);
     if(!orders?.length){
         return res.status(400).json({massage:'No orders found'})
     }
@@ -107,7 +106,6 @@ const getOrderByChef=async(req,res)=>{
     const orders = await Product.find({})
     orders.map(e=>e.products.map(f=>f.chef==chefId))
     // const orders = await Product.find({chef:chefId}).populate("category").populate("chef").populate("country").lean()
-    console.log(products);
     if(!products){
         return res.status(400).json({message:'products not found'})
     }

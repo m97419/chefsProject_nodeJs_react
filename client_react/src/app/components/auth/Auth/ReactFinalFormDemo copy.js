@@ -59,7 +59,6 @@ export const ReactFinalFormDemo = () => {
     };
 
     const onSubmit = (data, form) => {
-        console.log(data);
         setFormData(data);
         registerFunc(data)
         setShowMessage(true);

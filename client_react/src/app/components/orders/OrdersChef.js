@@ -13,21 +13,16 @@ export default function OrdersChef() {
     const [products, setProducts] = useState([]);
     const [layout, setLayout] = useState('grid');
     const { _id } = useAuth()
-    console.log(_id);
     const { data: ordersData = [], isLoading, isSuccess, isError, error, refetch } = useGetBasketByChef1Query(_id)
     const [updateFunc, { isError: isError1, error: error1, isSuccess: isSuccess1, data }] = useCompleteBasketMutation();
     const [orders, setOrders] = useState([]);
     useEffect(() => {
         setProducts(ordersData)
-        console.log(ordersData);
     }, [isSuccess]);
     useEffect(() => {
         setProducts(ordersData)
-        console.log(ordersData);
     }, [ordersData]);
-    console.log("ttt");
     const listItem = (product, index) => {
-        console.log("product.done", product.done != true);
         return (
             <div className="col-12" key={product.id}>
                 <div className={classNames('flex flex-column xl:flex-row xl:align-items-start p-4 gap-4', { 'border-top-1 surface-border': index !== 0 })}>

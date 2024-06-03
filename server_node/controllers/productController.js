@@ -3,11 +3,8 @@ const Category = require('../modules/Category')
 
 const createNewProduct = async (req,res)=>{
     try{
-    console.log("----------------------------------------------------");
     const{name,category,country,chef,price} = req.body
 
-    console.log(`cat  ${category}`);
-    console.log("----------------------------------------------------");
     const cat = category.split(",");
 
     if(!name || !price || !category || !country || !chef||!req.file)
@@ -28,14 +25,11 @@ catch(err){
 const getAllProducts = async (req,res)=>{
     try{
     const  {chef, country} = req.query;
-    console.log(country);
     if(country&&chef){
-        console.log("7&&");
     const products = await Product.find({chef,country}).populate("category").populate("chef").populate("country").lean()
     if(!products?.length){
         return res.status(400).json({massage:'No products found'})
     }
-    console.log(products);
    return res.json(products)
 }
 if(chef){
@@ -43,7 +37,6 @@ if(chef){
     if(!products?.length){
         return res.status(400).json({massage:'No products found'})
     }
-    console.log(products);
     return res.json(products)
 }
 if(country){
@@ -51,7 +44,6 @@ if(country){
     if(!products?.length){
         return res.status(400).json({massage:'No products found'})
     }
-    console.log(products);
     res.json(products)
 }
 else{
@@ -59,7 +51,6 @@ else{
     if(!products?.length){
         return res.status(400).json({massage:'No products found'})
     }
-    console.log(products);
     res.json(products)
 }
  
@@ -94,10 +85,8 @@ catch(err){
 const getProductById=async(req,res)=>{
     try{
     const {id}=req.params
-    console.log(typeof(id));
     try{
         const product = await Product.findById(id).lean()
-        console.log(product);
         res.json(product)
 
     }
@@ -114,7 +103,6 @@ catch(err){
 const updateProduct=async(req,res)=>{
  try{
     // const picture =(req.file?.filename? req.file.filename:"") 
-    console.log("nice");
     const {_id,name,category,price}=req.body
     const picture=req.file?req.file.path:""
     const cat = category.split(",");
@@ -164,7 +152,6 @@ const getByCountry=async(req,res)=>{
     try{
     const {countryId}=req.params
     const products = await Product.find({country:countryId}).populate("category").populate("chef").populate("country").lean()
-    console.log(products);  
     if(!products){
         return res.status(400).json({message:'products not found'})
     }
@@ -179,7 +166,6 @@ const getByChef=async(req,res)=>{
     try{
     const {chefId}=req.params
     const products = await Product.find({chef:chefId}).populate("category").populate("chef").populate("country").lean()
-    console.log(products);
     if(!products){
         return res.status(400).json({message:'products not found'})
     }
