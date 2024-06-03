@@ -42,6 +42,11 @@ export default function Register(prop) {
 
     const validate = (data) => {
         let errors = {};
+        // if(isError){
+        //     if(error?.data?.message=="Duplicate name"){
+        //         errors.name = 'Duplicate name'
+        //     }
+        // }
 
         if (!data.name) {
             errors.name = 'Name is required.';

@@ -28,7 +28,7 @@ export default function Login() {
             if(isSuccess){
                 console.log(`data ${data.error}`);
                 dispatch(setToken(data))
-                navigate(`/table`)
+                navigate(`/orders`)
             }
         },[isSuccess])
 

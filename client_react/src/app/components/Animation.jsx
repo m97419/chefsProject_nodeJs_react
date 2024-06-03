@@ -22,8 +22,8 @@ const Animation=()=>{
     return (
         // <div className="app" style={{ backgroundImage: backgroundImage }}>
        
-    <div className="app" style={{ backgroundImage: `http://localhost:7788/uploads/${productsData[currentIndex]?.picture?.split("\\")[2]}` }}>
-        <img className='app' src={`http://localhost:7788/uploads/${productsData[currentIndex]?.picture?.split("\\")[2]}`}   ></img>
+    <div className="home" style={{ backgroundImage: `http://localhost:7788/uploads/${productsData[currentIndex]?.picture?.split("\\")[2]}` }}>
+        <img className='home' src={`http://localhost:7788/uploads/${productsData[currentIndex]?.picture?.split("\\")[2]}`}   ></img>
         <div className="content">
             
         </div>

@@ -10,11 +10,14 @@ import useAuth from '../auth/useAuth';
 import { useCreateNewOrderMutation } from '../orders/ordersApiSlice';
 import { useCreateNewBasketMutation } from './basketApiSlice';
 import { Toast } from 'primereact/toast';
+import Msg from './Msg';
+import { useNavigate } from 'react-router';
 
 
 export default function Basket() {
  
 const {_id}=useAuth();
+const navigate = useNavigate()
 const [addFunc, { data: data = [], isLoading, isSuccess, isError, error }] = useCreateNewBasketMutation()
     const getBasket = () => {
         const myBasket = JSON.parse(localStorage.getItem("basket"))
@@ -25,6 +28,7 @@ const [addFunc, { data: data = [], isLoading, isSuccess, isError, error }] = use
     }
 
     const [basket, setBasket] = useState(getBasket())
+    const [orders, setOrders] = useState(getBasket())
     const [empty, setEmpty] = useState(basket==[])
     const [success,setSuccess]= useState(false);
     const [orderVisible, setOrderVisible] = useState(false)
@@ -34,6 +38,7 @@ const [addFunc, { data: data = [], isLoading, isSuccess, isError, error }] = use
     useEffect(() => {
         if(isSuccess)
         setSuccess(true);
+
     }, [isSuccess]);
     const refetch = () => {
         setBasket(getBasket());
@@ -47,7 +52,9 @@ const [addFunc, { data: data = [], isLoading, isSuccess, isError, error }] = use
             console.log(err);
         }
     }
-
+    const handle=()=>{
+        navigate("/auth")
+    }
     const listTemplate = (items) => {
         if (!items || items.length === 0) return null;
         let list = items.map((product, index) => {
@@ -57,6 +64,7 @@ const [addFunc, { data: data = [], isLoading, isSuccess, isError, error }] = use
     };
 
     const order = async () => {
+        setOrders(getBasket())
         await localStorage.setItem("basket",JSON.stringify([]))
         refetch()
 
@@ -67,10 +75,11 @@ const [addFunc, { data: data = [], isLoading, isSuccess, isError, error }] = use
             <div>
             <br></br>
             <br></br><br></br>
-            {success && <h1>הזמנתך בוצעה בהצלחה</h1>}
+            {isSuccess&&  <Msg ></Msg>}
             </div>
             <DataView value={basket} listTemplate={listTemplate}/> <br/>
-            <Button icon="pi pi-credit-card" disabled={empty || _id=="" }  onClick={(e) => { order()}}  raised aria-label="Filter" >&nbsp; to paying </Button>
+          { _id!="" && !isSuccess && !empty  &&<Button icon="pi pi-credit-card" disabled={empty || _id=="" }  onClick={(e) => { order()}}  raised aria-label="Filter" >&nbsp; to paying </Button>}
+            {_id=="" && <Button onClick={handle}  >הרשם כדי להזמין </Button>}
             <Dialog
             className='w-3'
                 visible={orderVisible}

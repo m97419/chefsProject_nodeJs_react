@@ -20,7 +20,7 @@ const basketApiSlice = ApiSlice.injectEndpoints({
             query:(customerId)=>({
                 url:`/api/basket/customer/${customerId}`
             })
-            // ,providesTags:["basket"]
+            ,providesTags:["basket"]
 
         }),
         createNewBasket:build.mutation({

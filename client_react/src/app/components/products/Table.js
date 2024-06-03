@@ -200,6 +200,7 @@ export default function Table() {
         createNewProduct(formData);
         setAddProductDialog(false);
     };
+
     const handlename = (e) => {
         setProductCreate(prevState => ({
             ...prevState,
