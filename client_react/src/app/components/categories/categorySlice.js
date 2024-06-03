@@ -1,15 +1,15 @@
-import { createSlice } from "@reduxjs/toolkit";
+// import { createSlice } from "@reduxjs/toolkit";
 
-const categotySlice = createSlice({
-    name:"categoty",
-    initialState:{
-        categoty:[]
-    },
-    reducers:{
-        setCategoty:(state,action)=>{
+// const categotySlice = createSlice({
+//     name:"categoty",
+//     initialState:{
+//         categoty:[]
+//     },
+//     reducers:{
+//         setCategoty:(state,action)=>{
             
-        }
-    }
-})
-export default authSlice.reducer
-export const {setToken,removeToken} = authSlice.actions
+//         }
+//     }
+// })
+// export default authSlice.reducer
+// export const {setToken,removeToken} = authSlice.actions

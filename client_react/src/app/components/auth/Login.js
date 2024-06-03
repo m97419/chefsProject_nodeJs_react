@@ -1,119 +1,115 @@
-import React,{useEffect,useState} from "react";
-import { useLoginMutation } from "./authApiSlice";
-import { removeToken, setToken } from "./authSlice";
-import { UseDispatch, useDispatch } from "react-redux";
-import { InputText } from "primereact/inputtext";
+
+import React, { useEffect, useState } from 'react';
+import { Form, Field } from 'react-final-form';
+import { InputText } from 'primereact/inputtext';
+import { Button } from 'primereact/button';
+// import { Dropdown } from 'primereact/dropdown';
+// import { Calendar } from 'primereact/calendar';
 import { Password } from 'primereact/password';
-import { Button } from "primereact/button";
-import {useNavigate} from "react-router-dom"
+// import { Checkbox } from 'primereact/checkbox';
+import { Dialog } from 'primereact/dialog';
 import { Divider } from 'primereact/divider';
-const Login=()=>{
-    const [user, setUser] = useState({
-        name: "",
-        password: ""
-    })
-    const navigate=useNavigate()
-    const registerchef=()=>{ navigate(`/registerchef`)}
-    const registercustomer=()=>{ navigate(`/registercustomer`)}
-    // const Login=()=>{ navigate(`/login`)}
-    const [able, setAble] = useState(true)
+import { classNames } from 'primereact/utils';
+import { InputNumber } from 'primereact/inputnumber';
+import { useNavigate } from "react-router-dom"
+import { setToken } from "./authSlice";
+import { useDispatch } from "react-redux";
+import { useRegisterCustomerMutation, useRegisterChefMutation } from './authApiSlice';
+import { FileUpload } from 'primereact/fileupload';
+import { useLoginMutation } from './authApiSlice';
+
+export default function Login() {
+    const [showMessage, setShowMessage] = useState(false);
+    const [formData, setFormData] = useState({});
+    const navigate = useNavigate()
     const dispatch = useDispatch()
     const [loginFunc,{isError,error,isSuccess,data}] =useLoginMutation()
-  useEffect(()=>{
-        if(isSuccess){
-            console.log(`data ${data.error}`);
-            // dispatch(removeToken())
-            dispatch(setToken(data))
-            navigate(`/`)
-        }
-    },[isSuccess])
-    const handlename = (e)=>{
-        setUser(prevState => ({
-            ...prevState,
-            name: e.target.value}))
-        if(e.target.value!="" && e.target.value!=null && user.password!="" && user.password!=null)
-            setAble(false)
-        else
-            setAble(true) }
-        const handlepassword=(e) => 
-        {  setUser(prevState => ({
-            ...prevState,
-            password: e.target.value}))
-            if(e.target.value!="" && e.target.value!=null && user.name!="" && user.name!=null)
-            setAble(false)
-        else
-            setAble(true)}
-        const handle=()=>{
-          
-            try{
-               loginFunc(user)
-  
+      useEffect(()=>{
+            if(isSuccess){
+                console.log(`data ${data.error}`);
+                dispatch(setToken(data))
+                navigate(`/table`)
             }
-            catch{
-                console.log(error);
-            }
+        },[isSuccess])
+
+
+    const validate = (data) => {
+        let errors = {};
+
+        if (!data.name) {
+            errors.name = 'Name is required.';
         }
-// className="primereact/resources/themes/vela-orange/theme.css"
-    return( <div >
-    <br></br><br></br>
-       <InputText value={user.name} placeholder="name" onChange={handlename}></InputText>
-       <br></br><br></br>
-        <Password  placeholder="password" onChange={handlepassword}  />
-        <br></br><br></br>
-        <Button onClick={handle} disabled={able}  ></Button>
-        <br></br><br></br>
 
-        <Button  onClick={registerchef} >Register Chef</Button>&nbsp;&nbsp;&nbsp;
-        <br></br><br></br>
-    <Button icon="pi pi-user" onClick={registercustomer}>&nbsp;&nbsp;Register Customer</Button>&nbsp;&nbsp;&nbsp;
+        if (!data.password) {
+            errors.password = 'Password is required.';
+        }
 
-    <div className="card">
-            <div className="flex flex-column md:flex-row">
-                <div className="w-full md:w-5 flex flex-column align-items-center justify-content-center gap-3 py-5">
-                    <div className="flex flex-wrap justify-content-center align-items-center gap-2">
-                        <label className="w-6rem">Username</label>
-                        <InputText id="username" type="text" className="w-12rem" />
-                    </div>
-                    <div className="flex flex-wrap justify-content-center align-items-center gap-2">
-                        <label className="w-6rem">Password</label>
-                        <InputText id="password" type="password" className="w-12rem" />
-                    </div>
-                    
-                    <Button label="Login" icon="pi pi-user" className="w-10rem mx-auto"></Button>
+        return errors;
+    };
+
+    const onSubmit = (data, form) => {
+        loginFunc(data)
+        form.restart();
+    };
+
+    const isFormFieldValid = (meta) => !!(meta.touched && meta.error);
+    const getFormErrorMessage = (meta) => {
+        return isFormFieldValid(meta) && <small className="p-error">{meta.error}</small>;
+    };
+
+    const dialogFooter = <div className="flex justify-content-center"><Button label="OK" className="p-button-text" autoFocus onClick={() => setShowMessage(false)} /></div>;
+    const passwordHeader = <h6>Pick a password</h6>;
+    const passwordFooter = (
+        <React.Fragment>
+            <Divider />
+            <p className="mt-2">Suggestions</p>
+            <ul className="pl-2 ml-2 mt-0" style={{ lineHeight: '1.5' }}>
+                <li>At least one lowercase</li>
+                <li>At least one uppercase</li>
+                <li>At least one numeric</li>
+                <li>Minimum 8 characters</li>
+            </ul>
+        </React.Fragment>
+    );
+
+    return (
+        <div className="form-demo">
+            <Dialog visible={showMessage} onHide={() => setShowMessage(false)} position="top" footer={dialogFooter} showHeader={false} breakpoints={{ '960px': '80vw' }} style={{ width: '30vw' }}>
+                <div className="flex align-items-center flex-column pt-6 px-3">
+                    <i className="pi pi-check-circle" style={{ fontSize: '5rem', color: 'var(--yellow-500)' }}></i>
+                    <h5>ההרשמה בוצעה</h5>
                 </div>
-                <div className="w-full md:w-2">
-                    <Divider layout="vertical" className="hidden md:flex">
-                        <b>OR</b>
-                    </Divider>
-                    <Divider layout="horizontal" className="flex md:hidden" align="center">
-                        <b>OR</b>
-                    </Divider>
-                </div>
-                <div className="w-full md:w-5 flex align-items-center justify-content-center py-5">
-                <div className="flex flex-wrap justify-content-center align-items-center gap-2">
-                <Button label="Register Chef" icon="pi pi-user"  onClick={registerchef} className="w-10rem mx-auto"></Button>
-                    </div>
-                    <div className="flex flex-wrap justify-content-center align-items-center gap-2">
-                    <Button label="Register Customer" icon="pi pi-user" onClick={registercustomer} className="w-10rem mx-auto"></Button>
-                    </div>
-                <div className="w-full md:w-5 flex align-items-center justify-content-center py-5">
-               
-                </div>
-                <div className="w-full md:w-5 flex align-items-center justify-content-center py-5">
-                
-                </div>
-        {/* <Button  onClick={registerchef} >Register Chef</Button> */}
-        <br></br><br></br>
-    {/* <Button icon="pi pi-user" onClick={registercustomer}> */}
-        {/* &nbsp;&nbsp;Register Customer</Button>&nbsp;&nbsp;&nbsp; */}
-                    {/* <Button label="Sign Up" icon="pi pi-user-plus" severity="success" className="w-10rem"></Button> */}
+            </Dialog>
+
+            <div className="flex justify-content-center">
+                <div className="card">
+                    <Form onSubmit={onSubmit} initialValues={{ name: '', password: '' }} validate={validate} render={({ handleSubmit }) => (
+                        <form onSubmit={handleSubmit} className="p-fluid">
+                            <Field name="name" render={({ input, meta }) => (
+                                <div className="field">
+                                    <span className="p-float-label">
+                                        <InputText id="name" {...input} autoFocus className={classNames({ 'p-invalid': isFormFieldValid(meta) })} />
+                                        <label htmlFor="name" className={classNames({ 'p-error': isFormFieldValid(meta) })}>Name*</label>
+                                    </span>
+                                    {getFormErrorMessage(meta)}
+                                </div>
+                            )} />
+                            <Field name="password" render={({ input, meta }) => (
+                                <div className="field">
+                                    <span className="p-float-label">
+                                        <Password id="password" {...input} toggleMask className={classNames({ 'p-invalid': isFormFieldValid(meta) })} header={passwordHeader} footer={passwordFooter} />
+                                        <label htmlFor="password" className={classNames({ 'p-error': isFormFieldValid(meta) })}>Password*</label>
+                                    </span>
+                                    {getFormErrorMessage(meta)}
+                                </div>
+                            )} />
+
+
+                            <Button type="submit" label="כניסה" className="mt-2" />
+                        </form>
+                    )} />
                 </div>
             </div>
         </div>
-
-</div>
-
-    )
+    );
 }
-export default Login
-// value={user.password}

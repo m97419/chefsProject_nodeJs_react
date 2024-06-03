@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import { ProductService } from './service/ProductService';
 import { Button } from 'primereact/button';
 import { DataView, DataViewLayoutOptions } from 'primereact/dataview';
 import { Rating } from 'primereact/rating';
@@ -12,7 +11,6 @@ import { Avatar } from 'primereact/avatar';
 export default function OrdersCustomer() {
     const [products, setProducts] = useState([]);
     const [layout, setLayout] = useState('grid');
-    // const { data: ordersData = [], isLoading, isSuccess, isError, error, refetch } =useGetAllOrdersQuery()
     const {_id} = useAuth()
    console.log(_id);
    const { data: ordersData = [], isLoading, isSuccess, isError, error, refetch } =useGetBasketByCustomerQuery(_id)
@@ -80,7 +78,6 @@ export default function OrdersCustomer() {
                     <span className="text-2xl font-semibold">{product.createdAt.split("T")[0]}</span>
                     <div className="flex align-items-center justify-content-between">
                         <span className="text-2xl font-semibold">${product.products.price*product.count }</span>
-                        {/* <Button icon="pi pi-shopping-cart" className="p-button-rounded" disabled={product.inventoryStatus === 'OUTOFSTOCK'}></Button> */}
                     </div>
                 </div>
             </div>
