@@ -43,9 +43,17 @@ export default function Register(prop) {
 
         }
     }, [isSuccessC, dataC])
+    useEffect(() => {
+     console.log(error?.data?.message);
+    }, [isError, isErrorC])
 
     const validate = (data) => {
         let errors = {};
+        // if(isError){
+        //     if(error?.data?.message=="Duplicate name"){
+        //         errors.name = 'Duplicate name'
+        //     }
+        // }
 
         if (!data.name) {
             errors.name = 'Name is required.';
@@ -82,8 +90,9 @@ export default function Register(prop) {
             registerFuncC(formDataChef);
 
         }
+
        
-        // form.restart();
+        form.restart();
     };
 
     const isFormFieldValid = (meta) => !!(meta.touched && meta.error);

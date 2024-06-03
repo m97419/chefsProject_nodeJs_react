@@ -17,7 +17,7 @@ export default function OrdersCustomer() {
     const [orders, setOrders] = useState([]);
     useEffect(() => {
         setProducts(ordersData)
-    }, [isSuccess]);
+    }, [isSuccess,ordersData]);
    
 
     const listItem = (product, index) => {
