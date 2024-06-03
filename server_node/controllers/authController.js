@@ -77,7 +77,7 @@ const login = async(req,res)=>{
             name:foundChef.name,
             phone:foundChef.phone,
             email:foundChef.email,
-            // picture:foundChef.picture,
+            picture:foundChef.picture,
             role:"chef"
         }
         
