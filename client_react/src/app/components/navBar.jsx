@@ -18,7 +18,7 @@ const NavBar = () => {
         if (role == "" || role == null)
             return <Button label="כניסה" icon="pi pi-spinner" onClick={() => { navigate(`/login`) }} />
         else
-            return <Button label="יציאה" icon="pi pi-power-off" onClick={() => { dispatch(removeToken()); navigate(`/`) }} />
+            return <Button label="יציאה" icon="pi pi-power-off" onClick={() => { dispatch(removeToken());localStorage.setItem('basket',[]); navigate(`/`) }} />
 
     }
 
