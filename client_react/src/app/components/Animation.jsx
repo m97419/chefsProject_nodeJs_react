@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useGetAllProductsQuery } from './products/productsApiSlice';
+import Post from './auth/Post';
 
 const Animation=()=>{
     // const [index, setIndex] = useState(0);
@@ -23,6 +24,7 @@ const Animation=()=>{
         // <div className="app" style={{ backgroundImage: backgroundImage }}>
        
     <div className="home" style={{ backgroundImage: `http://localhost:7788/uploads/${productsData[currentIndex]?.picture?.split("\\")[2]}` }}>
+        <Post></Post>
         <img className='home' src={`http://localhost:7788/uploads/${productsData[currentIndex]?.picture?.split("\\")[2]}`}   ></img>
         <div className="content">
             

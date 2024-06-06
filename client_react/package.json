@@ -2,6 +2,8 @@
   "name": "nice",
   "version": "0.1.0",
   "private": true,
+  "watch": ["server.js"],
+"legacyWatch": true,
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.1",
     "@testing-library/jest-dom": "^5.17.0",
@@ -23,6 +25,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "dev": "nodemon server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

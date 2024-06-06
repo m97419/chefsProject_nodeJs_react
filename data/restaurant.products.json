@@ -657,4 +657,964 @@
     "$date": "2024-06-02T12:47:29.518Z"
   },
   "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dab5a0e6f6c270e7212e4"
+  },
+  "name": "פלאפל",
+  "category": [
+    {
+      "$oid": "6658f98aa427f205988bfe79"
+    },
+    {
+      "$oid": "6658f99fa427f205988bfe7f"
+    },
+    {
+      "$oid": "665c53a12369d4833c38672d"
+    },
+    {
+      "$oid": "665c695e9b1c9c4449b85602"
+    }
+  ],
+  "country": {
+    "$oid": "6658f8faa427f205988bfe6d"
+  },
+  "chef": {
+    "$oid": "665dab110e6f6c270e7212dc"
+  },
+  "price": 23,
+  "picture": "public\\uploads\\picture-1717414751825-810148531fal.webp",
+  "createdAt": {
+    "$date": "2024-06-03T11:39:06.390Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T11:39:11.837Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dc17eecef884a036f608b"
+  },
+  "name": "שקשוקה",
+  "category": [
+    {
+      "$oid": "6658f98aa427f205988bfe79"
+    },
+    {
+      "$oid": "6658f99fa427f205988bfe7f"
+    },
+    {
+      "$oid": "665c53982369d4833c38672a"
+    },
+    {
+      "$oid": "665c65a89b1c9c4449b8553d"
+    }
+  ],
+  "country": {
+    "$oid": "6658f8faa427f205988bfe6d"
+  },
+  "chef": {
+    "$oid": "665dab110e6f6c270e7212dc"
+  },
+  "price": 10,
+  "picture": "public\\uploads\\picture-1717420414041-266601100Depositphotos_505157708_L-qhpwl5lepy20ww4d9p5lz02jmtrbl0fqn78lpgxsj0.jpg",
+  "createdAt": {
+    "$date": "2024-06-03T13:13:34.064Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T13:13:34.064Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dc6d1bd9eb8eb93b8b43f"
+  },
+  "name": "חומוס ישראלי ",
+  "category": [
+    {
+      "$oid": "6658f99fa427f205988bfe7f"
+    }
+  ],
+  "country": {
+    "$oid": "6658f8faa427f205988bfe6d"
+  },
+  "chef": {
+    "$oid": "665dab110e6f6c270e7212dc"
+  },
+  "price": 5,
+  "picture": "public\\uploads\\picture-1717421776929-29519507hum.webp",
+  "createdAt": {
+    "$date": "2024-06-03T13:36:17.061Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T13:36:17.061Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dc83d3039add97e5b5f39"
+  },
+  "name": "פסטה מוקרמת",
+  "category": [
+    {
+      "$oid": "665dc7e13039add97e5b5f33"
+    },
+    {
+      "$oid": "665dc8123039add97e5b5f36"
+    }
+  ],
+  "country": {
+    "$oid": "6658f8c3a427f205988bfe6a"
+  },
+  "chef": {
+    "$oid": "665dab110e6f6c270e7212dc"
+  },
+  "price": 30,
+  "picture": "public\\uploads\\picture-1717422141888-574674030a66f8-img_1079.webp",
+  "createdAt": {
+    "$date": "2024-06-03T13:42:21.908Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T13:42:21.908Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dc9941cbbba84c04d4f9c"
+  },
+  "name": "פסטה יאמי",
+  "category": [
+    {
+      "$oid": "665dc8123039add97e5b5f36"
+    }
+  ],
+  "country": {
+    "$oid": "6658f8c3a427f205988bfe6a"
+  },
+  "chef": {
+    "$oid": "665dab110e6f6c270e7212dc"
+  },
+  "price": 48,
+  "picture": "public\\uploads\\picture-1717422484777-685129928×¤×¡××-×¤×¡××-e1603095811982-355x236.jpg",
+  "createdAt": {
+    "$date": "2024-06-03T13:48:04.803Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T13:48:04.803Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dc9c21cbbba84c04d4fa2"
+  },
+  "name": "פסטה יאמי",
+  "category": [
+    {
+      "$oid": "665dc8123039add97e5b5f36"
+    }
+  ],
+  "country": {
+    "$oid": "6658f8c3a427f205988bfe6a"
+  },
+  "chef": {
+    "$oid": "665dab110e6f6c270e7212dc"
+  },
+  "price": 48,
+  "picture": "public\\uploads\\picture-1717422530833-594941911×¤×¡××-×¤×¡××-e1603095811982-355x236.jpg",
+  "createdAt": {
+    "$date": "2024-06-03T13:48:50.839Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T13:48:50.839Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dca191cbbba84c04d4fae"
+  },
+  "name": "לזניה",
+  "category": [
+    {
+      "$oid": "665c538e2369d4833c386727"
+    },
+    {
+      "$oid": "665c53982369d4833c38672a"
+    },
+    {
+      "$oid": "665c64709b1c9c4449b8550f"
+    }
+  ],
+  "country": {
+    "$oid": "6658f8c3a427f205988bfe6a"
+  },
+  "chef": {
+    "$oid": "665dab110e6f6c270e7212dc"
+  },
+  "price": 44,
+  "picture": "public\\uploads\\picture-1717422617922-3460825015fac12254a4cbf94d3b72fcae4be6903.webp",
+  "createdAt": {
+    "$date": "2024-06-03T13:50:17.927Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T13:50:17.927Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665eef6335580eb9dca2a12a"
+  },
+  "name": "sas",
+  "category": [
+    {
+      "$oid": "6658f998a427f205988bfe7c"
+    },
+    {
+      "$oid": "665c538e2369d4833c386727"
+    },
+    {
+      "$oid": "6658f99fa427f205988bfe7f"
+    }
+  ],
+  "country": {
+    "$oid": "6658f872a427f205988bfe5b"
+  },
+  "chef": {
+    "$oid": "665eef3b35580eb9dca2a11e"
+  },
+  "price": 66,
+  "picture": "public\\uploads\\picture-1717497699036-592582267_4c2341af-b72a-4cfd-a0d0-5237150f7160.jpeg",
+  "createdAt": {
+    "$date": "2024-06-04T10:41:39.048Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-04T10:41:39.048Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66615e92aa9a57e1d6972ceb"
+  },
+  "name": "מלך הבייגלה",
+  "category": [
+    {
+      "$oid": "66615e7baa9a57e1d6972ce8"
+    },
+    {
+      "$oid": "665dc7e13039add97e5b5f33"
+    },
+    {
+      "$oid": "665c68659b1c9c4449b855ba"
+    },
+    {
+      "$oid": "665c64709b1c9c4449b8550f"
+    }
+  ],
+  "country": {
+    "$oid": "6658f92fa427f205988bfe73"
+  },
+  "chef": {
+    "$oid": "6658f2ffa427f205988bfe49"
+  },
+  "price": 50,
+  "picture": "public\\uploads\\picture-1717657234689-513620830_a1792e52-bad1-45f0-bb32-139b7a7894bc.jpeg",
+  "createdAt": {
+    "$date": "2024-06-06T07:00:34.702Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-06T07:00:34.702Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6661bbf25ee755e8e93a6aa8"
+  },
+  "name": "בשר טעים",
+  "category": [
+    {
+      "$oid": "6658f98aa427f205988bfe79"
+    },
+    {
+      "$oid": "6658f998a427f205988bfe7c"
+    },
+    {
+      "$oid": "665c64709b1c9c4449b8550f"
+    },
+    {
+      "$oid": "665c64c49b1c9c4449b8551e"
+    }
+  ],
+  "country": {
+    "$oid": "6658f897a427f205988bfe61"
+  },
+  "chef": {
+    "$oid": "6658f2ffa427f205988bfe49"
+  },
+  "price": 39,
+  "picture": "public\\uploads\\picture-1717681138460-5110881099d6ebbd8a00a4286959bb92431b40ea8.jpg",
+  "createdAt": {
+    "$date": "2024-06-06T13:38:58.492Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-06T13:38:58.492Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6661bd6e9ae34588c3ed9d0b"
+  },
+  "name": "בשר",
+  "category": [
+    {
+      "$oid": "6658f998a427f205988bfe7c"
+    },
+    {
+      "$oid": "665c53982369d4833c38672a"
+    },
+    {
+      "$oid": "665c64709b1c9c4449b8550f"
+    }
+  ],
+  "country": {
+    "$oid": "6658f882a427f205988bfe5e"
+  },
+  "chef": {
+    "$oid": "6658f2ffa427f205988bfe49"
+  },
+  "price": 30,
+  "picture": "public\\uploads\\picture-1717681518234-318898201597a8271280c4600b207c23904712f95.jpg",
+  "createdAt": {
+    "$date": "2024-06-06T13:45:18.271Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-06T13:45:18.271Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6661c0c2cb50edb31062f5ac"
+  },
+  "name": "עוגת בננה",
+  "category": [
+    {
+      "$oid": "665c53982369d4833c38672a"
+    },
+    {
+      "$oid": "665c538e2369d4833c386727"
+    },
+    {
+      "$oid": "665c53a12369d4833c38672d"
+    }
+  ],
+  "country": {
+    "$oid": "6658f92fa427f205988bfe73"
+  },
+  "chef": {
+    "$oid": "6658f2ffa427f205988bfe49"
+  },
+  "price": 49,
+  "picture": "public\\uploads\\picture-1717682370895-79422621396c56d5aaf784b52a10b3cb695e2bff2.jpg",
+  "createdAt": {
+    "$date": "2024-06-06T13:59:30.904Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-06T13:59:30.904Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6661c105cb50edb31062f5b2"
+  },
+  "name": "צ'יפס",
+  "category": [
+    {
+      "$oid": "6658f99fa427f205988bfe7f"
+    },
+    {
+      "$oid": "665c53a12369d4833c38672d"
+    },
+    {
+      "$oid": "665c695e9b1c9c4449b85602"
+    },
+    {
+      "$oid": "665c69c79b1c9c4449b85611"
+    }
+  ],
+  "country": {
+    "$oid": "6658f8c3a427f205988bfe6a"
+  },
+  "chef": {
+    "$oid": "6658f2ffa427f205988bfe49"
+  },
+  "price": 13,
+  "picture": "public\\uploads\\picture-1717682437828-375042294a-tantalizing-photo-of-golden-crispy-french-fries--p3JHC52uT9iCKqfmgMN5Jg-aW9ter64SByYM0arT-V...jpeg",
+  "createdAt": {
+    "$date": "2024-06-06T14:00:37.830Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-06T14:00:37.830Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6661c273cb50edb31062f5d0"
+  },
+  "name": "לזניה",
+  "category": [
+    {
+      "$oid": "665c538e2369d4833c386727"
+    },
+    {
+      "$oid": "665c64709b1c9c4449b8550f"
+    },
+    {
+      "$oid": "665c695e9b1c9c4449b85602"
+    },
+    {
+      "$oid": "665dc7e13039add97e5b5f33"
+    }
+  ],
+  "country": {
+    "$oid": "6658f8c3a427f205988bfe6a"
+  },
+  "chef": {
+    "$oid": "6658ecd9a427f205988bfe0b"
+  },
+  "price": 79,
+  "picture": "public\\uploads\\picture-1717682803721-666184784_0b2e5844-c0f3-492a-ae90-972f6ae8bc10.jpeg",
+  "createdAt": {
+    "$date": "2024-06-06T14:06:43.733Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-06T14:06:43.733Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6661c2f2cb50edb31062f5d9"
+  },
+  "name": "מנת שחיתות",
+  "category": [
+    {
+      "$oid": "665c538e2369d4833c386727"
+    },
+    {
+      "$oid": "665c53982369d4833c38672a"
+    },
+    {
+      "$oid": "665c68659b1c9c4449b855ba"
+    }
+  ],
+  "country": {
+    "$oid": "6661c2e5cb50edb31062f5d6"
+  },
+  "chef": {
+    "$oid": "6658ecd9a427f205988bfe0b"
+  },
+  "price": 69,
+  "picture": "public\\uploads\\picture-1717682930234-743721728_02b4d5ae-f8d2-42f2-8fab-832e21ce53ad.jpeg",
+  "createdAt": {
+    "$date": "2024-06-06T14:08:50.240Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-06T14:08:50.240Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6661c338cb50edb31062f5e2"
+  },
+  "name": "רולדה",
+  "category": [
+    {
+      "$oid": "6658f99fa427f205988bfe7f"
+    },
+    {
+      "$oid": "665c695e9b1c9c4449b85602"
+    },
+    {
+      "$oid": "6661c321cb50edb31062f5df"
+    }
+  ],
+  "country": {
+    "$oid": "6658f955a427f205988bfe76"
+  },
+  "chef": {
+    "$oid": "6658ecd9a427f205988bfe0b"
+  },
+  "price": 120,
+  "picture": "public\\uploads\\picture-1717683000027-554649851_4c2341af-b72a-4cfd-a0d0-5237150f7160.jpeg",
+  "createdAt": {
+    "$date": "2024-06-06T14:10:00.031Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-06T14:10:00.031Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6661c37fcb50edb31062f5e8"
+  },
+  "name": "עוגת קצפת",
+  "category": [
+    {
+      "$oid": "6658f99fa427f205988bfe7f"
+    }
+  ],
+  "country": {
+    "$oid": "6658f882a427f205988bfe5e"
+  },
+  "chef": {
+    "$oid": "6658ecd9a427f205988bfe0b"
+  },
+  "price": 130,
+  "picture": "public\\uploads\\picture-1717683071523-271145876_76dc8d21-b138-4257-a0fa-3a5795385af8.jpeg",
+  "createdAt": {
+    "$date": "2024-06-06T14:11:11.528Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-06T14:11:11.528Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6661c41bcb50edb31062f603"
+  },
+  "name": "מוס שוקולד",
+  "category": [
+    {
+      "$oid": "6658f99fa427f205988bfe7f"
+    },
+    {
+      "$oid": "665c53982369d4833c38672a"
+    },
+    {
+      "$oid": "665c64709b1c9c4449b8550f"
+    },
+    {
+      "$oid": "665c68659b1c9c4449b855ba"
+    },
+    {
+      "$oid": "6661c321cb50edb31062f5df"
+    }
+  ],
+  "country": {
+    "$oid": "6658f882a427f205988bfe5e"
+  },
+  "chef": {
+    "$oid": "6658ebaaa427f205988bfe05"
+  },
+  "price": 50,
+  "picture": "public\\uploads\\picture-1717683227964-916205402_866ea8ed-5907-42b5-b543-5aa5ee331dc7.jpeg",
+  "createdAt": {
+    "$date": "2024-06-06T14:13:47.969Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-06T14:13:47.969Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6661c457cb50edb31062f609"
+  },
+  "name": " שכבות שוקולד",
+  "category": [
+    {
+      "$oid": "6658f99fa427f205988bfe7f"
+    },
+    {
+      "$oid": "665c53982369d4833c38672a"
+    },
+    {
+      "$oid": "665c68659b1c9c4449b855ba"
+    },
+    {
+      "$oid": "665dc7e13039add97e5b5f33"
+    },
+    {
+      "$oid": "6661c321cb50edb31062f5df"
+    }
+  ],
+  "country": {
+    "$oid": "6658f882a427f205988bfe5e"
+  },
+  "chef": {
+    "$oid": "6658ebaaa427f205988bfe05"
+  },
+  "price": 50,
+  "picture": "public\\uploads\\picture-1717683287506-654105673_5966e1de-8793-48c3-a64f-9652f17b6970.jpeg",
+  "createdAt": {
+    "$date": "2024-06-06T14:14:47.511Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-06T14:14:47.511Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6661c56fcb50edb31062f612"
+  },
+  "name": "פאנקייק פירות יער",
+  "category": [
+    {
+      "$oid": "6658f98aa427f205988bfe79"
+    },
+    {
+      "$oid": "665c538e2369d4833c386727"
+    },
+    {
+      "$oid": "665c53a12369d4833c38672d"
+    },
+    {
+      "$oid": "665c63bf9b1c9c4449b854f3"
+    },
+    {
+      "$oid": "665c64709b1c9c4449b8550f"
+    },
+    {
+      "$oid": "665c695e9b1c9c4449b85602"
+    },
+    {
+      "$oid": "6661c321cb50edb31062f5df"
+    }
+  ],
+  "country": {
+    "$oid": "6661c565cb50edb31062f60f"
+  },
+  "chef": {
+    "$oid": "6658ebaaa427f205988bfe05"
+  },
+  "price": 40,
+  "picture": "public\\uploads\\picture-1717683567988-703219245166d54a0a49049f8ba2a09f601d32735.jpg",
+  "createdAt": {
+    "$date": "2024-06-06T14:19:27.991Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-06T14:19:27.991Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6661c66bcb50edb31062f629"
+  },
+  "name": "עוגת גבינה",
+  "category": [
+    {
+      "$oid": "665c538e2369d4833c386727"
+    }
+  ],
+  "country": {
+    "$oid": "6658f8c3a427f205988bfe6a"
+  },
+  "chef": {
+    "$oid": "6658e8d3a427f205988bfdfa"
+  },
+  "price": 100,
+  "picture": "public\\uploads\\picture-1717683819196-258616144Default_Cheesecake_with_crumbs_0.jpg",
+  "createdAt": {
+    "$date": "2024-06-06T14:23:39.220Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-06T14:23:39.220Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6661c6d8cb50edb31062f62f"
+  },
+  "name": "עוגת קצפת עם תותים",
+  "category": [
+    {
+      "$oid": "665c538e2369d4833c386727"
+    },
+    {
+      "$oid": "665c68659b1c9c4449b855ba"
+    },
+    {
+      "$oid": "6661c321cb50edb31062f5df"
+    }
+  ],
+  "country": {
+    "$oid": "6658f897a427f205988bfe61"
+  },
+  "chef": {
+    "$oid": "6658e8d3a427f205988bfdfa"
+  },
+  "price": 190,
+  "picture": "public\\uploads\\picture-1717683928891-916599406insanely-tempting-cheesecake-and-chocolate-decorat-7oBjg0UeS9KPGB_xrslb_w-OfyAXXlsQ0OZ5WEIGL61Ng.png",
+  "createdAt": {
+    "$date": "2024-06-06T14:25:28.964Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-06T14:25:28.964Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6661c708cb50edb31062f635"
+  },
+  "name": "מילקשייק תותים",
+  "category": [
+    {
+      "$oid": "665c538e2369d4833c386727"
+    },
+    {
+      "$oid": "6661c321cb50edb31062f5df"
+    }
+  ],
+  "country": {
+    "$oid": "6661c565cb50edb31062f60f"
+  },
+  "chef": {
+    "$oid": "6658e8d3a427f205988bfdfa"
+  },
+  "price": 40,
+  "picture": "public\\uploads\\picture-1717683976555-303510415Default_Dairy_dessert_with_whipped_cream_and_pudding_and_straw_0.jpg",
+  "createdAt": {
+    "$date": "2024-06-06T14:26:16.578Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-06T14:26:16.578Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6661c738cb50edb31062f63b"
+  },
+  "name": "מגנום",
+  "category": [
+    {
+      "$oid": "665c538e2369d4833c386727"
+    },
+    {
+      "$oid": "665c68659b1c9c4449b855ba"
+    },
+    {
+      "$oid": "6661c321cb50edb31062f5df"
+    }
+  ],
+  "country": {
+    "$oid": "6658f8a3a427f205988bfe64"
+  },
+  "chef": {
+    "$oid": "6658e8d3a427f205988bfdfa"
+  },
+  "price": 12,
+  "picture": "public\\uploads\\picture-1717684024166-674397593Default_Small_popsiclesChocolate_and_nut_flavored_0.jpg",
+  "createdAt": {
+    "$date": "2024-06-06T14:27:04.193Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-06T14:27:04.193Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6661c7d2cb50edb31062f650"
+  },
+  "name": "חצילים מוקרמים ",
+  "category": [
+    {
+      "$oid": "665c538e2369d4833c386727"
+    },
+    {
+      "$oid": "665c64c49b1c9c4449b8551e"
+    }
+  ],
+  "country": {
+    "$oid": "6658f8a3a427f205988bfe64"
+  },
+  "chef": {
+    "$oid": "6658f1cca427f205988bfe3f"
+  },
+  "price": 0,
+  "picture": "public\\uploads\\picture-1717684178396-303965768Default_Eggplants_stuffed_with_cheese_0.jpg",
+  "createdAt": {
+    "$date": "2024-06-06T14:29:38.422Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-06T14:29:38.422Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6661c812cb50edb31062f656"
+  },
+  "name": "עוגת שוקולד ותותים",
+  "category": [
+    {
+      "$oid": "6658f99fa427f205988bfe7f"
+    },
+    {
+      "$oid": "665c53982369d4833c38672a"
+    },
+    {
+      "$oid": "665c64709b1c9c4449b8550f"
+    },
+    {
+      "$oid": "665c68659b1c9c4449b855ba"
+    },
+    {
+      "$oid": "6661c321cb50edb31062f5df"
+    }
+  ],
+  "country": {
+    "$oid": "6658f897a427f205988bfe61"
+  },
+  "chef": {
+    "$oid": "6658f1cca427f205988bfe3f"
+  },
+  "price": 60,
+  "picture": "public\\uploads\\picture-1717684242126-882193327ytskhq_91643_A_mouthwatering_photo_of_a_delectable_cheesecake_a_b8382282-bb41-4a40-ae62-742fd9...png",
+  "createdAt": {
+    "$date": "2024-06-06T14:30:42.199Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-06T14:30:42.199Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6661c84ecb50edb31062f666"
+  },
+  "name": "עוגת ויטרינה",
+  "category": [
+    {
+      "$oid": "665c538e2369d4833c386727"
+    }
+  ],
+  "country": {
+    "$oid": "6658f955a427f205988bfe76"
+  },
+  "chef": {
+    "$oid": "6658f0fda427f205988bfe3a"
+  },
+  "price": 100,
+  "picture": "public\\uploads\\picture-1717684389963-10563246233c5c0e5906b4ef986f02f8b3b01bf51.jpg",
+  "createdAt": {
+    "$date": "2024-06-06T14:31:42.856Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-06T14:33:09.967Z"
+  },
+  "__v": 1
+},
+{
+  "_id": {
+    "$oid": "6661c871cb50edb31062f66c"
+  },
+  "name": "מאכלי חלב",
+  "category": [
+    {
+      "$oid": "6658f99fa427f205988bfe7f"
+    },
+    {
+      "$oid": "665c68659b1c9c4449b855ba"
+    }
+  ],
+  "country": {
+    "$oid": "6661c2e5cb50edb31062f5d6"
+  },
+  "chef": {
+    "$oid": "6658f0fda427f205988bfe3a"
+  },
+  "price": 50,
+  "picture": "public\\uploads\\picture-1717684471017-9085304229b06fea68ca14022be3dc7e08c35630c.jpg",
+  "createdAt": {
+    "$date": "2024-06-06T14:32:17.351Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-06T14:34:31.022Z"
+  },
+  "__v": 1
+},
+{
+  "_id": {
+    "$oid": "6661c8e1cb50edb31062f684"
+  },
+  "name": "עוגת שוקולד",
+  "category": [
+    {
+      "$oid": "6658f99fa427f205988bfe7f"
+    },
+    {
+      "$oid": "665c68659b1c9c4449b855ba"
+    }
+  ],
+  "country": {
+    "$oid": "6658f882a427f205988bfe5e"
+  },
+  "chef": {
+    "$oid": "6658f0fda427f205988bfe3a"
+  },
+  "price": 200,
+  "picture": "public\\uploads\\picture-1717684449700-7565847688a4bc37728bf496da8bff100f7fad6a9 (1).jpg",
+  "createdAt": {
+    "$date": "2024-06-06T14:34:09.703Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-06T14:34:09.703Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6661c93bcb50edb31062f696"
+  },
+  "name": "המבורגר",
+  "category": [
+    {
+      "$oid": "6658f998a427f205988bfe7c"
+    },
+    {
+      "$oid": "665c64c49b1c9c4449b8551e"
+    },
+    {
+      "$oid": "665c695e9b1c9c4449b85602"
+    },
+    {
+      "$oid": "665dc8123039add97e5b5f36"
+    }
+  ],
+  "country": {
+    "$oid": "6661c565cb50edb31062f60f"
+  },
+  "chef": {
+    "$oid": "6658f0fda427f205988bfe3a"
+  },
+  "price": 50,
+  "picture": "public\\uploads\\picture-1717684539350-429080277Default_Cheese_and_zukini_patties_0 (1).jpg",
+  "createdAt": {
+    "$date": "2024-06-06T14:35:39.375Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-06T14:35:39.375Z"
+  },
+  "__v": 0
 }]
