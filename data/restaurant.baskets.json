@@ -1,23 +1,1840 @@
 [{
   "_id": {
-    "$oid": "6658fa07a427f205988bfea5"
+    "$oid": "665c66399b1c9c4449b8556b"
   },
   "products": {
-    "$oid": "6658f9a8a427f205988bfe82"
+    "$oid": "665c53b52369d4833c386730"
+  },
+  "count": 2,
+  "customer": {
+    "$oid": "665c57b617c1de9e6336f14e"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-02T12:31:53.046Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-02T12:31:53.046Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-02T12:31:53.046Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665c66399b1c9c4449b8556d"
+  },
+  "products": {
+    "$oid": "6659773fae0e50ca74116ebb"
+  },
+  "count": 3,
+  "customer": {
+    "$oid": "665c57b617c1de9e6336f14e"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-02T12:31:53.050Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-02T12:31:53.051Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-02T12:31:53.051Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665c663b9b1c9c4449b8556f"
+  },
+  "products": {
+    "$oid": "6659773fae0e50ca74116ebb"
+  },
+  "count": 3,
+  "customer": {
+    "$oid": "665c57b617c1de9e6336f14e"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-02T12:31:55.659Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-02T12:31:55.660Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-02T12:31:55.660Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665daad00e6f6c270e7212c7"
+  },
+  "products": {
+    "$oid": "665c64d49b1c9c4449b85521"
+  },
+  "count": 3,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T11:36:48.510Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T11:36:48.510Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T11:36:48.510Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665daad00e6f6c270e7212c9"
+  },
+  "products": {
+    "$oid": "665c651f9b1c9c4449b85531"
   },
   "count": 1,
   "customer": {
-    "$oid": "6658f9c6a427f205988bfe9e"
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T11:36:48.513Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T11:36:48.514Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T11:36:48.514Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665daaf60e6f6c270e7212d2"
+  },
+  "products": {
+    "$oid": "665c67bb9b1c9c4449b855a8"
+  },
+  "count": 2,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T11:37:26.917Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T11:37:26.918Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T11:37:26.918Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665daaf60e6f6c270e7212d4"
+  },
+  "products": {
+    "$oid": "665c68799b1c9c4449b855bd"
+  },
+  "count": 1,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T11:37:26.921Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T11:37:26.921Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T11:37:26.921Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dd207890e30e22815d987"
+  },
+  "products": {
+    "$oid": "665c63e89b1c9c4449b854fa"
+  },
+  "count": 1,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T14:24:07.875Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T14:24:07.876Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T14:24:07.876Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dd207890e30e22815d989"
+  },
+  "products": {
+    "$oid": "665c679a9b1c9c4449b855a2"
+  },
+  "count": 1,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T14:24:07.880Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T14:24:07.880Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T14:24:07.880Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dd207890e30e22815d98b"
+  },
+  "products": {
+    "$oid": "665c64d49b1c9c4449b85521"
+  },
+  "count": 4,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T14:24:07.883Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T14:24:07.883Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T14:24:07.883Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dd207890e30e22815d98d"
+  },
+  "products": {
+    "$oid": "665c69659b1c9c4449b85605"
+  },
+  "count": 8,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T14:24:07.888Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T14:24:07.889Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T14:24:07.889Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dd2d5890e30e22815d9a0"
+  },
+  "products": {
+    "$oid": "665c63e89b1c9c4449b854fa"
+  },
+  "count": 4,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T14:27:33.214Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T14:27:33.215Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T14:27:33.215Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dd2d5890e30e22815d9a2"
+  },
+  "products": {
+    "$oid": "665c647e9b1c9c4449b85512"
+  },
+  "count": 3,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T14:27:33.219Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T14:27:33.220Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T14:27:33.220Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dd325890e30e22815d9a9"
+  },
+  "products": {
+    "$oid": "665c63e89b1c9c4449b854fa"
+  },
+  "count": 3,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T14:28:53.705Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T14:28:53.706Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T14:28:53.706Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dd352890e30e22815d9ab"
+  },
+  "products": {
+    "$oid": "665c63e89b1c9c4449b854fa"
+  },
+  "count": 3,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T14:29:38.778Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T14:29:38.779Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T14:29:38.779Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dd503890e30e22815d9b2"
+  },
+  "products": {
+    "$oid": "665c63e89b1c9c4449b854fa"
+  },
+  "count": 2,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T14:36:51.291Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T14:36:51.292Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T14:36:51.292Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dd51b890e30e22815d9b8"
+  },
+  "products": {
+    "$oid": "665c647e9b1c9c4449b85512"
+  },
+  "count": 3,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T14:37:15.871Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T14:37:15.871Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T14:37:15.871Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dd51b890e30e22815d9ba"
+  },
+  "products": {
+    "$oid": "665c64a49b1c9c4449b85518"
+  },
+  "count": 2,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T14:37:15.874Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T14:37:15.874Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T14:37:15.874Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dd63b890e30e22815d9c1"
+  },
+  "products": {
+    "$oid": "665c63e89b1c9c4449b854fa"
+  },
+  "count": 2,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T14:42:03.706Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T14:42:03.707Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T14:42:03.707Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dd653890e30e22815d9c8"
+  },
+  "products": {
+    "$oid": "665dcea3890e30e22815d974"
+  },
+  "count": 3,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
   },
   "done": true,
   "date": {
-    "$date": "2024-05-30T22:13:27.408Z"
+    "$date": "2024-06-03T14:42:27.491Z"
   },
   "createdAt": {
-    "$date": "2024-05-30T22:13:27.409Z"
+    "$date": "2024-06-03T14:42:27.492Z"
   },
   "updatedAt": {
-    "$date": "2024-05-30T22:14:23.217Z"
+    "$date": "2024-06-03T15:26:25.546Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dd696890e30e22815d9cf"
+  },
+  "products": {
+    "$oid": "665c63e89b1c9c4449b854fa"
+  },
+  "count": 3,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T14:43:34.715Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T14:43:34.716Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T14:43:34.716Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dd6a9890e30e22815d9d6"
+  },
+  "products": {
+    "$oid": "665c63e89b1c9c4449b854fa"
+  },
+  "count": 3,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T14:43:53.478Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T14:43:53.479Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T14:43:53.479Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dd6a9890e30e22815d9d8"
+  },
+  "products": {
+    "$oid": "665c640c9b1c9c4449b85503"
+  },
+  "count": 3,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T14:43:53.481Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T14:43:53.481Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T14:43:53.481Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dd70c890e30e22815d9df"
+  },
+  "products": {
+    "$oid": "665c63e89b1c9c4449b854fa"
+  },
+  "count": 3,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T14:45:32.798Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T14:45:32.798Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T14:45:32.798Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dd73a890e30e22815d9e1"
+  },
+  "products": {
+    "$oid": "665c63e89b1c9c4449b854fa"
+  },
+  "count": 1,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T14:46:18.339Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T14:46:18.340Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T14:46:18.340Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dd76c890e30e22815d9e7"
+  },
+  "products": {
+    "$oid": "665c679a9b1c9c4449b855a2"
+  },
+  "count": 2,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T14:47:08.099Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T14:47:08.100Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T14:47:08.100Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dd89b890e30e22815d9ef"
+  },
+  "products": {
+    "$oid": "665c63e89b1c9c4449b854fa"
+  },
+  "count": 2,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T14:52:11.624Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T14:52:11.625Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T14:52:11.625Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dd8b6890e30e22815d9f3"
+  },
+  "products": {
+    "$oid": "665c63e89b1c9c4449b854fa"
+  },
+  "count": 2,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T14:52:38.405Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T14:52:38.405Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T14:52:38.405Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dd8b6890e30e22815d9f5"
+  },
+  "products": {
+    "$oid": "665c640c9b1c9c4449b85503"
+  },
+  "count": 1,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T14:52:38.408Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T14:52:38.408Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T14:52:38.408Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dd8f9890e30e22815d9fc"
+  },
+  "products": {
+    "$oid": "665c63e89b1c9c4449b854fa"
+  },
+  "count": 2,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T14:53:45.176Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T14:53:45.176Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T14:53:45.176Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dd994890e30e22815da07"
+  },
+  "products": {
+    "$oid": "665c63e89b1c9c4449b854fa"
+  },
+  "count": 2,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T14:56:20.457Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T14:56:20.458Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T14:56:20.458Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dd994890e30e22815da09"
+  },
+  "products": {
+    "$oid": "665c640c9b1c9c4449b85503"
+  },
+  "count": 1,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T14:56:20.462Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T14:56:20.463Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T14:56:20.463Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dd99f890e30e22815da0d"
+  },
+  "products": {
+    "$oid": "665c640c9b1c9c4449b85503"
+  },
+  "count": 2,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T14:56:31.958Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T14:56:31.959Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T14:56:31.959Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dd9d7890e30e22815da13"
+  },
+  "products": {
+    "$oid": "665c67bb9b1c9c4449b855a8"
+  },
+  "count": 1,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T14:57:27.146Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T14:57:27.146Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T14:57:27.146Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dd9d7890e30e22815da15"
+  },
+  "products": {
+    "$oid": "665c679a9b1c9c4449b855a2"
+  },
+  "count": 2,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T14:57:27.149Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T14:57:27.149Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T14:57:27.149Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dda5c890e30e22815da25"
+  },
+  "products": {
+    "$oid": "665c63e89b1c9c4449b854fa"
+  },
+  "count": 3,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T14:59:40.943Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T14:59:40.943Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T14:59:40.943Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dda99890e30e22815da2e"
+  },
+  "products": {
+    "$oid": "665c668e9b1c9c4449b85580"
+  },
+  "count": 2,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T15:00:41.282Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T15:00:41.282Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T15:00:41.282Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665ddee0890e30e22815da5f"
+  },
+  "products": {
+    "$oid": "665c63e89b1c9c4449b854fa"
+  },
+  "count": 2,
+  "customer": {
+    "$oid": "665dde0b890e30e22815da52"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T15:18:56.712Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T15:18:56.712Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T15:18:56.712Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665ddf48890e30e22815da68"
+  },
+  "products": {
+    "$oid": "665dcea3890e30e22815d974"
+  },
+  "count": 2,
+  "customer": {
+    "$oid": "665dde0b890e30e22815da52"
+  },
+  "done": true,
+  "date": {
+    "$date": "2024-06-03T15:20:40.763Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T15:20:40.763Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T15:26:24.119Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665de073890e30e22815da7f"
+  },
+  "products": {
+    "$oid": "665c69e19b1c9c4449b85614"
+  },
+  "count": 3,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": true,
+  "date": {
+    "$date": "2024-06-03T15:25:39.904Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T15:25:39.904Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-05T08:46:08.197Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665de073890e30e22815da81"
+  },
+  "products": {
+    "$oid": "665dcc8f1cbbba84c04d4fc6"
+  },
+  "count": 3,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": true,
+  "date": {
+    "$date": "2024-06-03T15:25:39.906Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T15:25:39.906Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T15:26:26.833Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665de64efc6f89f71cd1848c"
+  },
+  "products": {
+    "$oid": "665dcea3890e30e22815d974"
+  },
+  "count": 5,
+  "customer": {
+    "$oid": "665de643fc6f89f71cd18484"
+  },
+  "done": true,
+  "date": {
+    "$date": "2024-06-03T15:50:38.052Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T15:50:38.053Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T15:59:47.521Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665de7e9fc6f89f71cd184a7"
+  },
+  "products": {
+    "$oid": "665c68799b1c9c4449b855bd"
+  },
+  "count": 2,
+  "customer": {
+    "$oid": "665de643fc6f89f71cd18484"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T15:57:29.916Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T15:57:29.917Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T15:57:29.917Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665de7e9fc6f89f71cd184a9"
+  },
+  "products": {
+    "$oid": "665c64a49b1c9c4449b85518"
+  },
+  "count": 1,
+  "customer": {
+    "$oid": "665de643fc6f89f71cd18484"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T15:57:29.920Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T15:57:29.921Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T15:57:29.921Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665de7e9fc6f89f71cd184ab"
+  },
+  "products": {
+    "$oid": "665c647e9b1c9c4449b85512"
+  },
+  "count": 1,
+  "customer": {
+    "$oid": "665de643fc6f89f71cd18484"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T15:57:29.923Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T15:57:29.924Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T15:57:29.924Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dec12fc6f89f71cd18518"
+  },
+  "products": {
+    "$oid": "665c64a49b1c9c4449b85518"
+  },
+  "count": 2,
+  "customer": {
+    "$oid": "665de643fc6f89f71cd18484"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T16:15:14.372Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T16:15:14.373Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T16:15:14.373Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dec60fc6f89f71cd1852c"
+  },
+  "products": {
+    "$oid": "665c63e89b1c9c4449b854fa"
+  },
+  "count": 2,
+  "customer": {
+    "$oid": "665de643fc6f89f71cd18484"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T16:16:32.688Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T16:16:32.689Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T16:16:32.689Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dec9bfc6f89f71cd18535"
+  },
+  "products": {
+    "$oid": "665c651f9b1c9c4449b85531"
+  },
+  "count": 2,
+  "customer": {
+    "$oid": "665de643fc6f89f71cd18484"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T16:17:31.568Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T16:17:31.570Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T16:17:31.570Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665decb2fc6f89f71cd1853e"
+  },
+  "products": {
+    "$oid": "665c679a9b1c9c4449b855a2"
+  },
+  "count": 2,
+  "customer": {
+    "$oid": "665de643fc6f89f71cd18484"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T16:17:54.706Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T16:17:54.707Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T16:17:54.707Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665dee28fc6f89f71cd18556"
+  },
+  "products": {
+    "$oid": "665c63e89b1c9c4449b854fa"
+  },
+  "count": 1,
+  "customer": {
+    "$oid": "665ded95fc6f89f71cd1854d"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T16:24:08.376Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T16:24:08.377Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T16:24:08.377Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665df50cfc6f89f71cd18593"
+  },
+  "products": {
+    "$oid": "665c679a9b1c9c4449b855a2"
+  },
+  "count": 4,
+  "customer": {
+    "$oid": "665ded95fc6f89f71cd1854d"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T16:53:32.715Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T16:53:32.716Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T16:53:32.716Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665df50cfc6f89f71cd18595"
+  },
+  "products": {
+    "$oid": "665dc17eecef884a036f608b"
+  },
+  "count": 2,
+  "customer": {
+    "$oid": "665ded95fc6f89f71cd1854d"
+  },
+  "done": true,
+  "date": {
+    "$date": "2024-06-03T16:53:32.719Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T16:53:32.720Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T16:54:53.292Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665df50cfc6f89f71cd18597"
+  },
+  "products": {
+    "$oid": "665c67bb9b1c9c4449b855a8"
+  },
+  "count": 2,
+  "customer": {
+    "$oid": "665ded95fc6f89f71cd1854d"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T16:53:32.723Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T16:53:32.724Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T16:53:32.724Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665df50cfc6f89f71cd18599"
+  },
+  "products": {
+    "$oid": "665c68799b1c9c4449b855bd"
+  },
+  "count": 2,
+  "customer": {
+    "$oid": "665ded95fc6f89f71cd1854d"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T16:53:32.726Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T16:53:32.726Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T16:53:32.726Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665df50cfc6f89f71cd1859b"
+  },
+  "products": {
+    "$oid": "665c64a49b1c9c4449b85518"
+  },
+  "count": 2,
+  "customer": {
+    "$oid": "665ded95fc6f89f71cd1854d"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T16:53:32.728Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T16:53:32.729Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T16:53:32.729Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665df52afc6f89f71cd1859d"
+  },
+  "products": {
+    "$oid": "665c64a49b1c9c4449b85518"
+  },
+  "count": 1,
+  "customer": {
+    "$oid": "665ded95fc6f89f71cd1854d"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T16:54:02.324Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T16:54:02.324Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T16:54:02.324Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665df52afc6f89f71cd1859f"
+  },
+  "products": {
+    "$oid": "665c68799b1c9c4449b855bd"
+  },
+  "count": 1,
+  "customer": {
+    "$oid": "665ded95fc6f89f71cd1854d"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T16:54:02.327Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T16:54:02.327Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T16:54:02.327Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665df5b5fc6f89f71cd185d0"
+  },
+  "products": {
+    "$oid": "665c63e89b1c9c4449b854fa"
+  },
+  "count": 1,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T16:56:21.918Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T16:56:21.919Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T16:56:21.919Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665e053264b0dde0678cc001"
+  },
+  "products": {
+    "$oid": "665c692f9b1c9c4449b855fc"
+  },
+  "count": 2,
+  "customer": {
+    "$oid": "665df987aede0101d977765b"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T18:02:26.666Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T18:02:26.674Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T18:02:26.674Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665e053264b0dde0678cc003"
+  },
+  "products": {
+    "$oid": "665c67bb9b1c9c4449b855a8"
+  },
+  "count": 2,
+  "customer": {
+    "$oid": "665df987aede0101d977765b"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T18:02:26.681Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T18:02:26.681Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T18:02:26.681Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665e07005b7b16905b9304e5"
+  },
+  "products": {
+    "$oid": "665c63e89b1c9c4449b854fa"
+  },
+  "count": 1,
+  "customer": {
+    "$oid": "665daa840e6f6c270e7212bf"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T18:10:08.465Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T18:10:08.474Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T18:10:08.474Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665e076d5b7b16905b9304f7"
+  },
+  "products": {
+    "$oid": "665c63e89b1c9c4449b854fa"
+  },
+  "count": 3,
+  "customer": {
+    "$oid": "665e07665b7b16905b9304ef"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-03T18:11:57.405Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-03T18:11:57.406Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-03T18:11:57.406Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665eed82671cce17adf9b2b4"
+  },
+  "products": {
+    "$oid": "665c69659b1c9c4449b85605"
+  },
+  "count": 2,
+  "customer": {
+    "$oid": "665eed3f671cce17adf9b29a"
+  },
+  "done": true,
+  "date": {
+    "$date": "2024-06-04T10:33:38.861Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-04T10:33:38.862Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-05T08:51:45.734Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665eed82671cce17adf9b2b6"
+  },
+  "products": {
+    "$oid": "665c63e89b1c9c4449b854fa"
+  },
+  "count": 2,
+  "customer": {
+    "$oid": "665eed3f671cce17adf9b29a"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-04T10:33:38.867Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-04T10:33:38.868Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-04T10:33:38.868Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666025aa3bbb24eae85e0398"
+  },
+  "products": {
+    "$oid": "665c647e9b1c9c4449b85512"
+  },
+  "count": 1,
+  "customer": {
+    "$oid": "666025833bbb24eae85e038a"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-05T08:45:30.045Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-05T08:45:30.045Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-05T08:45:30.045Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666025aa3bbb24eae85e039a"
+  },
+  "products": {
+    "$oid": "665c692f9b1c9c4449b855fc"
+  },
+  "count": 1,
+  "customer": {
+    "$oid": "666025833bbb24eae85e038a"
+  },
+  "done": true,
+  "date": {
+    "$date": "2024-06-05T08:45:30.049Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-05T08:45:30.050Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-05T08:46:03.359Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66602bbe3bbb24eae85e03fc"
+  },
+  "products": {
+    "$oid": "665c647e9b1c9c4449b85512"
+  },
+  "count": 1,
+  "customer": {
+    "$oid": "66602b643bbb24eae85e03ef"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-05T09:11:26.391Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-05T09:11:26.393Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-05T09:11:26.393Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66602bbe3bbb24eae85e03fe"
+  },
+  "products": {
+    "$oid": "665c69659b1c9c4449b85605"
+  },
+  "count": 2,
+  "customer": {
+    "$oid": "66602b643bbb24eae85e03ef"
+  },
+  "done": true,
+  "date": {
+    "$date": "2024-06-05T09:11:26.396Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-05T09:11:26.397Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-05T09:11:48.517Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66602bbe3bbb24eae85e0400"
+  },
+  "products": {
+    "$oid": "665c68799b1c9c4449b855bd"
+  },
+  "count": 1,
+  "customer": {
+    "$oid": "66602b643bbb24eae85e03ef"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-05T09:11:26.402Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-05T09:11:26.403Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-05T09:11:26.403Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66602bbe3bbb24eae85e0402"
+  },
+  "products": {
+    "$oid": "665c63e89b1c9c4449b854fa"
+  },
+  "count": 1,
+  "customer": {
+    "$oid": "66602b643bbb24eae85e03ef"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-05T09:11:26.406Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-05T09:11:26.407Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-05T09:11:26.407Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6661c9abcb50edb31062f6a9"
+  },
+  "products": {
+    "$oid": "6661c871cb50edb31062f66c"
+  },
+  "count": 2,
+  "customer": {
+    "$oid": "6661c9a8cb50edb31062f6a6"
+  },
+  "done": true,
+  "date": {
+    "$date": "2024-06-06T14:37:31.439Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-06T14:37:31.439Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-06T14:38:18.928Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6661c9abcb50edb31062f6ab"
+  },
+  "products": {
+    "$oid": "6661c2f2cb50edb31062f5d9"
+  },
+  "count": 1,
+  "customer": {
+    "$oid": "6661c9a8cb50edb31062f6a6"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-06T14:37:31.441Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-06T14:37:31.441Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-06T14:37:31.441Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6661ca4bcb50edb31062f6df"
+  },
+  "products": {
+    "$oid": "6661c6d8cb50edb31062f62f"
+  },
+  "count": 2,
+  "customer": {
+    "$oid": "6661ca45cb50edb31062f6da"
+  },
+  "done": true,
+  "date": {
+    "$date": "2024-06-06T14:40:11.408Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-06T14:40:11.408Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-06T14:43:18.915Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6661cac6cb50edb31062f6fa"
+  },
+  "products": {
+    "$oid": "6661c6d8cb50edb31062f62f"
+  },
+  "count": 2,
+  "customer": {
+    "$oid": "6661ca45cb50edb31062f6da"
+  },
+  "done": true,
+  "date": {
+    "$date": "2024-06-06T14:42:14.911Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-06T14:42:14.911Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-06T14:43:22.773Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6661cac6cb50edb31062f6fc"
+  },
+  "products": {
+    "$oid": "6661c738cb50edb31062f63b"
+  },
+  "count": 1,
+  "customer": {
+    "$oid": "6661ca45cb50edb31062f6da"
+  },
+  "done": true,
+  "date": {
+    "$date": "2024-06-06T14:42:14.913Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-06T14:42:14.914Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-06T14:43:21.941Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6661cac6cb50edb31062f6fe"
+  },
+  "products": {
+    "$oid": "6661c708cb50edb31062f635"
+  },
+  "count": 1,
+  "customer": {
+    "$oid": "6661ca45cb50edb31062f6da"
+  },
+  "done": true,
+  "date": {
+    "$date": "2024-06-06T14:42:14.917Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-06T14:42:14.917Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-06T14:43:23.525Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6661cac6cb50edb31062f700"
+  },
+  "products": {
+    "$oid": "6661c457cb50edb31062f609"
+  },
+  "count": 1,
+  "customer": {
+    "$oid": "6661ca45cb50edb31062f6da"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-06T14:42:14.919Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-06T14:42:14.919Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-06T14:42:14.919Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6661cacdcb50edb31062f704"
+  },
+  "products": {
+    "$oid": "6661c6d8cb50edb31062f62f"
+  },
+  "count": 2,
+  "customer": {
+    "$oid": "6661ca45cb50edb31062f6da"
+  },
+  "done": true,
+  "date": {
+    "$date": "2024-06-06T14:42:21.577Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-06T14:42:21.578Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-06T14:43:25.702Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6661cacdcb50edb31062f706"
+  },
+  "products": {
+    "$oid": "6661c738cb50edb31062f63b"
+  },
+  "count": 1,
+  "customer": {
+    "$oid": "6661ca45cb50edb31062f6da"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-06T14:42:21.581Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-06T14:42:21.581Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-06T14:42:21.581Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6661cacdcb50edb31062f708"
+  },
+  "products": {
+    "$oid": "6661c457cb50edb31062f609"
+  },
+  "count": 1,
+  "customer": {
+    "$oid": "6661ca45cb50edb31062f6da"
+  },
+  "done": false,
+  "date": {
+    "$date": "2024-06-06T14:42:21.583Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-06T14:42:21.583Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-06T14:42:21.583Z"
   },
   "__v": 0
 }]
