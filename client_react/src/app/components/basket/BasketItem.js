@@ -27,7 +27,6 @@ export default function BasketItem(prop) {
         prop.refetch()
     }
 
-console.log("prop.product.details"+prop.product.details);
     return (
         <>
             <div className="col-12" key={prop.product._id}>
@@ -71,4 +70,4 @@ console.log("prop.product.details"+prop.product.details);
             </>
     )
 }
-        
+    

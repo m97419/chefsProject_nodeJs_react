@@ -34,7 +34,6 @@ export default function AddCategory() {
     }
     const handle = () => {
         try {
-            console.log(category);
             addFunc(category);
         }
         catch {

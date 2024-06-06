@@ -1,51 +1,44 @@
-
 import React, { useEffect, useState } from 'react';
 import { Form, Field } from 'react-final-form';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
-// import { Dropdown } from 'primereact/dropdown';
-// import { Calendar } from 'primereact/calendar';
 import { Password } from 'primereact/password';
-// import { Checkbox } from 'primereact/checkbox';
 import { Dialog } from 'primereact/dialog';
 import { Divider } from 'primereact/divider';
 import { classNames } from 'primereact/utils';
-import { InputNumber } from 'primereact/inputnumber';
-import { useNavigate } from "react-router-dom"
+import { FileUpload } from 'primereact/fileupload';
+import { useNavigate } from "react-router-dom";
 import { setToken } from "./authSlice";
 import { useDispatch } from "react-redux";
 import { useRegisterCustomerMutation, useRegisterChefMutation } from './authApiSlice';
-import { FileUpload } from 'primereact/fileupload';
-
 
 export default function Register(prop) {
     const [showMessage, setShowMessage] = useState(false);
     const [formData, setFormData] = useState({});
     const [selectedPicture, setSelectedPicture] = useState(null);
-    const [registerFunc, { isError, isSuccess, isLoading, data, error }] = useRegisterCustomerMutation();
-    const [registerFuncC, { isErrorC, isSuccessC, isLoadingC, dataC, errorC }] = useRegisterChefMutation();
-    const navigate = useNavigate()
-    const dispatch = useDispatch()
-    useEffect(() => {
-        if (isSuccess) {
-            console.log(`data ${data.error}`);
-            dispatch(setToken(data));
-            setShowMessage(true);
-            navigate(`/chooseCountry`)
-        }
-    }, [isSuccess])
-    useEffect(() => {
-        if (isSuccessC) {
-            console.log(`data ${dataC.error}`);
-            dispatch(setToken(dataC));
-            setShowMessage(true);
-            navigate(`/`)
+    const [registerFunc, resultCustomer] = useRegisterCustomerMutation();
+    const [registerFuncC, resultChef] = useRegisterChefMutation();
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
-        }
-    }, [isSuccessC, dataC])
     useEffect(() => {
-     console.log(error?.data?.message);
-    }, [isError, isErrorC])
+        if (resultCustomer.isSuccess) {
+            console.log(`data ${resultCustomer.data.error}`);
+            dispatch(setToken(resultCustomer.data));
+            setShowMessage(true);
+            navigate(`/chooseCountry`);
+        }
+    }, [resultCustomer]);
+
+    useEffect(() => {
+        console.log(resultChef);
+        if (resultChef.isSuccess) {
+            console.log(`data ${resultChef.data.error}`);
+            dispatch(setToken(resultChef.data));
+            setShowMessage(true);
+            navigate(`/table`);
+        }
+    }, [resultChef]);
 
     const validate = (data) => {
         let errors = {};
@@ -66,8 +59,8 @@ export default function Register(prop) {
         if (!data.password) {
             errors.password = 'Password is required.';
         }
-        if (!selectedPicture && prop.role == "chef") {
-            errors.picture = 'Picture is required.'
+        if (!selectedPicture && prop.role === "chef") {
+            errors.picture = 'Picture is required.';
         }
 
         return errors;
@@ -75,12 +68,9 @@ export default function Register(prop) {
 
     const onSubmit = (data, form) => {
         setFormData(data);
-        if (prop.role == "customer") {
-            console.log("if");
-            registerFunc(data)
-        }
-        else {
-            console.log("else");
+        if (prop.role === "customer") {
+            registerFunc(data);
+        } else {
             const formDataChef = new FormData();
             formDataChef.append("name", data.name);
             formDataChef.append("password", data.password);
@@ -88,11 +78,8 @@ export default function Register(prop) {
             formDataChef.append("email", data.email);
             formDataChef.append("picture", selectedPicture);
             registerFuncC(formDataChef);
-
+            console.log('Submitted formDataChef:', formDataChef);
         }
-
-       
-        form.restart();
     };
 
     const isFormFieldValid = (meta) => !!(meta.touched && meta.error);
@@ -165,18 +152,15 @@ export default function Register(prop) {
                                     {getFormErrorMessage(meta)}
                                 </div>
                             )} />
-                            {prop.role == "chef" && <Field name="picture" render={({ input, meta }) => (
+                            {prop.role === "chef" && <Field name="picture" render={({ input, meta }) => (
                                 <div className="field">
-                                    <FileUpload name="demo[]" auto accept="image/*" maxFileSize={1000000000000000} emptyTemplate={<p className="m-0">upload picture</p>}
-                                        uploadLabel='&nbsp;העלאה' cancelLabel='&nbsp;ביטול' chooseLabel='choose &nbsp;'
+                                    <FileUpload name="demo[]" auto accept="image/*" maxFileSize={1000000} emptyTemplate={<p className="m-0">upload picture</p>}
+                                        uploadLabel='&nbsp;העלאה' cancelLabel='&nbsp;ביטול' chooseLabel='&nbsp;choose'
                                         customUpload uploadHandler={(e) => setSelectedPicture(e.files[0])} />
-
 
                                     {getFormErrorMessage(meta)}
                                 </div>
                             )} />}
-
-
                             <Button type="submit" label="Submit" className="mt-2" />
                         </form>
                     )} />

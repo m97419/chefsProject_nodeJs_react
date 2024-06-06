@@ -78,7 +78,6 @@ const Country = () => {
         if (!flag) {
             products.push({ id: product._id, details: product, count: 1 });
         }
-        console.log(products, product);
         localStorage.setItem("basket", JSON.stringify(products))
     }
     const listItem = (product, index) => {
@@ -106,7 +105,6 @@ const Country = () => {
 
                         {/*  <Chips value={product.category}/> */}
                         <div className="flex sm:flex-column align-items-center sm:align-items-end gap-3 sm:gap-2">
-                            {console.log(product.category)}
                             <span className="text-2xl font-semibold">${product.price}</span>
                             <br></br>
                             <Button icon="pi pi-cart-plus" rounded text raised aria-label="Filter" onClick={() => addItemToBusket(product)}></Button>

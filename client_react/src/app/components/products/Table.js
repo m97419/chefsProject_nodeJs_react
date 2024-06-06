@@ -101,7 +101,7 @@ export default function Table() {
         return <InputText type="text" value={options.value} onChange={(e) => options.editorCallback(e.target.value)} />;
     };
     const priceEditor = (options) => {
-        return <InputNumber value={options.value} onValueChange={(e) => { console.log(e.target.value); options.editorCallback(e.target.value) }} mode="currency" currency="USD" locale="en-US" />;
+        return <InputNumber value={options.value} onValueChange={(e) => { options.editorCallback(e.target.value) }} mode="currency" currency="USD" locale="en-US" />;
     };
 
     const categoryEditor = (options) => {
@@ -147,9 +147,7 @@ export default function Table() {
     };
 
     const categoriesArr = (rowData) => {
-        console.log(rowData.category);
         const names = rowData.category.map(e => e.name)
-        console.log(names);
         return (
             <VirtualScroller items={rowData.category} itemSize={50} itemTemplate={itemTemplateCategory} className="border-1 surface-border border-round" style={{ width: '200px', height: 0, minHeight: '70px' }} />
         )
@@ -179,27 +177,19 @@ export default function Table() {
     };
 
     const confirmDeleteProduct = (product) => {
-        console.log(product._id);
         setProduct({ id: product._id, name: product.name });
-        console.log(product);
         setDeleteProductDialog(true);
     };
 
     const deleteProduct = () => {
         let _products = products.filter((val) => val.id !== product.id);
         setProducts(_products);
-        console.log(`delete${product.id}`);
         deleteFunc({ id: product.id });
-        console.log(`delete${product.id}`);
         setDeleteProductDialog(false);
         setProduct(emptyProduct);
-        console.log(`delete${product.id}`);
     };
     const addNewProduct = () => {
-        console.log(productCreate);
-        console.log(cat);
         const category = cat
-        console.log(selectedPicture);
         const formData = new FormData();
         formData.append("picture", selectedPicture);
         formData.append("name", productCreate.name);
@@ -207,7 +197,6 @@ export default function Table() {
         formData.append("country", productCreate.country);
         formData.append("chef", productCreate.chef);
         formData.append("price", productCreate.price);
-        console.log(formData.picture);
         createNewProduct(formData);
         setAddProductDialog(false);
     };

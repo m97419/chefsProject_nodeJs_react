@@ -12,7 +12,6 @@ export default function OrdersCustomer() {
     const [products, setProducts] = useState([]);
     const [layout, setLayout] = useState('grid');
     const {_id} = useAuth()
-   console.log(_id);
    const { data: ordersData = [], isLoading, isSuccess, isError, error, refetch } =useGetBasketByCustomerQuery(_id)
     const [orders, setOrders] = useState([]);
     useEffect(() => {

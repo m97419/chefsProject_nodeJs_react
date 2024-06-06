@@ -58,7 +58,6 @@ export default function CategoriesList({ setCat }) {
     }
     const handle = () => {
         try {
-            console.log(category);
             addFunc(category);
             setAddCaegoryDialog(false)
         }

@@ -9,10 +9,8 @@ const CountryList = () => {
      const navigate = useNavigate()
      if (isError) {
           console.log(error);
-          console.log("error!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
      }
      const newcountries = countries.map(country => { return { label: country.name, key: country._id, command: () => { navigate(`/countries/${country._id}`) } }; })
-     console.log(newcountries);
      return (<div className="card" style={{ position: 'sticky', top: 15, zIndex: 9999 }} >
           <Menubar model={newcountries} />
           <Outlet />

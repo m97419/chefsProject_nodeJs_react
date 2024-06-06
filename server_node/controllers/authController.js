@@ -51,11 +51,8 @@ const login = async(req,res)=>{
     const registerChef = async(req,res)=>{
         try{
         const picture =(req.file?.filename? req.file.filename:"") 
-        console.log(picture);
         const {name,password,email,phone} =req.body
         // picture=req.file.path
-        console.log(picture);
-        console.log(` n ${name} p ${password} e ${email} p  ${phone}  p ${picture}`);
         if(!name || !password)
             return res.status(400).json({massage:'All field are required'})
     const duplicate = await Chef.findOne({name:name}).lean()
@@ -67,22 +64,18 @@ const login = async(req,res)=>{
     const hashedPwd = await bcrypt.hash(password,10)
     const chefObject = {name,password:hashedPwd,phone,email,picture,role:"chef"}
     const chef =await Chef.create(chefObject);
-    if(chef)
-    console.log("chef");
     const foundChef = await Chef.findOne({name}).lean()
-    console.log(foundChef);
     if(foundChef){
         const chefInfo={
             _id:foundChef._id,
             name:foundChef.name,
             phone:foundChef.phone,
             email:foundChef.email,
-            // picture:foundChef.picture,
+            picture:foundChef.picture,
             role:"chef"
         }
         
         const accessToken = jwt.sign(chefInfo,process.env.ACCESS_TOKEN_SECRET)
-        console.log("accessToken");
         return res.status(201).json({token:accessToken})
         }
         else
@@ -98,7 +91,6 @@ const login = async(req,res)=>{
     const registerCustomer = async(req,res)=>{
         try{
         const {name,password,email,phone} =req.body
-        console.log(` n ${name} p ${password} e ${email} p  ${phone}  `);
         if(!name || !password){
             return res.status(400).json({massage:'All field are required'})
         }

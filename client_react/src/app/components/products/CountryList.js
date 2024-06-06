@@ -21,7 +21,6 @@ export default function CountryList({ setProduct }) {
     useEffect(() => {
         const _countriesData = countriesData.map(c => { return { name: c.name, id: c._id } });
         setCountries(_countriesData)
-        console.log(countries);
 
     }, [isSuccess])
     useEffect(() => {
@@ -53,7 +52,6 @@ export default function CountryList({ setProduct }) {
             const formData = new FormData();
             formData.append("name", country.name);
             formData.append("picture", selectedPicture);
-            console.log(country);
             addFunc(formData);
             setAddCountryDialog(false)
         }
