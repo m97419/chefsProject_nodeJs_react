@@ -15,11 +15,20 @@ export default function Basket() {
     const navigate = useNavigate();
     const [addFunc, { data: data = [], isLoading, isSuccess, isError, error }] = useCreateNewBasketMutation();
     const getBasket = () => {
-        const myBasket = JSON.parse(localStorage.getItem("basket"));
-
-        if (!myBasket || !Array.isArray(myBasket))
+        const storageBasket = localStorage.getItem("basket")
+        if(! storageBasket)
             return [];
-        return myBasket;
+        try{
+            const myBasket = JSON.parse(localStorage.getItem("basket"));
+            return myBasket;
+        }
+        catch{
+            return [];
+        
+
+        // if (!myBasket || !Array.isArray(myBasket))
+        //     return [];
+        // return myBasket;
     };
 
     const [basket, setBasket] = useState(getBasket());
