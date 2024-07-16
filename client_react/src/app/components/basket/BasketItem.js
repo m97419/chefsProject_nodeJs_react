@@ -24,7 +24,8 @@ export default function BasketItem(prop) {
         const myBasket = JSON.parse(localStorage.getItem("basket"))
         const updateBasket = myBasket.filter(prod=> prod.id != prop.product.id)
         localStorage.setItem("basket",JSON.stringify(updateBasket))
-        prop.refetch()
+       prop.setBasket(prop.getBasket())
+        // prop.refetch()
     }
 
     return (
