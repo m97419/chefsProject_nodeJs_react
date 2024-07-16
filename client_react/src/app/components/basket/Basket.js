@@ -24,7 +24,7 @@ export default function Basket() {
         }
         catch{
             return [];
-        
+        }
 
         // if (!myBasket || !Array.isArray(myBasket))
         //     return [];
@@ -60,7 +60,7 @@ export default function Basket() {
     const listTemplate = (items) => {
         if (!items || items.length === 0) return null;
         return <div className="grid grid-nogutter">{items.map((product, index) => (
-            <BasketItem product={product} index={index} refetch={refetch} key={index} />
+            <BasketItem product={product} index={index} refetch={refetch} key={index} setBasket={setBasket} getBasket={getBasket}/>
         ))}</div>;
     };
 
